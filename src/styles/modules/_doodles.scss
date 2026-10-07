@@ -18,7 +18,10 @@ $doodles: "../../assets/images/doodles";
 		position: relative;
 	}
 
-	// Margin doodles. Absolutely positioned so the grid ignores them.
+	// Margin doodles. Absolutely positioned so the grid ignores them. They run
+	// the full page height, so they are never rotated: a tilted element that
+	// tall widens the page by a few hundred pixels. Shown only when the viewport
+	// leaves at least 40px outside the 1080px shell plus the doodle column.
 	.wp-site-blocks::before,
 	.wp-site-blocks::after {
 		content: "";
@@ -43,7 +46,6 @@ $doodles: "../../assets/images/doodles";
 			0 40rem,
 			0.5rem 72rem;
 		background-size: 3.5rem, 4.5rem, 5.5rem;
-		rotate: -6deg;
 		animation: bubbledew-float 8s ease-in-out infinite;
 	}
 
@@ -58,11 +60,10 @@ $doodles: "../../assets/images/doodles";
 			right 0 top 58rem,
 			right 0.5rem top 92rem;
 		background-size: 3rem, 4rem, 3.25rem;
-		rotate: 8deg;
 		animation: bubbledew-float 9.5s ease-in-out -3s infinite;
 	}
 
-	@media (width >= 1220px) {
+	@media (width >= 1440px) {
 		.wp-site-blocks::before,
 		.wp-site-blocks::after {
 			display: block;

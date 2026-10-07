@@ -52,6 +52,11 @@ header.wp-block-template-part:has(> .is-position-sticky) {
 		min-block-size: 100svh;
 		display: grid;
 
+		// Tilted cards, badges and stickers poke past the edges on a phone.
+		// `clip` cuts them off without making the page a scroll container, so
+		// sticky headers keep working.
+		overflow-x: clip;
+
 		// minmax(0, …): a plain 1fr track grows to its widest child, so a wide
 		// table or code block widens the header and footer with it.
 		grid-template-columns: minmax(0, 1fr);
