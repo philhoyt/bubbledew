@@ -206,6 +206,17 @@ $fills: (
 	}
 }
 
+// Archive and search: the title and description sit above the first card, which
+// needs room for its badge.
+.bubbledew-feed > .wp-block-query-title,
+.bubbledew-feed > .wp-block-term-description {
+	margin-block: 0 var(--wp--preset--spacing--s);
+}
+
+.bubbledew-feed > .wp-block-query {
+	margin-block-start: var(--wp--preset--spacing--l);
+}
+
 // Single post header: the title sits close to its pills and meta.
 .bubbledew-single__header .wp-block-post-title {
 	margin-block: 0;

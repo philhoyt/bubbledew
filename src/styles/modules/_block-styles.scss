@@ -33,6 +33,19 @@
 	text-align: center;
 }
 
+// The 404 page is one big bubble with the search form inside.
+.bubbledew-404.is-style-speech-bubble {
+	--bubbledew-card-fill: color-mix(in oklab, var(--wp--preset--color--butter) 35%, var(--wp--preset--color--surface));
+
+	padding: var(--wp--preset--spacing--l);
+	background-color: var(--bubbledew-card-fill);
+	rotate: -0.6deg;
+
+	.wp-block-search {
+		margin-block-start: var(--wp--preset--spacing--m);
+	}
+}
+
 // The tagline's bubble is small and points up at the site title.
 p.wp-block-site-tagline.is-style-speech-bubble {
 	width: fit-content;
