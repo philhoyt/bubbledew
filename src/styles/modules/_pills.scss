@@ -179,7 +179,7 @@ $nav-top: ".wp-block-navigation__container > .wp-block-navigation-item, .wp-bloc
 
 // The arrow is a span beside the link, so the pill goes on the wrapper and
 // the link inherits its colour.
-.bubbledew-post-nav .wp-block-post-navigation-link {
+.wp-block-post-navigation-link {
 	@include pill;
 
 	max-width: 100%;
@@ -197,12 +197,12 @@ $nav-top: ".wp-block-navigation__container > .wp-block-navigation-item, .wp-bloc
 	}
 }
 
-.bubbledew-post-nav .post-navigation-link-previous {
+.post-navigation-link-previous {
 	--bubbledew-pill-fill: var(--wp--preset--color--secondary);
 	--bubbledew-pill-tilt: -1.5deg;
 }
 
-.bubbledew-post-nav .post-navigation-link-next {
+.post-navigation-link-next {
 	--bubbledew-pill-fill: var(--wp--preset--color--tertiary);
 	--bubbledew-pill-tilt: 1.5deg;
 }
@@ -237,7 +237,7 @@ $nav-top: ".wp-block-navigation__container > .wp-block-navigation-item, .wp-bloc
 
 // ------------------------------------------------------------- pagination
 
-.bubbledew-pagination {
+.wp-block-query-pagination {
 	.wp-block-query-pagination-previous,
 	.wp-block-query-pagination-next,
 	.wp-block-query-pagination-numbers .page-numbers {
@@ -312,21 +312,9 @@ $nav-top: ".wp-block-navigation__container > .wp-block-navigation-item, .wp-bloc
 	}
 }
 
-// ----------------------------------------------------------------- footer
-
-.bubbledew-footer__top {
-	@include pill;
-
-	--bubbledew-pill-fill: var(--wp--preset--color--surface);
-	--bubbledew-pill-tilt: 2deg;
-
-	padding: 0.3rem 0.85rem;
-	font-size: var(--wp--preset--font-size--xs);
-}
-
 // ----------------------------------------------------------------- search
 
-.bubbledew-widget .wp-block-search__input {
+.is-style-card .wp-block-search__input {
 	border: 0;
 	border-radius: var(--wp--custom--pill--radius);
 	background-color: var(--wp--preset--color--base);

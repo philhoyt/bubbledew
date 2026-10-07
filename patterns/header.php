@@ -18,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- wp:group {"metadata":{"name":"Header band"},"className":"bubbledew-band bubbledew-band--header","style":{"spacing":{"padding":{"top":"var:preset|spacing|l","bottom":"var:preset|spacing|m"}}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group bubbledew-band bubbledew-band--header" style="padding-top:var(--wp--preset--spacing--l);padding-bottom:var(--wp--preset--spacing--m)"><!-- wp:group {"align":"wide","style":{"spacing":{"blockGap":"var:preset|spacing|m"}},"layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between","verticalAlignment":"center"}} -->
 <div class="wp-block-group alignwide"><!-- wp:group {"metadata":{"name":"Brand"},"className":"bubbledew-brand","style":{"spacing":{"blockGap":"var:preset|spacing|s"}},"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center"}} -->
-<div class="wp-block-group bubbledew-brand"><!-- wp:site-logo {"width":56,"shouldSyncIcon":false,"className":"bubbledew-brand__mark"} /-->
+<div class="wp-block-group bubbledew-brand"><!-- wp:site-logo {"width":56,"shouldSyncIcon":false,"className":"is-style-pebble"} /-->
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|xs"}},"layout":{"type":"flex","orientation":"vertical"}} -->
 <div class="wp-block-group"><!-- wp:site-title {"className":"is-style-highlight"} /-->

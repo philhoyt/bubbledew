@@ -602,6 +602,110 @@
       "core/post-comments-link": {
         "typography": {
           "fontSize": "var(--wp--preset--font-size--xs)"
+        },
+        "elements": {
+          "link": {
+            "color": {
+              "text": "currentColor"
+            },
+            "typography": {
+              "textDecoration": "none"
+            },
+            ":hover": {
+              "color": {
+                "text": "var(--wp--preset--color--link)"
+              },
+              "typography": {
+                "textDecoration": "underline"
+              }
+            },
+            ":focus": {
+              "color": {
+                "text": "var(--wp--preset--color--link)"
+              },
+              "typography": {
+                "textDecoration": "underline"
+              }
+            }
+          }
+        }
+      },
+      "core/post-title": {
+        "elements": {
+          "link": {
+            "color": {
+              "text": "currentColor"
+            },
+            "typography": {
+              "textDecoration": "none"
+            },
+            ":hover": {
+              "color": {
+                "text": "var(--wp--preset--color--link)"
+              }
+            },
+            ":focus": {
+              "color": {
+                "text": "var(--wp--preset--color--link)"
+              }
+            }
+          }
+        }
+      },
+      "core/post-date": {
+        "elements": {
+          "link": {
+            "color": {
+              "text": "currentColor"
+            },
+            "typography": {
+              "textDecoration": "none"
+            },
+            ":hover": {
+              "color": {
+                "text": "var(--wp--preset--color--link)"
+              },
+              "typography": {
+                "textDecoration": "underline"
+              }
+            },
+            ":focus": {
+              "color": {
+                "text": "var(--wp--preset--color--link)"
+              },
+              "typography": {
+                "textDecoration": "underline"
+              }
+            }
+          }
+        }
+      },
+      "core/post-author-name": {
+        "elements": {
+          "link": {
+            "color": {
+              "text": "currentColor"
+            },
+            "typography": {
+              "textDecoration": "none"
+            },
+            ":hover": {
+              "color": {
+                "text": "var(--wp--preset--color--link)"
+              },
+              "typography": {
+                "textDecoration": "underline"
+              }
+            },
+            ":focus": {
+              "color": {
+                "text": "var(--wp--preset--color--link)"
+              },
+              "typography": {
+                "textDecoration": "underline"
+              }
+            }
+          }
         }
       }
     },

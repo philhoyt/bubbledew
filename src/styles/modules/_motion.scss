@@ -55,8 +55,8 @@
 		transition: none !important;
 	}
 
-	.bubbledew-card:hover,
-	.bubbledew-card:focus-within {
+	.is-style-card:hover,
+	.is-style-card:focus-within {
 		translate: 0 0;
 		rotate: var(--bubbledew-tilt, 0deg);
 	}
