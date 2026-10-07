@@ -66,14 +66,16 @@ src/styles/
     ├── _pills.scss         # nav items, category pills, buttons, excerpt link, pagination, search field
     ├── _blobs.scss         # uneven corner radii per position + corner-shape: squircle
     ├── _bands.scss         # header/footer tinted bands with masked SVG wave edges
-    ├── _doodles.scss       # margin doodles (≥1440px), bobbing avatar and brand mark
+    ├── _doodles.scss       # bobbing avatar and tipping brand mark (the rest of the doodle layer was removed)
     ├── _block-styles.scss  # the CSS half of the styles/blocks/*.json variations (tail, tape, stripe)
     └── _motion.scss        # the three keyframes and the prefers-reduced-motion switch
 ```
 
-Decorative SVGs live in `assets/images/doodles/` and are referenced from SCSS with
-`url("../../assets/images/doodles/<name>.svg")`: the path resolves from the entry file in
-`src/styles/`, not from the partial, and the build inlines them as data URIs. Fonts are
+The one decorative SVG, the sticky-post star, lives in `assets/images/doodles/` and is
+referenced from SCSS with `url("../../assets/images/doodles/star.svg")`: the path resolves
+from the entry file in `src/styles/`, not from the partial, and the build inlines it as a
+data URI. Card-corner stickers and floating margin doodles were built and then removed as
+clutter; the star stays because it marks a sticky post. Fonts are
 local variable woff2 files under `assets/fonts/` (see its README for versions and
 checksums) declared through `fontFace` in `theme.json`; nothing is enqueued for them.
 
@@ -106,7 +108,7 @@ The `_context.scss` mixin controls whether styles apply on the front-end or in t
 | `functions.php`                                             | Minimal entry point — includes `inc/setup.php`                                                                                                                                                                                                                                                                                                                                                      |
 | `patterns/`                                                 | PHP patterns holding the theme's block markup (the pattern paradigm)                                                                                                                                                                                                                                                                                                                                |
 | `styles/blocks/`                                            | Block style variations as JSON partials (`speech-bubble`, `sticky-note`, `highlight`); their pseudo-element halves live in `src/styles/modules/_block-styles.scss`                                                                                                                                                                                                                                  |
-| `assets/`                                                   | `fonts/` (Fredoka and Nunito, OFL, with README and licences), `images/doodles/` (sticker SVGs), `images/avatar-placeholder.svg` (the sidebar about card's default picture)                                                                                                                                                                                                                          |
+| `assets/`                                                   | `fonts/` (Fredoka and Nunito, OFL, with README and licences), `images/doodles/star.svg` (the sticky-post sticker), `images/avatar-placeholder.svg` (the sidebar about card's default picture)                                                                                                                                                                                                       |
 | `webpack.config.js`                                         | Build config extending `@wordpress/scripts` defaults                                                                                                                                                                                                                                                                                                                                                |
 | `phpcs.xml`                                                 | PHP CodeSniffer ruleset (WordPress standard + PHPCompatibilityWP)                                                                                                                                                                                                                                                                                                                                   |
 | `phpstan.neon`                                              | PHPStan config (level 5, WordPress stubs)                                                                                                                                                                                                                                                                                                                                                           |
@@ -317,10 +319,10 @@ Things that are not derivable from the code:
 - **Core emits `.has-*-background-color` with `!important`.** A background preset in the
   markup cannot be overridden from CSS, so the cards carry no `backgroundColor` attribute
   and `_cards.scss` sets the fill (the position-based pastel rotation depends on this).
-- **Never rotate a full-height pseudo-element.** The margin doodles span the page height;
-  a few degrees of `rotate` on them widened the page by hundreds of pixels (the smoke test
-  caught it). `.wp-site-blocks` has `overflow-x: clip` for the tilted cards and stickers;
-  `clip` does not create a scroll container, so sticky headers keep working.
+- **Never rotate a full-height pseudo-element.** The since-removed margin doodles spanned
+  the page height; a few degrees of `rotate` on them widened the page by hundreds of pixels
+  (the smoke test caught it). `.wp-site-blocks` has `overflow-x: clip` for the tilted cards
+  and badges; `clip` does not create a scroll container, so sticky headers keep working.
 - **`bin/check-a11y.js` skips looping animations.** It awaits `document.getAnimations()`
   after opening the phone menu; an infinite animation never finishes, so animations with
   `iterations: Infinity` are filtered out or the run hangs for three minutes and dies.

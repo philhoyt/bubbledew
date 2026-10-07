@@ -1,77 +1,12 @@
 //
 // Module: doodles.
 //
-// Decorative art: doodles floating in the page margins on wide screens, plus
-// the bobbing avatar and brand mark. All of it is CSS pseudo-elements and
-// transforms with `pointer-events: none`, so the block markup stays plain core
-// blocks and no decorative image ends up in the content. Card-corner stickers
-// were tried and removed as clutter; the sticky-post star in _cards.scss is the
-// one sticker left, because it carries meaning. The SVGs live in
-// assets/images/doodles/ and are bundled by the build. The path is resolved
-// from the entry file in src/styles/, not from this partial.
+// What is left of the decorative layer: the bobbing avatar in the sidebar's
+// about card and the brand mark that tips on hover. Card-corner stickers and
+// floating margin doodles were tried and removed as clutter; the sticky-post
+// star in _cards.scss is the one sticker kept, because it carries meaning.
+// Shared by the front end and the editor.
 //
-
-@use "../tools/context";
-
-$doodles: "../../assets/images/doodles";
-
-@include context.is(front) {
-	.wp-site-blocks {
-		position: relative;
-	}
-
-	// Margin doodles. Absolutely positioned so the grid ignores them. They run
-	// the full page height, so they are never rotated: a tilted element that
-	// tall widens the page by a few hundred pixels. Shown only when the viewport
-	// leaves at least 40px outside the 1080px shell plus the doodle column.
-	.wp-site-blocks::before,
-	.wp-site-blocks::after {
-		content: "";
-		position: absolute;
-		top: 0;
-		bottom: 0;
-		z-index: 0;
-		display: none;
-		width: 8rem;
-		background-repeat: no-repeat;
-		pointer-events: none;
-	}
-
-	.wp-site-blocks::before {
-		left: calc(50% - 680px);
-		background-image:
-			url("#{$doodles}/star.svg"),
-			url("#{$doodles}/flower.svg"),
-			url("#{$doodles}/cloud.svg");
-		background-position:
-			1rem 14rem,
-			0 40rem,
-			0.5rem 72rem;
-		background-size: 3.5rem, 4.5rem, 5.5rem;
-		animation: bubbledew-float 8s ease-in-out infinite;
-	}
-
-	.wp-site-blocks::after {
-		right: calc(50% - 680px);
-		background-image:
-			url("#{$doodles}/heart.svg"),
-			url("#{$doodles}/sprout.svg"),
-			url("#{$doodles}/swirl.svg");
-		background-position:
-			right 1rem top 26rem,
-			right 0 top 58rem,
-			right 0.5rem top 92rem;
-		background-size: 3rem, 4rem, 3.25rem;
-		animation: bubbledew-float 9.5s ease-in-out -3s infinite;
-	}
-
-	@media (width >= 1440px) {
-		.wp-site-blocks::before,
-		.wp-site-blocks::after {
-			display: block;
-		}
-	}
-}
 
 // The avatar bobs gently.
 .bubbledew-avatar img {
