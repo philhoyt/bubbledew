@@ -2,7 +2,7 @@
 
 A whimsical pastel blog theme for the WordPress Site Editor. The posts list sits in a narrow 640px column on the left with a 300px sidebar on the right inside a 1080px shell; every post is a tilted pastel card with its category on a name tag across the top edge. Single posts and pages are one reading column, comments are speech bubbles, and headings are set in Fredoka with Nunito for body text, both bundled with the theme.
 
-Everything is core blocks and `theme.json`. Templates and parts under `templates/` and `parts/` are thin shells; the block markup lives in PHP patterns under `patterns/` so strings can be translated. Four block styles ship as JSON partials under `styles/blocks/`: Pills, Speech bubble, Sticky note and Highlight. See `CLAUDE.md` for the architecture notes and `readme.txt` for the directory readme.
+Everything is core blocks and `theme.json`. Templates and parts under `templates/` and `parts/` are thin shells; the block markup lives in PHP patterns under `patterns/` so strings can be translated. Eight block styles ship as JSON partials under `styles/blocks/`: Card, Name tag, Pebble, Pills, Blob bullets, Speech bubble, Sticky note and Highlight. The patterns opt into them; a user can switch any of them off per block in the editor. See `CLAUDE.md` for the architecture notes and `readme.txt` for the directory readme.
 
 ![Bubbledew home template](screenshot.png)
 
