@@ -3,8 +3,9 @@
  * Applies a theme style variation to the site's user global styles record, the
  * way choosing it in the Styles panel does, or resets the record. For looking at
  * a preset on the dev site; run through bin/wp.sh with a user, or WordPress
- * cannot attach the theme term and creates an orphan record on every call:
+ * cannot attach the theme term and creates an orphan record on every call.
  *
+ * Examples:
  *   bin/wp.sh eval-file bin/preview-variation.php sakura --user=admin
  *   bin/wp.sh eval-file bin/preview-variation.php reset --user=admin
  *
