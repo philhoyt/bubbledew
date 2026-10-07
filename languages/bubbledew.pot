@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-10-07T17:20:08+00:00\n"
+"POT-Creation-Date: 2026-10-07T19:08:06+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: bubbledew\n"
@@ -194,6 +194,20 @@ msgstr ""
 #: patterns/template-query-loop.php:49
 msgctxt "Message shown when a query returns nothing."
 msgid "No posts were found."
+msgstr ""
+
+#: patterns/template-single.php
+msgctxt "Pattern title"
+msgid "Single post"
+msgstr ""
+
+#: patterns/template-single.php
+msgctxt "Pattern description"
+msgid "Category pills, title, meta row, featured image, content and tags for a single post."
+msgstr ""
+
+#: patterns/template-single.php:37
+msgid "Tagged"
 msgstr ""
 
 #: theme.json
