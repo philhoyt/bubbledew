@@ -6,7 +6,7 @@ Requires PHP: 7.4
 Stable tag: 0.1.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
-Tags: blog, two-columns, right-sidebar, custom-colors, custom-logo, editor-style, block-patterns, block-styles, full-site-editing, translation-ready
+Tags: blog, two-columns, right-sidebar, wide-blocks, custom-colors, custom-logo, custom-menu, editor-style, featured-images, threaded-comments, block-patterns, block-styles, style-variations, full-site-editing, rtl-language-support, translation-ready
 
 A whimsical pastel blog theme: pebble-shaped post cards, name-tag category badges, pill navigation and a sidebar, built from core blocks.
 
@@ -18,6 +18,10 @@ Everything is built from core blocks and theme.json, so the Site Editor can chan
 
 The sidebar is a template part. Replace the picture in its about card with your own and edit the text; the Categories, Latest Posts and Archives blocks fill themselves.
 
+Three colour presets besides the default (Sakura, Dusk and Seaside) share the same palette slugs, so switching between them keeps saved content intact, and every preset is checked against the same contrast table. A Nunito typography preset swaps the Fredoka headings for heavier Nunito ones.
+
+Patterns in the inserter: Keep reading (the three most recent posts, excluding the one being read), Posts grid (two columns of cards), Links in bio (a speech-bubble card with stacked buttons and social icons, for the Page without title template) and Sticky note.
+
 == Installation ==
 
 1. In your admin panel, go to Appearance > Themes and click Add New Theme.
@@ -25,6 +29,10 @@ The sidebar is a template part. Replace the picture in its about card with your 
 3. Click Activate.
 
 == Frequently Asked Questions ==
+
+= How do I change the colours or the fonts? =
+
+Open the Site Editor, choose Styles, then Colors for the Sakura, Dusk and Seaside presets or Typography for the Nunito preset. Every colour in the palette can also be changed by hand.
 
 = Can a post card be a particular colour? =
 

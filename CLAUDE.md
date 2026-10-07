@@ -33,6 +33,8 @@ npm run wp-env:start   # http://localhost:8888; bin/wp.sh falls back to it when 
 npm run seed           # Seed content into the site bin/wp.sh reaches
 npm run test:smoke     # Templates and seeded edge cases at desktop and phone widths
 npm run check:a11y     # axe-core WCAG 2.1 A/AA + best-practice
+npm run check:contrast # every colour preset against the theme's text pairs
+npm run demo           # demo posts + pastel featured images (-- --clean wipes wp-env first)
 npm run review:start   # Theme Unit Test site on :8896 (review:import, review:check)
 ```
 
@@ -107,6 +109,8 @@ The `_context.scss` mixin controls whether styles apply on the front-end or in t
 | `inc/setup.php`                                             | Theme setup hooks, asset enqueueing using `*.asset.php` manifests                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
 | `functions.php`                                             | Minimal entry point — includes `inc/setup.php`                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
 | `patterns/`                                                 | PHP patterns holding the theme's block markup (the pattern paradigm)                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| `styles/colors/`, `styles/typography/`                      | Theme style variations: three colour presets (Sakura, Dusk, Seaside) sharing the default palette's slugs, and a Nunito typography preset that redeclares both font families. `npm run check:contrast` (`bin/check-contrast.js`) must pass for every preset                                                                                                                                                                                                                                                           |
+| `.github/demo.xml`, `bin/demo.js`                           | Demo content (six posts, two pages, comments) imported by the Playground blueprint and by `npm run demo`; the blueprint's `runPHP` step (featured images drawn with GD, sticky post, cleanup) is the single source and `bin/demo.js` runs that same code locally through `wp eval-file`. `screenshot.png` is shot from this content                                                                                                                                                                                  |
 | `styles/blocks/`                                            | Block style variations as JSON partials (`card`, `name-tag`, `pebble`, `pills`, `blob-bullets`, `speech-bubble`, `sticky-note`, `highlight`); the CSS halves live in `_cards.scss`, `_blobs.scss`, `_pills.scss` and `_block-styles.scss`. Every look a user might toggle is one of these; the only `bubbledew-*` classes left are structural hooks (`bubbledew-sidebar`, `bubbledew-feed`, `bubbledew-band*`, `bubbledew-brand`, `bubbledew-about`, `bubbledew-404`, `bubbledew-footer__brand`, `bubbledew-single`) |
 | `assets/`                                                   | `fonts/` (Fredoka and Nunito, OFL, with README and licences), `images/doodles/star.svg` (the sticky-post sticker), `images/avatar-placeholder.svg` (the sidebar about card's default picture)                                                                                                                                                                                                                                                                                                                        |
 | `webpack.config.js`                                         | Build config extending `@wordpress/scripts` defaults                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
@@ -191,7 +195,8 @@ This theme follows the **pattern-paradigm** used by Twenty Twenty-Five: template
 **Naming conventions**
 
 - `header.php` / `footer.php` / `sidebar.php` — site-wide template-part patterns (`parts/sidebar.html` is the right-hand column on the feed templates only; single posts and pages are one column)
-- `template-*.php` — full-page or major-region patterns that compose a template (`template-query-loop`)
+- `template-*.php` — full-page or major-region patterns that compose a template (`template-query-loop`, `template-single`)
+- Inserter patterns: `keep-reading.php` (also placed by `single.html`), `posts-grid.php`, `links-in-bio.php`, `sticky-note.php`
 - `hidden-*.php` — internal building blocks referenced only from templates or other patterns; not shown in the inserter
 - Other names (`comments.php`, `post-navigation.php`) — reusable building blocks that may also surface in the inserter
 
@@ -324,6 +329,11 @@ Things that are not derivable from the code:
 - **`bin/check-a11y.js` skips looping animations.** It awaits `document.getAnimations()`
   after opening the phone menu; an infinite animation never finishes, so animations with
   `iterations: Infinity` are filtered out or the run hangs for three minutes and dies.
+- **WP-CLI needs `--user` to touch global styles.** Without a user, `wp_insert_post` cannot
+  assign the `wp_theme` term, so `WP_Theme_JSON_Resolver::get_user_global_styles_post_id()`
+  creates a new orphan record on every call and nothing you write ever renders. Run
+  `bin/wp.sh eval-file bin/preview-variation.php <preset> --user=admin` to look at a colour
+  or typography preset on the dev site, and `… reset --user=admin` to go back.
 - **Block style variations are JSON partials since 6.6.** Put them under `styles/`
   (Twenty Twenty-Five uses `styles/blocks/`) with a `blockTypes` key, not
   `register_block_style()` in PHP.
