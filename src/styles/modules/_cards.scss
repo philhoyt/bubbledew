@@ -48,8 +48,6 @@ $fills: (
 .bubbledew-widget {
 	position: relative;
 	overflow: visible;
-	background-color: var(--wp--preset--color--surface);
-	background-color: var(--bubbledew-card-fill, var(--wp--preset--color--surface));
 	rotate: var(--bubbledew-tilt, 0deg);
 	transition:
 		rotate 0.25s cubic-bezier(0.34, 1.56, 0.64, 1),
@@ -58,7 +56,15 @@ $fills: (
 }
 
 // Blocks carrying a block style (speech bubble, sticky note) keep the fill
-// their style gives them.
+// their style gives them. Global styles print block style variations at
+// `:root :where(...)`, which is (0,1,0): the same as one class, so a plain
+// `.bubbledew-widget` background later in the cascade would override them.
+.bubbledew-card,
+.bubbledew-widget:not([class*="is-style-"]) {
+	background-color: var(--wp--preset--color--surface);
+	background-color: var(--bubbledew-card-fill, var(--wp--preset--color--surface));
+}
+
 @each $i, $card in $fills {
 	.wp-block-post-template > .wp-block-post:nth-child(4n + #{$i}) .bubbledew-card,
 	.bubbledew-sidebar > .bubbledew-widget:nth-child(4n + #{$i}):not([class*="is-style-"]) {
@@ -196,5 +202,62 @@ $fills: (
 		background-color: var(--wp--preset--color--tertiary);
 		vertical-align: middle;
 		rotate: 15deg;
+	}
+}
+
+// Latest posts and archives: blob bullets in rotating pastels.
+.bubbledew-list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+
+	li {
+		position: relative;
+		margin: 0 0 var(--wp--preset--spacing--xs);
+		padding-inline-start: 1.4rem;
+		font-weight: 700;
+		line-height: 1.35;
+	}
+
+	li::before {
+		content: "";
+		position: absolute;
+		top: 0.35em;
+		left: 0;
+		width: 0.8rem;
+		height: 0.8rem;
+		border-radius: 45% 55% 50% 50% / 55% 45%;
+		background-color: var(--wp--preset--color--primary);
+		rotate: 20deg;
+	}
+
+	li:nth-child(4n + 2)::before {
+		background-color: var(--wp--preset--color--tertiary);
+	}
+
+	li:nth-child(4n + 3)::before {
+		background-color: var(--wp--preset--color--lavender);
+	}
+
+	li:nth-child(4n + 4)::before {
+		background-color: var(--wp--preset--color--secondary);
+	}
+
+	a {
+		color: inherit;
+		text-decoration: none;
+	}
+
+	a:hover,
+	a:focus-visible {
+		color: var(--wp--preset--color--link);
+		text-decoration: underline;
+	}
+
+	.wp-block-latest-posts__post-date {
+		display: block;
+		font-size: var(--wp--preset--font-size--xs);
+		font-weight: 700;
+		color: var(--wp--preset--color--contrast-dark);
 	}
 }
