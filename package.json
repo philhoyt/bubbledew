@@ -1,7 +1,7 @@
 {
   "name": "bubbledew",
-  "description": "A custom WordPress Site Editor theme.",
-  "version": "0.0.0",
+  "description": "A whimsical pastel blog theme built from core blocks.",
+  "version": "0.1.0",
   "scripts": {
     "start": "wp-scripts start --experimental-modules",
     "build": "wp-scripts build --experimental-modules",
