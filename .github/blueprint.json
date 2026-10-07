@@ -1,5 +1,11 @@
 {
   "$schema": "https://playground.wordpress.net/blueprint-schema.json",
+  "meta": {
+    "title": "Bubbledew",
+    "description": "A whimsical pastel blog theme: pebble-shaped cards, name-tag badges, pill navigation, speech-bubble comments, four colour presets and demo posts to show it off.",
+    "author": "philhoyt",
+    "categories": ["themes", "block-theme"]
+  },
   "landingPage": "/",
   "login": true,
   "preferredVersions": {
@@ -23,6 +29,27 @@
       "options": {
         "activate": true
       }
+    },
+    {
+      "step": "setSiteOptions",
+      "options": {
+        "blogname": "Bubbledew",
+        "blogdescription": "Notes on growing things, small software and slow weekends",
+        "permalink_structure": "/%postname%/",
+        "posts_per_page": 5
+      }
+    },
+    {
+      "step": "importWxr",
+      "file": {
+        "resource": "url",
+        "url": "https://raw.githubusercontent.com/philhoyt/bubbledew/main/.github/demo.xml"
+      },
+      "defaultAuthorUsername": "admin"
+    },
+    {
+      "step": "runPHP",
+      "code": "<?php require_once 'wordpress/wp-load.php'; update_option( 'blogdescription', 'Notes on growing things, small software and slow weekends' ); $colors = array( array( 255, 194, 214 ), array( 169, 220, 247 ), array( 214, 200, 245 ), array( 159, 223, 191 ), array( 255, 229, 138 ), array( 255, 195, 174 ) ); $posts = get_posts( array( 'numberposts' => 6, 'post_status' => 'publish', 'orderby' => 'date', 'order' => 'DESC' ) ); require_once ABSPATH . 'wp-admin/includes/image.php'; foreach ( $posts as $i => $post ) { if ( has_post_thumbnail( $post ) || ! function_exists( 'imagecreatetruecolor' ) ) { continue; } $w = 1200; $h = 675; $im = imagecreatetruecolor( $w, $h ); $a = $colors[ $i % 6 ]; $b = $colors[ ( $i + 2 ) % 6 ]; for ( $y = 0; $y < $h; $y++ ) { $t = $y / $h; $c = imagecolorallocate( $im, (int) ( $a[0] + ( $b[0] - $a[0] ) * $t ), (int) ( $a[1] + ( $b[1] - $a[1] ) * $t ), (int) ( $a[2] + ( $b[2] - $a[2] ) * $t ) ); imageline( $im, 0, $y, $w, $y, $c ); } imagefilledellipse( $im, (int) ( $w * 0.72 ), (int) ( $h * 0.6 ), 380, 300, imagecolorallocatealpha( $im, 255, 255, 255, 60 ) ); ob_start(); imagepng( $im ); $png = ob_get_clean(); imagedestroy( $im ); $up = wp_upload_bits( 'bubbledew-demo-' . ( $i + 1 ) . '.png', null, $png ); if ( ! empty( $up['error'] ) ) { continue; } $id = wp_insert_attachment( array( 'post_mime_type' => 'image/png', 'post_title' => 'Pastel placeholder ' . ( $i + 1 ), 'post_status' => 'inherit' ), $up['file'], $post->ID ); wp_update_attachment_metadata( $id, wp_generate_attachment_metadata( $id, $up['file'] ) ); set_post_thumbnail( $post, $id ); } $first = get_posts( array( 'name' => 'the-tomatoes-finally-gave-up', 'numberposts' => 1 ) ); if ( $first ) { stick_post( $first[0]->ID ); } foreach ( array( array( 'sample-page', 'page' ), array( 'hello-world', 'post' ) ) as $gone ) { $p = get_posts( array( 'name' => $gone[0], 'post_type' => $gone[1], 'numberposts' => 1, 'post_status' => 'any' ) ); if ( $p ) { wp_delete_post( $p[0]->ID, true ); } } flush_rewrite_rules();"
     }
   ]
 }
