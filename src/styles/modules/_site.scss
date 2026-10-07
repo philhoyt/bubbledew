@@ -52,6 +52,11 @@ header.wp-block-template-part:has(> .is-position-sticky) {
 		min-block-size: 100svh;
 		display: grid;
 
+		// Tilted cards, badges and stickers poke past the edges on a phone.
+		// `clip` cuts them off without making the page a scroll container, so
+		// sticky headers keep working.
+		overflow-x: clip;
+
 		// minmax(0, …): a plain 1fr track grows to its widest child, so a wide
 		// table or code block widens the header and footer with it.
 		grid-template-columns: minmax(0, 1fr);
@@ -78,5 +83,34 @@ header.wp-block-template-part:has(> .is-position-sticky) {
 		> footer {
 			grid-area: footer;
 		}
+	}
+}
+
+// The page itself: a faint dot grid over cream, with four soft pastel blooms
+// behind the content so the background is never flat. Front end only; the
+// editor canvas stays plain so blocks are easy to see.
+@include context.is(front) {
+	body {
+		background-color: var(--wp--preset--color--base);
+		background-image:
+			radial-gradient(circle at 1px 1px, rgb(74 63 53 / 9%) 1px, transparent 0),
+			radial-gradient(ellipse at center, color-mix(in oklab, var(--wp--preset--color--secondary) 50%, transparent), transparent 60%),
+			radial-gradient(ellipse at center, color-mix(in oklab, var(--wp--preset--color--tertiary) 45%, transparent), transparent 60%),
+			radial-gradient(ellipse at center, color-mix(in oklab, var(--wp--preset--color--lavender) 50%, transparent), transparent 60%),
+			radial-gradient(ellipse at center, color-mix(in oklab, var(--wp--preset--color--butter) 40%, transparent), transparent 60%);
+		background-repeat: repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+		background-position:
+			0 0,
+			-20rem 6rem,
+			right -18rem top 40rem,
+			left -16rem top 90rem,
+			right -14rem top 120rem;
+		background-size: 22px 22px, 70rem 44rem, 56rem 40rem, 60rem 40rem, 50rem 34rem;
+	}
+
+	// The site wrapper inherits `background-color` for sticky headers; the
+	// blooms and dots must stay visible through it.
+	.wp-site-blocks {
+		background-color: transparent;
 	}
 }

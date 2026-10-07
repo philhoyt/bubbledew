@@ -89,9 +89,19 @@ const impactOrder = { critical: 0, serious: 1, moderate: 2, minor: 3 };
 					await page
 						.waitForSelector(".wp-block-navigation__responsive-container.is-menu-open", { timeout: 2000 })
 						.catch(() => {});
-					// Let the drawer finish sliding in; contrast is measured against what is on screen.
+					// Let the drawer finish sliding in; contrast is measured against what is on
+					// screen. Looping animations (a floating doodle) never finish, so only
+					// finite ones are awaited, or the run would hang on them.
 					await page.evaluate(() =>
-						Promise.all(document.getAnimations().map((a) => a.finished.catch(() => {})))
+						Promise.all(
+							document
+								.getAnimations()
+								.filter((a) => {
+									const timing = a.effect && a.effect.getTiming();
+									return !timing || timing.iterations !== Infinity;
+								})
+								.map((a) => a.finished.catch(() => {}))
+						)
 					);
 				}
 			}

@@ -8,7 +8,13 @@
     "scss/comment-no-empty": null,
     "custom-property-pattern": null,
     "selector-class-pattern": null,
-    "declaration-block-no-redundant-longhand-properties": null
+    "declaration-block-no-redundant-longhand-properties": null,
+    "property-no-unknown": [
+      true,
+      {
+        "ignoreProperties": ["corner-shape"]
+      }
+    ]
   },
   "ignoreFiles": ["**/*.css", "dist/**", "node_modules/**", "vendor/**"]
 }

@@ -12,6 +12,13 @@
 @use "modules/navigation";
 @use "modules/content";
 @use "modules/utilities";
+@use "modules/motion";
+@use "modules/blobs";
+@use "modules/cards";
+@use "modules/pills";
+@use "modules/bands";
+@use "modules/doodles";
+@use "modules/block-styles";
 
 html {
 	scrollbar-gutter: stable;
@@ -21,7 +28,7 @@ html {
 :where(.wp-site-blocks *:focus) {
 	outline-width: var(--wp--custom--outline--width);
 	outline-style: var(--wp--custom--outline--style);
-	outline-color: var(--wp--preset--color--tertiary);
+	outline-color: var(--wp--preset--color--contrast);
 }
 
 /* Increase the bottom margin on submenus, so that the outline is visible. */

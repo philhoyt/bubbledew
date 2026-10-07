@@ -1,0 +1,131 @@
+//
+// Module: block styles.
+//
+// The parts of the speech-bubble, sticky-note and highlight block styles
+// (registered as JSON partials under styles/blocks/) that theme.json cannot
+// express: the bubble's tail, the note's strip of tape and the highlight
+// stripe's width and tilt. Shared by the front end and the editor.
+//
+
+// ---------------------------------------------------------- speech bubble
+
+.is-style-speech-bubble {
+	position: relative;
+
+	&::after {
+		content: "";
+		position: absolute;
+		bottom: -0.7rem;
+		left: 2.2rem;
+		width: 1.5rem;
+		height: 1.5rem;
+		border-radius: 0.2rem;
+		background: inherit;
+		transform: rotate(45deg) skew(8deg, 8deg);
+		pointer-events: none;
+	}
+}
+
+.bubbledew-about.is-style-speech-bubble {
+	--bubbledew-card-fill: color-mix(in oklab, var(--wp--preset--color--tertiary) 34%, var(--wp--preset--color--surface));
+
+	background-color: var(--bubbledew-card-fill);
+	text-align: center;
+}
+
+// The 404 page is one big bubble with the search form inside.
+.bubbledew-404.is-style-speech-bubble {
+	--bubbledew-card-fill: color-mix(in oklab, var(--wp--preset--color--butter) 35%, var(--wp--preset--color--surface));
+
+	padding: var(--wp--preset--spacing--l);
+	background-color: var(--bubbledew-card-fill);
+	rotate: -0.6deg;
+
+	.wp-block-search {
+		margin-block-start: var(--wp--preset--spacing--m);
+	}
+}
+
+// The tagline's bubble is small and points up at the site title.
+p.wp-block-site-tagline.is-style-speech-bubble {
+	width: fit-content;
+	max-width: 100%;
+	padding: 0.35rem 0.8rem;
+	font-weight: 700;
+	rotate: 1deg;
+
+	&::after {
+		top: -0.4rem;
+		bottom: auto;
+		left: 1rem;
+		width: 0.85rem;
+		height: 0.85rem;
+		border-radius: 0.15rem;
+		transform: rotate(45deg);
+	}
+}
+
+// A comment's bubble sits under its author line, so the tail points up at the
+// avatar. Comments alternate between surface and a sky tint so a thread reads
+// as a conversation.
+.wp-block-comment-content.is-style-speech-bubble {
+	padding: var(--wp--preset--spacing--s) var(--wp--preset--spacing--m);
+	border-radius: 1.4rem 1.6rem 1.5rem 1.2rem / 1.5rem 1.3rem 1.6rem 1.4rem;
+
+	&::after {
+		top: -0.6rem;
+		bottom: auto;
+		left: 1.25rem;
+		width: 1.2rem;
+		height: 1.2rem;
+		transform: rotate(45deg);
+	}
+}
+
+.wp-block-comment-template > li:nth-child(even) > .wp-block-group > .wp-block-comment-content.is-style-speech-bubble {
+	background-color: color-mix(in oklab, var(--wp--preset--color--secondary) 30%, var(--wp--preset--color--surface));
+}
+
+// ------------------------------------------------------------ sticky note
+
+.is-style-sticky-note {
+	position: relative;
+	rotate: 1.8deg;
+
+	&::before {
+		content: "";
+		position: absolute;
+		top: -0.7rem;
+		left: 50%;
+		width: 5.5rem;
+		height: 1.5rem;
+		border-radius: 0.1rem;
+		background-color: rgb(255 255 255 / 55%);
+		box-shadow: 0 1px 2px rgb(120 80 50 / 10%);
+		translate: -50% 0;
+		rotate: -3deg;
+		pointer-events: none;
+	}
+
+	// The butter stripe would vanish on butter paper.
+	.wp-block-heading.is-style-highlight {
+		background-image: linear-gradient(transparent 58%, var(--wp--preset--color--surface) 58%, var(--wp--preset--color--surface) 92%, transparent 92%);
+	}
+}
+
+// -------------------------------------------------------------- highlight
+
+.is-style-highlight {
+	width: fit-content;
+	max-width: 100%;
+	padding-inline: 0.15rem;
+	rotate: -1deg;
+
+	&.has-text-align-center {
+		margin-inline: auto;
+	}
+
+	&.has-text-align-right {
+		margin-inline-start: auto;
+	}
+}

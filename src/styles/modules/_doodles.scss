@@ -1,0 +1,26 @@
+//
+// Module: doodles.
+//
+// What is left of the decorative layer: the bobbing avatar in the sidebar's
+// about card and the brand mark that tips on hover. Card-corner stickers and
+// floating margin doodles were tried and removed as clutter; the sticky-post
+// star in _cards.scss is the one sticker kept, because it carries meaning.
+// Shared by the front end and the editor.
+//
+
+// The avatar bobs gently.
+.bubbledew-avatar img {
+	box-shadow: var(--wp--preset--shadow--card);
+	rotate: -4deg;
+	animation: bubbledew-float 6s ease-in-out infinite;
+}
+
+.bubbledew-brand__mark img {
+	box-shadow: var(--wp--preset--shadow--card);
+	rotate: -8deg;
+	transition: rotate 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.bubbledew-brand:hover .bubbledew-brand__mark img {
+	rotate: 8deg;
+}

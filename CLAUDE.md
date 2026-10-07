@@ -38,7 +38,7 @@ npm run review:start   # Theme Unit Test site on :8896 (review:import, review:ch
 
 ## Architecture
 
-This is a **WordPress Full Site Editing (FSE) block theme** scaffold. There are no PHP page templates — `templates/` and `parts/` hold thin block-based `.html` shells, while the meaningful block markup lives in PHP patterns under `patterns/` (see [Patterns](#patterns)).
+This is **Bubbledew**, a WordPress Full Site Editing (FSE) block theme: a whimsical pastel blog with a two-column feed (640px posts, 300px sidebar, 1080px shell), single-column posts and pages, tilted pastel post cards with name-tag category badges, pill navigation and speech-bubble comments. It grew out of the block-theme scaffold, so the tooling notes below still describe that scaffold. There are no PHP page templates — `templates/` and `parts/` hold thin block-based `.html` shells, while the meaningful block markup lives in PHP patterns under `patterns/` (see [Patterns](#patterns)).
 
 ### Build Pipeline
 
@@ -62,7 +62,22 @@ src/styles/
 ├── tools/_context.scss     # front/editor separation mixin
 ├── base/global/            # global resets/base styles
 └── modules/                # feature-specific partials
+    ├── _cards.scss         # post cards and sidebar widgets: tilt, nth-child fills, badge, sticky-post star, list bullets
+    ├── _pills.scss         # nav items, category pills, buttons, excerpt link, pagination, search field
+    ├── _blobs.scss         # uneven corner radii per position + corner-shape: squircle
+    ├── _bands.scss         # header/footer tinted bands with masked SVG wave edges
+    ├── _doodles.scss       # bobbing avatar and tipping brand mark (the rest of the doodle layer was removed)
+    ├── _block-styles.scss  # the CSS half of the styles/blocks/*.json variations (tail, tape, stripe)
+    └── _motion.scss        # the three keyframes and the prefers-reduced-motion switch
 ```
+
+The one decorative SVG, the sticky-post star, lives in `assets/images/doodles/` and is
+referenced from SCSS with `url("../../assets/images/doodles/star.svg")`: the path resolves
+from the entry file in `src/styles/`, not from the partial, and the build inlines it as a
+data URI. Card-corner stickers and floating margin doodles were built and then removed as
+clutter; the star stays because it marks a sticky post. Fonts are
+local variable woff2 files under `assets/fonts/` (see its README for versions and
+checksums) declared through `fontFace` in `theme.json`; nothing is enqueued for them.
 
 The `_context.scss` mixin controls whether styles apply on the front-end or in the editor:
 
@@ -85,26 +100,28 @@ The `_context.scss` mixin controls whether styles apply on the front-end or in t
 
 ### Key Files
 
-| File                                                        | Purpose                                                                                                                                                                                                                                                                                                                                                                                             |
-| ----------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `style.css`                                                 | Theme header — name, version, text domain, `Requires`/`Tested up to` metadata                                                                                                                                                                                                                                                                                                                       |
-| `theme.json`                                                | All theme settings: color palette, typography, layout widths, spacing, border radii. Its `$schema` is pinned to a released version (`wp/7.1`) and moves together with `Tested up to` in `style.css`, so the editor and validators only offer settings the theme claims to support                                                                                                                   |
-| `inc/setup.php`                                             | Theme setup hooks, asset enqueueing using `*.asset.php` manifests                                                                                                                                                                                                                                                                                                                                   |
-| `functions.php`                                             | Minimal entry point — includes `inc/setup.php`                                                                                                                                                                                                                                                                                                                                                      |
-| `patterns/`                                                 | PHP patterns holding the theme's block markup (the pattern paradigm)                                                                                                                                                                                                                                                                                                                                |
-| `webpack.config.js`                                         | Build config extending `@wordpress/scripts` defaults                                                                                                                                                                                                                                                                                                                                                |
-| `phpcs.xml`                                                 | PHP CodeSniffer ruleset (WordPress standard + PHPCompatibilityWP)                                                                                                                                                                                                                                                                                                                                   |
-| `phpstan.neon`                                              | PHPStan config (level 5, WordPress stubs)                                                                                                                                                                                                                                                                                                                                                           |
-| `bin/wp.sh`                                                 | WP-CLI wrapper. Uses the Local site when its socket is up, else the wp-env site. `SITE` at the top is the folder name under `~/Local Sites` (`bubbledew` for the scaffold's own dev site; change it in a derived theme) and needs a one-time socket symlink, described in the script                                                                                                                  |
-| `bin/validate-blocks.js`                                    | Block markup validator (`npm run validate:blocks`); see [Block markup must validate](#block-markup-must-validate)                                                                                                                                                                                                                                                                                   |
-| `bin/seed-content.php`, `bin/smoke.js`, `bin/check-a11y.js` | Test content, smoke test and axe check; see [Test sites](#test-sites). The `smoke-*` slugs are shared between the seed and the smoke test                                                                                                                                                                                                                                                           |
-| `bin/export-templates.php`, `bin/flush-patterns.php`        | Site Editor export and pattern-cache flush, run through `bin/wp.sh eval-file`                                                                                                                                                                                                                                                                                                                       |
-| `.wp-env.json`, `.wp-env.review.json`                       | The two wp-env sites; both mount the theme at `wp-content/themes/bubbledew`                                                                                                                                                                                                                                                                                                                            |
-| `.github/workflows/ci.yml`                                  | Lint job, then a site job on PHP 7.4 and 8.4: wp-env, seed, `validate:blocks` with patterns, smoke test, axe                                                                                                                                                                                                                                                                                        |
-| `.github/blueprint.json`                                    | Playground blueprint template for the latest release zip; set `OWNER/REPO` (the zip name follows the slug)                                                                                                                                                                                                                                                                                          |
-| `.nvmrc`                                                    | Node version (`24`; run `nvm use`). `engines.node` in `package.json` is the floor wp-scripts 36 and jsdom 30 need (`^22.22.2 \|\| ^24.15.0 \|\| >=26`). npm 11 skips dependency install scripts not listed in `allowScripts`; puppeteer's (it downloads Chrome for the smoke and a11y checks) is allowed                                                                                            |
-| `.distignore`                                               | Paths excluded from the theme zip (source, tooling, dotfiles, docs, lockfiles)                                                                                                                                                                                                                                                                                                                      |
-| `.github/workflows/release.yml`                             | On a `v*` tag: builds, checks the tag against `style.css` `Version` and `package.json` (and `readme.txt` `Stable tag` once one exists), stages through `.distignore`, zips with a single `<slug>/` root, and publishes a GitHub release with the fixed asset name `<slug>.zip`. Set `SLUG` in its `env:` block. The scaffold itself never tags a release; the workflow activates in a derived theme |
+| File                                                        | Purpose                                                                                                                                                                                                                                                                                                                                                                                          |
+| ----------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `style.css`                                                 | Theme header — name, version, text domain, `Requires`/`Tested up to` metadata                                                                                                                                                                                                                                                                                                                    |
+| `theme.json`                                                | All theme settings: color palette, typography, layout widths, spacing, border radii. Its `$schema` is pinned to a released version (`wp/7.1`) and moves together with `Tested up to` in `style.css`, so the editor and validators only offer settings the theme claims to support                                                                                                                |
+| `inc/setup.php`                                             | Theme setup hooks, asset enqueueing using `*.asset.php` manifests                                                                                                                                                                                                                                                                                                                                |
+| `functions.php`                                             | Minimal entry point — includes `inc/setup.php`                                                                                                                                                                                                                                                                                                                                                   |
+| `patterns/`                                                 | PHP patterns holding the theme's block markup (the pattern paradigm)                                                                                                                                                                                                                                                                                                                             |
+| `styles/blocks/`                                            | Block style variations as JSON partials (`speech-bubble`, `sticky-note`, `highlight`); their pseudo-element halves live in `src/styles/modules/_block-styles.scss`                                                                                                                                                                                                                               |
+| `assets/`                                                   | `fonts/` (Fredoka and Nunito, OFL, with README and licences), `images/doodles/star.svg` (the sticky-post sticker), `images/avatar-placeholder.svg` (the sidebar about card's default picture)                                                                                                                                                                                                    |
+| `webpack.config.js`                                         | Build config extending `@wordpress/scripts` defaults                                                                                                                                                                                                                                                                                                                                             |
+| `phpcs.xml`                                                 | PHP CodeSniffer ruleset (WordPress standard + PHPCompatibilityWP)                                                                                                                                                                                                                                                                                                                                |
+| `phpstan.neon`                                              | PHPStan config (level 5, WordPress stubs)                                                                                                                                                                                                                                                                                                                                                        |
+| `bin/wp.sh`                                                 | WP-CLI wrapper. Uses the Local site when its socket is up, else the wp-env site. `SITE` at the top is the folder name under `~/Local Sites`; there is no Local site for Bubbledew at the moment, so the wp-env site is the one it reaches (needs Docker). A Local site needs a one-time socket symlink, described in the script                                                                  |
+| `bin/validate-blocks.js`                                    | Block markup validator (`npm run validate:blocks`); see [Block markup must validate](#block-markup-must-validate)                                                                                                                                                                                                                                                                                |
+| `bin/seed-content.php`, `bin/smoke.js`, `bin/check-a11y.js` | Test content, smoke test and axe check; see [Test sites](#test-sites). The `smoke-*` slugs are shared between the seed and the smoke test                                                                                                                                                                                                                                                        |
+| `bin/export-templates.php`, `bin/flush-patterns.php`        | Site Editor export and pattern-cache flush, run through `bin/wp.sh eval-file`                                                                                                                                                                                                                                                                                                                    |
+| `.wp-env.json`, `.wp-env.review.json`                       | The two wp-env sites; both mount the theme at `wp-content/themes/bubbledew`                                                                                                                                                                                                                                                                                                                      |
+| `.github/workflows/ci.yml`                                  | Lint job, then a site job on PHP 7.4 and 8.4: wp-env, seed, `validate:blocks` with patterns, smoke test, axe                                                                                                                                                                                                                                                                                     |
+| `.github/blueprint.json`                                    | Playground blueprint for the latest release zip from `philhoyt/bubbledew`; the README links it through playground.wordpress.net                                                                                                                                                                                                                                                                  |
+| `.nvmrc`                                                    | Node version (`24`; run `nvm use`). `engines.node` in `package.json` is the floor wp-scripts 36 and jsdom 30 need (`^22.22.2 \|\| ^24.15.0 \|\| >=26`). npm 11 skips dependency install scripts not listed in `allowScripts`; puppeteer's (it downloads Chrome for the smoke and a11y checks) is allowed                                                                                         |
+| `.distignore`                                               | Paths excluded from the theme zip (source, tooling, dotfiles, docs, lockfiles)                                                                                                                                                                                                                                                                                                                   |
+| `.github/workflows/release.yml`                             | On a `v*` tag: builds, checks the tag against `style.css` `Version` and `package.json` (and `readme.txt` `Stable tag` once one exists), stages through `.distignore`, zips with a single `<slug>/` root, and publishes a GitHub release with the fixed asset name `<slug>.zip`. `SLUG` is set to `bubbledew`. The workflow runs once the repository has a GitHub remote and a `v*` tag is pushed |
 
 ### Navigation
 
@@ -123,8 +140,7 @@ properties reset; core marks the open overlay's background and padding `!importa
 
 `.claude/settings.json` runs six `PostToolUse` hooks after every Edit/Write, from
 `.claude/scripts/hooks/`: phpcs (using the project `phpcs.xml`), ESLint, Stylelint, a
-security-pattern warning for PHP, a readme-prose warning (a no-op until a
-`readme.txt` exists), and `validate:blocks` on the edited pattern, template or part. Each hook only acts on the file type it covers and feeds its
+security-pattern warning for PHP, a readme-prose warning (now active, since `readme.txt` exists), and `validate:blocks` on the edited pattern, template or part. Each hook only acts on the file type it covers and feeds its
 findings back as additional context; none of them block the edit. The hook scripts are
 excluded from phpcs (`phpcs.xml`), ESLint (`eslint.config.js`) and Prettier
 (`.prettierignore`) so they do not show up as lint targets themselves.
@@ -166,7 +182,7 @@ This theme follows the **pattern-paradigm** used by Twenty Twenty-Five: template
 | Header            | Purpose                                                                                                                |
 | ----------------- | ---------------------------------------------------------------------------------------------------------------------- |
 | `Title:`          | Display name in the inserter                                                                                           |
-| `Slug:`           | `bubbledew/{name}` — must match the namespace                                                                             |
+| `Slug:`           | `bubbledew/{name}` — must match the namespace                                                                          |
 | `Categories:`     | Inserter grouping (`header`, `footer`, `query`, `text`)                                                                |
 | `Block Types:`    | Marks the pattern as a starter for that block (e.g. `core/query`, `core/comments`)                                     |
 | `Inserter: no`    | Suppresses the pattern from the inserter UI                                                                            |
@@ -174,7 +190,7 @@ This theme follows the **pattern-paradigm** used by Twenty Twenty-Five: template
 
 **Naming conventions**
 
-- `header.php` / `footer.php` — site-wide template-part patterns
+- `header.php` / `footer.php` / `sidebar.php` — site-wide template-part patterns (`parts/sidebar.html` is the right-hand column on the feed templates only; single posts and pages are one column)
 - `template-*.php` — full-page or major-region patterns that compose a template (`template-query-loop`)
 - `hidden-*.php` — internal building blocks referenced only from templates or other patterns; not shown in the inserter
 - Other names (`comments.php`, `post-navigation.php`) — reusable building blocks that may also surface in the inserter
@@ -239,9 +255,8 @@ theme at `wp-content/themes/bubbledew`, so it is active under its text-domain sl
 - `npm run review:check` builds, stages the files the zip would contain into
   `build/bubbledew-check/` through `.distignore`, and runs Theme Check on that copy. Theme
   Check scans the installed directory, so running it on the working copy reports
-  `node_modules/`, `src/` and the other dev files the zip leaves out. Expect the
-  `readme.txt`, copyright-notice and directory-name findings until the derived theme adds
-  a `readme.txt` and is renamed.
+  `node_modules/`, `src/` and the other dev files the zip leaves out. The theme has a
+  `readme.txt` with the font copyright notices, so a clean run is the expectation.
 
 ### Translations
 
@@ -295,6 +310,20 @@ Things that are not derivable from the code:
   redeclare every family that theme.json or a pattern references, or those fall back.
 - **Renaming a block-style slug strips its styling from existing content.** Saved posts
   keep the old `is-style-*` class; keep the old slug (Tendo kept `tendo-striped`).
+- **Block style variation CSS prints at `:root :where(...)`, which is (0,1,0).** Any
+  single-class theme rule later in the cascade beats it (the sticky note's butter fill was
+  overridden by `.bubbledew-widget { background-color }` until that rule excluded
+  `[class*="is-style-"]`). Keep theme rules off blocks that carry a style, or exclude them.
+- **Core emits `.has-*-background-color` with `!important`.** A background preset in the
+  markup cannot be overridden from CSS, so the cards carry no `backgroundColor` attribute
+  and `_cards.scss` sets the fill (the position-based pastel rotation depends on this).
+- **Never rotate a full-height pseudo-element.** The since-removed margin doodles spanned
+  the page height; a few degrees of `rotate` on them widened the page by hundreds of pixels
+  (the smoke test caught it). `.wp-site-blocks` has `overflow-x: clip` for the tilted cards
+  and badges; `clip` does not create a scroll container, so sticky headers keep working.
+- **`bin/check-a11y.js` skips looping animations.** It awaits `document.getAnimations()`
+  after opening the phone menu; an infinite animation never finishes, so animations with
+  `iterations: Infinity` are filtered out or the run hangs for three minutes and dies.
 - **Block style variations are JSON partials since 6.6.** Put them under `styles/`
   (Twenty Twenty-Five uses `styles/blocks/`) with a `blockTypes` key, not
   `register_block_style()` in PHP.

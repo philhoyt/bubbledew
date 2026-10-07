@@ -16,8 +16,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 ?>
 <!-- wp:comments {"className":"wp-block-comments-query-loop","style":{"spacing":{"margin":{"top":"var:preset|spacing|xl","bottom":"var:preset|spacing|xl"}}}} -->
 <div class="wp-block-comments wp-block-comments-query-loop" style="margin-top:var(--wp--preset--spacing--xl);margin-bottom:var(--wp--preset--spacing--xl)"><!-- wp:group {"metadata":{"name":"Comments Heading"},"style":{"spacing":{"blockGap":"var:preset|spacing|xs","margin":{"bottom":"var:preset|spacing|l"}}},"layout":{"type":"default"}} -->
-<div class="wp-block-group" style="margin-bottom:var(--wp--preset--spacing--l)"><!-- wp:heading {"fontSize":"xl"} -->
-<h2 class="wp-block-heading has-xl-font-size"><?php esc_html_e( 'Comments', 'bubbledew' ); ?></h2>
+<div class="wp-block-group" style="margin-bottom:var(--wp--preset--spacing--l)"><!-- wp:heading {"className":"is-style-highlight","fontSize":"xl"} -->
+<h2 class="wp-block-heading is-style-highlight has-xl-font-size"><?php esc_html_e( 'Comments', 'bubbledew' ); ?></h2>
 <!-- /wp:heading -->
 
 <!-- wp:comments-title {"level":3} /--></div>
@@ -41,7 +41,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- /wp:group --></div>
 <!-- /wp:group -->
 
-<!-- wp:comment-content /--></div>
+<!-- wp:comment-content {"className":"is-style-speech-bubble"} /--></div>
 <!-- /wp:group -->
 <!-- /wp:comment-template -->
 

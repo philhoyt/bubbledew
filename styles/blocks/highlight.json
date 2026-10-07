@@ -1,0 +1,12 @@
+{
+  "$schema": "https://schemas.wp.org/wp/7.1/theme.json",
+  "version": 3,
+  "title": "Highlight",
+  "slug": "highlight",
+  "blockTypes": ["core/heading", "core/site-title", "core/query-title"],
+  "styles": {
+    "color": {
+      "gradient": "linear-gradient(transparent 58%, var(--wp--preset--color--butter) 58%, var(--wp--preset--color--butter) 92%, transparent 92%)"
+    }
+  }
+}

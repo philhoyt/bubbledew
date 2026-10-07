@@ -1,0 +1,71 @@
+//
+// Module: motion.
+//
+// The theme's three animations, and the switch that turns every one of them
+// off (along with the hover tilt, lift and press squish) for people who ask
+// for reduced motion. Shared by the front end and the editor.
+//
+
+@keyframes bubbledew-float {
+	0%,
+	100% {
+		translate: 0 0;
+	}
+
+	50% {
+		translate: 0 -10px;
+	}
+}
+
+@keyframes bubbledew-wiggle {
+	0%,
+	100% {
+		rotate: 12deg;
+	}
+
+	50% {
+		rotate: 4deg;
+		scale: 1.04;
+	}
+}
+
+@keyframes bubbledew-wobble {
+	0%,
+	100% {
+		rotate: 0deg;
+	}
+
+	25% {
+		rotate: -2.5deg;
+	}
+
+	75% {
+		rotate: 2.5deg;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.wp-site-blocks *,
+	.wp-site-blocks *::before,
+	.wp-site-blocks *::after,
+	.editor-styles-wrapper *,
+	.editor-styles-wrapper *::before,
+	.editor-styles-wrapper *::after {
+		animation: none !important;
+		transition: none !important;
+	}
+
+	.bubbledew-card:hover,
+	.bubbledew-card:focus-within {
+		translate: 0 0;
+		rotate: var(--bubbledew-tilt, 0deg);
+	}
+
+	.bubbledew-pills a:hover,
+	.bubbledew-pills li:hover,
+	.wp-block-button__link:active,
+	.wp-block-post-excerpt__more-link:active,
+	.wp-block-search__button:active {
+		translate: 0 0;
+	}
+}

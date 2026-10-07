@@ -1,0 +1,280 @@
+//
+// Module: cards.
+//
+// Post cards and sidebar widgets: a tilt and a pastel fill that rotate with the
+// card's position, the category badge sitting across the top edge like the
+// speaker's name on an Animal Crossing dialogue box, and a star sticker on
+// sticky posts. Shared by the front end and the editor.
+//
+// Fills are set here, not with a background preset in the markup, because
+// core emits `.has-*-background-color` with `!important` and the rotation
+// could not override it.
+//
+
+@use "sass:map";
+
+$fills: (
+	1: (
+		"fill": "var(--wp--preset--color--surface)",
+		"tilt": "calc(-1 * var(--wp--custom--card--tilt))",
+		"badge": "var(--wp--preset--color--secondary)",
+		"badge-tilt": "-4deg",
+		"side": "left",
+	),
+	2: (
+		"fill": "color-mix(in oklab, var(--wp--preset--color--secondary) 32%, var(--wp--preset--color--surface))",
+		"tilt": "calc(0.9 * var(--wp--custom--card--tilt))",
+		"badge": "var(--wp--preset--color--tertiary)",
+		"badge-tilt": "3deg",
+		"side": "right",
+	),
+	3: (
+		"fill": "color-mix(in oklab, var(--wp--preset--color--lavender) 36%, var(--wp--preset--color--surface))",
+		"tilt": "calc(-0.7 * var(--wp--custom--card--tilt))",
+		"badge": "var(--wp--preset--color--lavender)",
+		"badge-tilt": "-2deg",
+		"side": "left",
+	),
+	4: (
+		"fill": "color-mix(in oklab, var(--wp--preset--color--primary) 30%, var(--wp--preset--color--surface))",
+		"tilt": "calc(1.2 * var(--wp--custom--card--tilt))",
+		"badge": "var(--wp--preset--color--primary)",
+		"badge-tilt": "2.5deg",
+		"side": "right",
+	),
+);
+
+.bubbledew-card,
+.bubbledew-widget {
+	position: relative;
+	overflow: visible;
+	rotate: var(--bubbledew-tilt, 0deg);
+	transition:
+		rotate 0.25s cubic-bezier(0.34, 1.56, 0.64, 1),
+		translate 0.25s cubic-bezier(0.34, 1.56, 0.64, 1),
+		box-shadow 0.25s;
+}
+
+// Blocks carrying a block style (speech bubble, sticky note) keep the fill
+// their style gives them. Global styles print block style variations at
+// `:root :where(...)`, which is (0,1,0): the same as one class, so a plain
+// `.bubbledew-widget` background later in the cascade would override them.
+.bubbledew-card,
+.bubbledew-widget:not([class*="is-style-"]) {
+	background-color: var(--wp--preset--color--surface);
+	background-color: var(--bubbledew-card-fill, var(--wp--preset--color--surface));
+}
+
+@each $i, $card in $fills {
+	.wp-block-post-template > .wp-block-post:nth-child(4n + #{$i}) .bubbledew-card,
+	.bubbledew-sidebar > .bubbledew-widget:nth-child(4n + #{$i}):not([class*="is-style-"]) {
+		--bubbledew-card-fill: #{map.get($card, "fill")};
+		--bubbledew-tilt: #{map.get($card, "tilt")};
+		--bubbledew-badge-fill: #{map.get($card, "badge")};
+		--bubbledew-badge-tilt: #{map.get($card, "badge-tilt")};
+	}
+
+	@if map.get($card, "side") == "right" {
+		.wp-block-post-template > .wp-block-post:nth-child(4n + #{$i}) .bubbledew-badge {
+			right: var(--wp--preset--spacing--m);
+			left: auto;
+		}
+	}
+}
+
+// Hovering or focusing inside a card straightens and lifts it.
+.bubbledew-card:hover,
+.bubbledew-card:focus-within {
+	rotate: 0deg;
+	translate: 0 -5px;
+	box-shadow: var(--wp--preset--shadow--lift);
+}
+
+// The name tag. The card's top padding (spacing l in the pattern) leaves room
+// for it; `max-width` and wrapping keep a post in several categories inside
+// the card on a phone.
+.bubbledew-badge {
+	position: absolute;
+	top: calc(-1 * var(--wp--custom--card--badge-offset));
+	left: var(--wp--preset--spacing--m);
+	z-index: 1;
+	display: inline-flex;
+	flex-wrap: wrap;
+	gap: 0.25rem 0.5rem;
+	align-items: center;
+	max-width: calc(100% - 2 * var(--wp--preset--spacing--m));
+	padding: 0.35rem 0.95rem;
+	border-radius: var(--wp--custom--pill--radius);
+	background-color: var(--wp--preset--color--primary);
+	background-color: var(--bubbledew-badge-fill, var(--wp--preset--color--primary));
+	color: var(--wp--preset--color--contrast);
+	font-family: var(--wp--preset--font-family--heading);
+	font-size: var(--wp--preset--font-size--xs);
+	font-weight: 600;
+	line-height: 1.3;
+	box-shadow: 0 var(--wp--custom--pill--lip) 0 var(--wp--preset--color--contrast-medium);
+	box-shadow:
+		0 var(--wp--custom--pill--lip) 0 color-mix(in oklab, var(--bubbledew-badge-fill, var(--wp--preset--color--primary)) 82%, black),
+		0 6px 12px -6px rgb(120 80 50 / 30%);
+	rotate: var(--bubbledew-badge-tilt, -3deg);
+	transition: rotate 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+
+	&:hover,
+	&:focus-within {
+		rotate: 0deg;
+	}
+
+	a {
+		color: inherit;
+		text-decoration: none;
+	}
+
+	a:hover,
+	a:focus-visible {
+		text-decoration: underline;
+	}
+
+	// Several categories sit side by side with the flex gap instead of ", ".
+	.wp-block-post-terms__separator {
+		display: none;
+	}
+}
+
+// Sticky posts wear a star. Icon only: text in CSS could not be translated.
+.wp-block-post.sticky .bubbledew-card::after {
+	content: "";
+	position: absolute;
+	top: -1.4rem;
+	right: -0.6rem;
+	z-index: 1;
+	width: 3.5rem;
+	height: 3.5rem;
+	background: url("../../assets/images/doodles/star.svg") center / contain no-repeat;
+	filter: drop-shadow(0 3px 4px rgb(120 80 50 / 20%));
+	pointer-events: none;
+	animation: bubbledew-wiggle 4s ease-in-out infinite;
+}
+
+.bubbledew-card__title {
+	margin-block: 0;
+	font-size: var(--wp--preset--font-size--xl);
+
+	a {
+		color: inherit;
+		text-decoration: none;
+	}
+
+	a:hover,
+	a:focus-visible {
+		color: var(--wp--preset--color--link);
+	}
+}
+
+.bubbledew-card__image {
+	margin-block: 0;
+}
+
+.bubbledew-card__excerpt .wp-block-post-excerpt__more-text {
+	margin-block: var(--wp--preset--spacing--s) 0;
+}
+
+.bubbledew-card__meta,
+.bubbledew-meta {
+	font-weight: 700;
+
+	a {
+		color: inherit;
+		text-decoration: none;
+	}
+
+	a:hover,
+	a:focus-visible {
+		text-decoration: underline;
+	}
+
+	// Pastel dots between the items instead of the plain middle dot.
+	.dot-before::before {
+		content: "";
+		display: inline-block;
+		width: 0.5rem;
+		height: 0.5rem;
+		margin-inline-end: 0.5rem;
+		border-radius: 40%;
+		background-color: var(--wp--preset--color--tertiary);
+		vertical-align: middle;
+		rotate: 15deg;
+	}
+}
+
+// Archive and search: the title and description sit above the first card, which
+// needs room for its badge.
+.bubbledew-feed > .wp-block-query-title,
+.bubbledew-feed > .wp-block-term-description {
+	margin-block: 0 var(--wp--preset--spacing--s);
+}
+
+.bubbledew-feed > .wp-block-query {
+	margin-block-start: var(--wp--preset--spacing--l);
+}
+
+// Single post header: the title sits close to its pills and meta.
+.bubbledew-single__header .wp-block-post-title {
+	margin-block: 0;
+}
+
+// Latest posts and archives: blob bullets in rotating pastels.
+.bubbledew-list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+
+	li {
+		position: relative;
+		margin: 0 0 var(--wp--preset--spacing--xs);
+		padding-inline-start: 1.4rem;
+		font-weight: 700;
+		line-height: 1.35;
+	}
+
+	li::before {
+		content: "";
+		position: absolute;
+		top: 0.35em;
+		left: 0;
+		width: 0.8rem;
+		height: 0.8rem;
+		border-radius: 45% 55% 50% 50% / 55% 45%;
+		background-color: var(--wp--preset--color--primary);
+		rotate: 20deg;
+	}
+
+	li:nth-child(4n + 2)::before {
+		background-color: var(--wp--preset--color--tertiary);
+	}
+
+	li:nth-child(4n + 3)::before {
+		background-color: var(--wp--preset--color--lavender);
+	}
+
+	li:nth-child(4n + 4)::before {
+		background-color: var(--wp--preset--color--secondary);
+	}
+
+	a {
+		color: inherit;
+		text-decoration: none;
+	}
+
+	a:hover,
+	a:focus-visible {
+		color: var(--wp--preset--color--link);
+		text-decoration: underline;
+	}
+
+	.wp-block-latest-posts__post-date {
+		display: block;
+		font-size: var(--wp--preset--font-size--xs);
+		font-weight: 700;
+		color: var(--wp--preset--color--contrast-dark);
+	}
+}
