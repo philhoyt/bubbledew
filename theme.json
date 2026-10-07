@@ -100,11 +100,24 @@
         "width": "2px",
         "offset": "2px",
         "style": "solid"
+      },
+      "card": {
+        "radius": "1.75rem",
+        "tilt": "0.9deg",
+        "badgeOffset": "1.05rem",
+        "padding": "1.9rem 1.85rem 1.6rem"
+      },
+      "pill": {
+        "radius": "999px",
+        "lip": "3px"
+      },
+      "band": {
+        "waveHeight": "2.75rem"
       }
     },
     "layout": {
-      "contentSize": "720px",
-      "wideSize": "1440px"
+      "contentSize": "640px",
+      "wideSize": "1080px"
     },
     "border": {
       "radius": true,
@@ -330,7 +343,22 @@
       "textDecoration": true,
       "textTransform": true
     },
-    "useRootPaddingAwareAlignments": true
+    "useRootPaddingAwareAlignments": true,
+    "shadow": {
+      "defaultPresets": false,
+      "presets": [
+        {
+          "name": "Card",
+          "slug": "card",
+          "shadow": "0 14px 28px -16px rgb(120 80 50 / 0.35), 0 2px 6px rgb(120 80 50 / 0.06)"
+        },
+        {
+          "name": "Lift",
+          "slug": "lift",
+          "shadow": "0 22px 36px -16px rgb(120 80 50 / 0.42), 0 2px 6px rgb(120 80 50 / 0.06)"
+        }
+      ]
+    }
   },
   "styles": {
     "color": {
