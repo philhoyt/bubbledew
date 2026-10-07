@@ -1,0 +1,31 @@
+{
+  "$schema": "https://schemas.wp.org/wp/7.1/theme.json",
+  "version": 3,
+  "title": "Pills",
+  "slug": "pills",
+  "blockTypes": ["core/navigation", "core/categories", "core/post-terms"],
+  "styles": {
+    "typography": {
+      "fontFamily": "var(--wp--preset--font-family--heading)",
+      "fontWeight": "500"
+    },
+    "elements": {
+      "link": {
+        "color": {
+          "text": "var(--wp--preset--color--contrast)"
+        },
+        "typography": {
+          "textDecoration": "none"
+        },
+        ":hover": {
+          "color": {
+            "text": "var(--wp--preset--color--contrast)"
+          },
+          "typography": {
+            "textDecoration": "none"
+          }
+        }
+      }
+    }
+  }
+}

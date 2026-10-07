@@ -8,19 +8,17 @@
 // Shared by the front end and the editor.
 //
 
-// The avatar bobs gently.
-.bubbledew-avatar img {
-	box-shadow: var(--wp--preset--shadow--card);
+// The about card's picture bobs gently; the site logo tips when the brand is hovered.
+.bubbledew-about .is-style-pebble {
 	rotate: -4deg;
 	animation: bubbledew-float 6s ease-in-out infinite;
 }
 
-.bubbledew-brand__mark img {
-	box-shadow: var(--wp--preset--shadow--card);
+.bubbledew-brand .is-style-pebble {
 	rotate: -8deg;
 	transition: rotate 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-.bubbledew-brand:hover .bubbledew-brand__mark img {
+.bubbledew-brand:hover .is-style-pebble {
 	rotate: 8deg;
 }

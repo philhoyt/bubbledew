@@ -1,0 +1,31 @@
+{
+  "$schema": "https://schemas.wp.org/wp/7.1/theme.json",
+  "version": 3,
+  "title": "Blob bullets",
+  "slug": "blob-bullets",
+  "blockTypes": ["core/latest-posts", "core/archives", "core/list"],
+  "styles": {
+    "typography": {
+      "fontWeight": "700",
+      "lineHeight": "1.35"
+    },
+    "elements": {
+      "link": {
+        "color": {
+          "text": "var(--wp--preset--color--contrast)"
+        },
+        "typography": {
+          "textDecoration": "none"
+        },
+        ":hover": {
+          "color": {
+            "text": "var(--wp--preset--color--link)"
+          },
+          "typography": {
+            "textDecoration": "underline"
+          }
+        }
+      }
+    }
+  }
+}

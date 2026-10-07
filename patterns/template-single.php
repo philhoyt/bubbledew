@@ -16,13 +16,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 ?>
 <!-- wp:group {"tagName":"article","metadata":{"name":"Post"},"className":"bubbledew-single","style":{"spacing":{"blockGap":"var:preset|spacing|m"}},"layout":{"type":"constrained"}} -->
-<article class="wp-block-group bubbledew-single"><!-- wp:group {"metadata":{"name":"Post header"},"className":"bubbledew-single__header","style":{"spacing":{"blockGap":"var:preset|spacing|s"}},"layout":{"type":"default"}} -->
-<div class="wp-block-group bubbledew-single__header"><!-- wp:post-terms {"term":"category","className":"bubbledew-pills"} /-->
+<article class="wp-block-group bubbledew-single"><!-- wp:group {"metadata":{"name":"Post header"},"style":{"spacing":{"blockGap":"var:preset|spacing|s"}},"layout":{"type":"default"}} -->
+<div class="wp-block-group"><!-- wp:post-terms {"term":"category","className":"is-style-pills"} /-->
 
 <!-- wp:post-title {"level":1} /-->
 
-<!-- wp:group {"metadata":{"name":"Post meta"},"className":"bubbledew-meta","style":{"spacing":{"blockGap":"var:preset|spacing|xs"}},"textColor":"contrast-dark","fontSize":"xs","layout":{"type":"flex","flexWrap":"wrap","verticalAlignment":"center"}} -->
-<div class="wp-block-group bubbledew-meta has-contrast-dark-color has-text-color has-xs-font-size"><!-- wp:post-author-name {"isLink":true} /-->
+<!-- wp:group {"metadata":{"name":"Post meta"},"style":{"spacing":{"blockGap":"var:preset|spacing|xs"},"typography":{"fontWeight":"700"}},"textColor":"contrast-dark","fontSize":"xs","layout":{"type":"flex","flexWrap":"wrap","verticalAlignment":"center"}} -->
+<div class="wp-block-group has-contrast-dark-color has-text-color has-xs-font-size" style="font-weight:700"><!-- wp:post-author-name {"isLink":true} /-->
 
 <!-- wp:post-date {"isLink":true,"className":"dot-before"} /-->
 
@@ -30,9 +30,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- /wp:group --></div>
 <!-- /wp:group -->
 
-<!-- wp:post-featured-image {"aspectRatio":"16/9","className":"bubbledew-hero"} /-->
+<!-- wp:post-featured-image {"aspectRatio":"16/9","className":"is-style-pebble"} /-->
 
 <!-- wp:post-content {"layout":{"type":"constrained"}} /-->
 
-<!-- wp:post-terms {"term":"post_tag","prefix":"<?php esc_attr_e( 'Tagged', 'bubbledew' ); ?> ","className":"bubbledew-pills bubbledew-single__tags","style":{"spacing":{"margin":{"top":"var:preset|spacing|l"}}}} /--></article>
+<!-- wp:post-terms {"term":"post_tag","prefix":"<?php esc_attr_e( 'Tagged', 'bubbledew' ); ?> ","className":"is-style-pills","style":{"spacing":{"margin":{"top":"var:preset|spacing|l"}}}} /--></article>
 <!-- /wp:group -->

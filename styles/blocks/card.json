@@ -1,0 +1,17 @@
+{
+  "$schema": "https://schemas.wp.org/wp/7.1/theme.json",
+  "version": 3,
+  "title": "Card",
+  "slug": "card",
+  "blockTypes": ["core/group"],
+  "styles": {
+    "border": {
+      "radius": "var(--wp--custom--card--radius)"
+    },
+    "color": {
+      "background": "var(--wp--preset--color--surface)",
+      "text": "var(--wp--preset--color--contrast)"
+    },
+    "shadow": "var(--wp--preset--shadow--card)"
+  }
+}

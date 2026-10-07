@@ -60,3 +60,16 @@ $wave: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox
 		z-index: 1;
 	}
 }
+
+// Footer rows: the brand column keeps its width, the navigation wraps beside it.
+.bubbledew-footer__brand {
+	max-width: 22rem;
+}
+
+// Footer links use the Navigation block's default (quiet) look from theme.json
+// and wrap under the brand on a phone.
+@media (width < 600px) {
+	.bubbledew-footer__brand + .wp-block-navigation .wp-block-navigation__container {
+		justify-content: flex-start;
+	}
+}

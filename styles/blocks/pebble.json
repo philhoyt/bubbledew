@@ -1,0 +1,13 @@
+{
+  "$schema": "https://schemas.wp.org/wp/7.1/theme.json",
+  "version": 3,
+  "title": "Pebble",
+  "slug": "pebble",
+  "blockTypes": ["core/image", "core/post-featured-image", "core/site-logo"],
+  "styles": {
+    "border": {
+      "radius": "2.2rem 1.6rem 2.4rem 1.8rem / 1.7rem 2.3rem 1.6rem 2.4rem"
+    },
+    "shadow": "var(--wp--preset--shadow--card)"
+  }
+}

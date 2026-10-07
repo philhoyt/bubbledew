@@ -14,7 +14,7 @@ A whimsical pastel blog theme: pebble-shaped post cards, name-tag category badge
 
 Bubbledew is a block theme for personal blogs. The posts list sits in a narrow column on the left with a sidebar on the right, and every post is a tilted pastel card with its category on a name tag across the top edge. Single posts and pages are a single reading column. Comments are speech bubbles. Headings are set in Fredoka and body text in Nunito, both shipped with the theme.
 
-Everything is built from core blocks and theme.json, so the Site Editor can change any of it. Three block styles come with the theme: Speech bubble (Group, Paragraph, Site Tagline, Comment Content), Sticky note (Group) and Highlight (Heading, Site Title, Query Title).
+Everything is built from core blocks and theme.json, so the Site Editor can change any of it. Everything that gives the theme its look is a block style you can switch on or off in the editor: Card (Group: the tilted pastel post cards and sidebar widgets), Name tag (Post Terms: the category badge across a card's top edge), Pebble (Image, Featured Image, Site Logo), Pills (Navigation, Categories, Post Terms), Blob bullets (Latest Posts, Archives, List), Speech bubble (Group, Paragraph, Site Tagline, Comment Content), Sticky note (Group) and Highlight (Heading, Site Title, Query Title). The header menu uses Pills; a menu without it is a quiet row of text links, which is what the footer uses.
 
 The sidebar is a template part. Replace the picture in its about card with your own and edit the text; the Categories, Latest Posts and Archives blocks fill themselves.
 
