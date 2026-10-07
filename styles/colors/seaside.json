@@ -1,0 +1,77 @@
+{
+  "$schema": "https://schemas.wp.org/wp/7.1/theme.json",
+  "version": 3,
+  "title": "Seaside",
+  "slug": "seaside",
+  "settings": {
+    "color": {
+      "palette": [
+        {
+          "color": "#F2FAF7",
+          "name": "Base",
+          "slug": "base"
+        },
+        {
+          "color": "#FBFEFD",
+          "name": "Surface",
+          "slug": "surface"
+        },
+        {
+          "color": "#23403A",
+          "name": "Contrast",
+          "slug": "contrast"
+        },
+        {
+          "color": "#4F6B64",
+          "name": "Contrast - Dark",
+          "slug": "contrast-dark"
+        },
+        {
+          "color": "#C5DAD3",
+          "name": "Contrast - Medium",
+          "slug": "contrast-medium"
+        },
+        {
+          "color": "#E3F1EC",
+          "name": "Contrast - Light",
+          "slug": "contrast-light"
+        },
+        {
+          "color": "#A6E3D0",
+          "name": "Mint",
+          "slug": "primary"
+        },
+        {
+          "color": "#B3DDF5",
+          "name": "Sky",
+          "slug": "secondary"
+        },
+        {
+          "color": "#FFD3B6",
+          "name": "Sand",
+          "slug": "tertiary"
+        },
+        {
+          "color": "#FBE9A6",
+          "name": "Sun",
+          "slug": "butter"
+        },
+        {
+          "color": "#D9D3F5",
+          "name": "Sea glass",
+          "slug": "lavender"
+        },
+        {
+          "color": "#FFD1DF",
+          "name": "Shell",
+          "slug": "pink"
+        },
+        {
+          "color": "#1F6B5E",
+          "name": "Link",
+          "slug": "link"
+        }
+      ]
+    }
+  }
+}

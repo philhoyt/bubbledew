@@ -1,0 +1,77 @@
+{
+  "$schema": "https://schemas.wp.org/wp/7.1/theme.json",
+  "version": 3,
+  "title": "Dusk",
+  "slug": "dusk",
+  "settings": {
+    "color": {
+      "palette": [
+        {
+          "color": "#F4EEF8",
+          "name": "Base",
+          "slug": "base"
+        },
+        {
+          "color": "#FBF8FD",
+          "name": "Surface",
+          "slug": "surface"
+        },
+        {
+          "color": "#2F2438",
+          "name": "Contrast",
+          "slug": "contrast"
+        },
+        {
+          "color": "#5E5168",
+          "name": "Contrast - Dark",
+          "slug": "contrast-dark"
+        },
+        {
+          "color": "#CFC3DA",
+          "name": "Contrast - Medium",
+          "slug": "contrast-medium"
+        },
+        {
+          "color": "#EAE2F1",
+          "name": "Contrast - Light",
+          "slug": "contrast-light"
+        },
+        {
+          "color": "#C9B8F2",
+          "name": "Violet",
+          "slug": "primary"
+        },
+        {
+          "color": "#B6D4F2",
+          "name": "Evening",
+          "slug": "secondary"
+        },
+        {
+          "color": "#F2B8C6",
+          "name": "Rose",
+          "slug": "tertiary"
+        },
+        {
+          "color": "#F6DFA6",
+          "name": "Amber",
+          "slug": "butter"
+        },
+        {
+          "color": "#D8C8F0",
+          "name": "Heather",
+          "slug": "lavender"
+        },
+        {
+          "color": "#F4C2DC",
+          "name": "Orchid",
+          "slug": "pink"
+        },
+        {
+          "color": "#5B3D8F",
+          "name": "Link",
+          "slug": "link"
+        }
+      ]
+    }
+  }
+}

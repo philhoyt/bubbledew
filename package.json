@@ -27,7 +27,9 @@
     "review:import": "wp-env run cli --config=.wp-env.review.json bash -c \"curl -sL https://raw.githubusercontent.com/WordPress/theme-test-data/master/themeunittestdata.wordpress.xml -o /tmp/tut.xml && wp import /tmp/tut.xml --authors=create\"",
     "review:check": "npm run build && mkdir -p build/bubbledew-check && rsync -a --delete --exclude-from=.distignore --exclude=build ./ build/bubbledew-check/ && wp-env run cli --config=.wp-env.review.json wp theme-check run bubbledew-check",
     "test:smoke": "node bin/smoke.js",
-    "check:a11y": "node bin/check-a11y.js"
+    "check:a11y": "node bin/check-a11y.js",
+    "check:contrast": "node bin/check-contrast.js",
+    "demo": "node bin/demo.js"
   },
   "overrides": {
     "@sentry/node": {

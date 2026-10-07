@@ -1,0 +1,77 @@
+{
+  "$schema": "https://schemas.wp.org/wp/7.1/theme.json",
+  "version": 3,
+  "title": "Sakura",
+  "slug": "sakura",
+  "settings": {
+    "color": {
+      "palette": [
+        {
+          "color": "#FFF5F7",
+          "name": "Base",
+          "slug": "base"
+        },
+        {
+          "color": "#FFFCFD",
+          "name": "Surface",
+          "slug": "surface"
+        },
+        {
+          "color": "#4B3A42",
+          "name": "Contrast",
+          "slug": "contrast"
+        },
+        {
+          "color": "#6E5A64",
+          "name": "Contrast - Dark",
+          "slug": "contrast-dark"
+        },
+        {
+          "color": "#E3CBD3",
+          "name": "Contrast - Medium",
+          "slug": "contrast-medium"
+        },
+        {
+          "color": "#F8E6EC",
+          "name": "Contrast - Light",
+          "slug": "contrast-light"
+        },
+        {
+          "color": "#FFC2D6",
+          "name": "Blossom",
+          "slug": "primary"
+        },
+        {
+          "color": "#D9CCF4",
+          "name": "Wisteria",
+          "slug": "secondary"
+        },
+        {
+          "color": "#FFD2B8",
+          "name": "Apricot",
+          "slug": "tertiary"
+        },
+        {
+          "color": "#FFEDA8",
+          "name": "Honey",
+          "slug": "butter"
+        },
+        {
+          "color": "#E0D4F7",
+          "name": "Lilac",
+          "slug": "lavender"
+        },
+        {
+          "color": "#FFD6E0",
+          "name": "Petal",
+          "slug": "pink"
+        },
+        {
+          "color": "#A23A5E",
+          "name": "Link",
+          "slug": "link"
+        }
+      ]
+    }
+  }
+}
