@@ -1,8 +1,12 @@
 //
 // Module: pills.
 //
-// Toy-like pills: navigation items, category list items, buttons, the
-// excerpt's "Keep reading" link, pagination and the search field. Each pill
+// Toy-like pills. Navigation, Categories and Post Terms get them through the
+// "Pills" block style (styles/blocks/pills.json registers it; this is its CSS
+// half, keyed on `is-style-pills`), so a user can switch any menu or term
+// list between pills and the quiet default in the editor. Buttons, the
+// excerpt's "Keep reading" link, pagination and the search field are pills
+// by default. Each pill
 // has a darker lip underneath that squishes on press, and the nav and
 // category pills take a different pastel and a slight tilt from their
 // position. Shared by the front end and the editor.
@@ -73,7 +77,7 @@ $pastels: (
 // class, so it is excluded or an item with children grows a second pill.
 $nav-top: ".wp-block-navigation__container > .wp-block-navigation-item, .wp-block-navigation__container > .wp-block-page-list > .wp-block-navigation-item";
 
-.bubbledew-pills.wp-block-navigation {
+.wp-block-navigation.is-style-pills {
 	:is(#{$nav-top}) > .wp-block-navigation-item__content:not(.wp-block-navigation-submenu__toggle) {
 		@include pill;
 
@@ -103,7 +107,7 @@ $nav-top: ".wp-block-navigation__container > .wp-block-navigation-item, .wp-bloc
 
 // ------------------------------------------------------- category pills
 
-.bubbledew-pills.wp-block-categories-list {
+.wp-block-categories-list.is-style-pills {
 	display: flex;
 	flex-wrap: wrap;
 	gap: calc(0.5rem + var(--wp--custom--pill--lip)) 0.55rem;
@@ -140,7 +144,7 @@ $nav-top: ".wp-block-navigation__container > .wp-block-navigation-item, .wp-bloc
 
 // Category and tag lists on a single post. The block renders bare links with a
 // ", " separator; the separator is hidden and the flex gap spaces the pills.
-.bubbledew-pills.wp-block-post-terms {
+.wp-block-post-terms.is-style-pills {
 	display: flex;
 	flex-wrap: wrap;
 	gap: calc(0.4rem + var(--wp--custom--pill--lip)) 0.5rem;

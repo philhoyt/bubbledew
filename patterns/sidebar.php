@@ -50,7 +50,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <h2 class="wp-block-heading is-style-highlight has-m-font-size"><?php esc_html_e( 'Categories', 'bubbledew' ); ?></h2>
 <!-- /wp:heading -->
 
-<!-- wp:categories {"showPostCounts":true,"className":"bubbledew-pills"} /--></div>
+<!-- wp:categories {"showPostCounts":true,"className":"is-style-pills"} /--></div>
 <!-- /wp:group -->
 
 <!-- wp:group {"metadata":{"name":"Latest posts"},"className":"bubbledew-widget","style":{"shadow":"var:preset|shadow|card","spacing":{"padding":{"top":"var:preset|spacing|m","right":"var:preset|spacing|m","bottom":"var:preset|spacing|m","left":"var:preset|spacing|m"},"blockGap":"var:preset|spacing|s"}},"backgroundColor":"surface","layout":{"type":"default"}} -->

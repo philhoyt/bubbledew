@@ -28,7 +28,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- /wp:group -->
 
 <!-- wp:group {"metadata":{"name":"Navigation and hooked blocks"},"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center"}} -->
-<div class="wp-block-group"><!-- wp:navigation {"className":"bubbledew-pills","layout":{"type":"flex","setCascadingProperties":true,"justifyContent":"right","orientation":"horizontal"},"style":{"spacing":{"margin":{"top":"0"}}}} -->
+<div class="wp-block-group"><!-- wp:navigation {"className":"is-style-pills","layout":{"type":"flex","setCascadingProperties":true,"justifyContent":"right","orientation":"horizontal"},"style":{"spacing":{"margin":{"top":"0"}}}} -->
 <!-- wp:page-list /-->
 <!-- /wp:navigation --></div>
 <!-- /wp:group --></div>
