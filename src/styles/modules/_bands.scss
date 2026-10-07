@@ -66,17 +66,33 @@ $wave: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox
 	max-width: 22rem;
 }
 
-.bubbledew-footer__nav {
-	flex: 0 1 auto;
-	max-width: 100%;
-	align-items: flex-end;
-	text-align: end;
+// Footer links: plain text, no pills, no submenus. The header already has the
+// pill navigation; down here the links stay quiet.
+.bubbledew-footer__links.wp-block-navigation {
+	.wp-block-navigation-item__content {
+		color: var(--wp--preset--color--contrast);
+		font-weight: 700;
+		text-decoration: none;
+	}
 
-	// On a phone the navigation drops under the brand and lines up with it.
+	.wp-block-navigation-item__content:hover,
+	.wp-block-navigation-item__content:focus-visible {
+		color: var(--wp--preset--color--link);
+		text-decoration: underline wavy;
+		text-underline-offset: 0.2em;
+	}
+
+	.wp-block-navigation__submenu-icon,
+	.wp-block-navigation__submenu-container {
+		display: none;
+	}
+
+	.has-child > .wp-block-navigation-item__content {
+		margin-inline-end: 0;
+	}
+
+	// On a phone the links drop under the brand and line up with it.
 	@media (width < 600px) {
-		align-items: flex-start;
-		text-align: start;
-
 		.wp-block-navigation__container {
 			justify-content: flex-start;
 		}

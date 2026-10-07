@@ -4,7 +4,7 @@
  * Slug: bubbledew/footer
  * Categories: footer
  * Block Types: core/template-part/footer
- * Description: Site footer on a leaf band: brand, tagline, footer navigation, then copyright, credit and a back-to-top link.
+ * Description: Site footer on a leaf band: brand, tagline, a quiet row of links, then copyright, credit and a back-to-top link.
  * Viewport Width: 1280
  *
  * @package bubbledew
@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 ?>
 <!-- wp:group {"metadata":{"name":"Footer band"},"className":"bubbledew-band bubbledew-band--footer","style":{"spacing":{"padding":{"top":"var:preset|spacing|xl","bottom":"var:preset|spacing|l"},"blockGap":"var:preset|spacing|l"}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group bubbledew-band bubbledew-band--footer" style="padding-top:var(--wp--preset--spacing--xl);padding-bottom:var(--wp--preset--spacing--l)"><!-- wp:group {"metadata":{"name":"Footer top"},"align":"wide","style":{"spacing":{"blockGap":"var:preset|spacing|m"}},"layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between","verticalAlignment":"top"}} -->
+<div class="wp-block-group bubbledew-band bubbledew-band--footer" style="padding-top:var(--wp--preset--spacing--xl);padding-bottom:var(--wp--preset--spacing--l)"><!-- wp:group {"metadata":{"name":"Footer top"},"align":"wide","style":{"spacing":{"blockGap":"var:preset|spacing|m"}},"layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between","verticalAlignment":"center"}} -->
 <div class="wp-block-group alignwide"><!-- wp:group {"metadata":{"name":"Footer brand"},"className":"bubbledew-footer__brand","style":{"spacing":{"blockGap":"var:preset|spacing|xs"}},"layout":{"type":"flex","orientation":"vertical"}} -->
 <div class="wp-block-group bubbledew-footer__brand"><!-- wp:site-logo {"width":48,"shouldSyncIcon":false,"className":"bubbledew-brand__mark"} /-->
 
@@ -25,13 +25,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- wp:site-tagline {"fontSize":"s"} /--></div>
 <!-- /wp:group -->
 
-<!-- wp:group {"metadata":{"name":"Footer navigation"},"className":"bubbledew-footer__nav","style":{"spacing":{"blockGap":"var:preset|spacing|xs"}},"layout":{"type":"flex","orientation":"vertical"}} -->
-<div class="wp-block-group bubbledew-footer__nav"><!-- wp:heading {"level":2,"className":"is-style-highlight","fontSize":"s"} -->
-<h2 class="wp-block-heading is-style-highlight has-s-font-size"><?php esc_html_e( 'Around the site', 'bubbledew' ); ?></h2>
-<!-- /wp:heading -->
-
-<!-- wp:navigation {"className":"bubbledew-pills","overlayMenu":"never","layout":{"type":"flex","flexWrap":"wrap","justifyContent":"right"},"fontSize":"s"} /--></div>
-<!-- /wp:group --></div>
+<!-- wp:navigation {"className":"bubbledew-footer__links","overlayMenu":"never","showSubmenuIcon":false,"layout":{"type":"flex","flexWrap":"wrap","justifyContent":"right"},"style":{"spacing":{"blockGap":"var:preset|spacing|m"}},"fontSize":"s"} /--></div>
 <!-- /wp:group -->
 
 <!-- wp:separator {"className":"bubbledew-footer__rule","align":"wide","style":{"color":{"background":"#d9cdbe"}}} -->
