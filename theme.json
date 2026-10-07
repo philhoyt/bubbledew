@@ -368,7 +368,7 @@
     "blocks": {
       "core/columns": {
         "spacing": {
-          "blockGap": "var:preset|spacing|m"
+          "blockGap": "var:preset|spacing|l"
         }
       },
       "core/button": {
@@ -810,6 +810,11 @@
       "area": "footer",
       "name": "footer",
       "title": "Footer"
+    },
+    {
+      "area": "uncategorized",
+      "name": "sidebar",
+      "title": "Sidebar"
     }
   ],
   "version": 3
