@@ -64,7 +64,7 @@ src/styles/
 ├── tools/_context.scss     # front/editor separation mixin
 ├── base/global/            # global resets/base styles
 └── modules/                # feature-specific partials
-    ├── _cards.scss         # Card, Name tag and Blob bullets block styles: tilt, nth-child fills, badge, sticky-post star
+    ├── _cards.scss         # Card, Name tag and Blob bullets block styles: tilt, nth-child badge colours, sticky-post star
     ├── _pills.scss         # the Pills block style (nav, categories, post terms) plus buttons, excerpt link, pagination, post nav, search field
     ├── _blobs.scss         # Card radii per position, the Pebble image style, corner-shape: squircle
     ├── _bands.scss         # header/footer tinted bands with masked SVG wave edges
@@ -320,8 +320,9 @@ Things that are not derivable from the code:
   overridden by a one-class widget rule until the fills were keyed on `.is-style-card`
   only). Keep theme rules off blocks that carry another style.
 - **Core emits `.has-*-background-color` with `!important`.** A background preset in the
-  markup cannot be overridden from CSS, so Card blocks carry no `backgroundColor` attribute
-  and `_cards.scss` sets the fill (the position-based pastel rotation depends on this).
+  markup cannot be overridden from CSS. Card blocks carry no `backgroundColor` attribute;
+  the Card style's JSON gives them the surface colour. (A fill that rotated with position
+  was tried and removed as noise, so nothing overrides it any more.)
 - **Never rotate a full-height pseudo-element.** The since-removed margin doodles spanned
   the page height; a few degrees of `rotate` on them widened the page by hundreds of pixels
   (the smoke test caught it). `.wp-site-blocks` has `overflow-x: clip` for the tilted Cards
