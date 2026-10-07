@@ -40,7 +40,9 @@ Then copy or symlink this folder into `wp-content/themes/bubbledew` and activate
 
 Bump `Version` in `style.css` and `version` in `package.json` to the same value, then push a tag such as `v1.0.0`. `.github/workflows/release.yml` builds the theme, stages it through `.distignore`, and publishes `bubbledew.zip` on a GitHub release.
 
-Once a release exists, `.github/blueprint.json` can open the theme in WordPress Playground: replace `OWNER/REPO` in its `installTheme` URL with this repository.
+Once a release exists, the theme can be tried in WordPress Playground without installing anything. `.github/blueprint.json` installs the latest release zip and activates it:
+
+[Open Bubbledew in Playground](https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/philhoyt/bubbledew/main/.github/blueprint.json)
 
 ## License
 
