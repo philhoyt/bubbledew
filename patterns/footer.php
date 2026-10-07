@@ -14,6 +14,19 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+$bubbledew_credit = sprintf(
+	/* translators: %s: WordPress. */
+	esc_html__( 'Proudly powered by %s', 'bubbledew' ),
+	'<a href="' . esc_url( __( 'https://wordpress.org/', 'bubbledew' ) ) . '" rel="nofollow">WordPress</a>'
+);
+
+$bubbledew_credit_tags = array(
+	'a' => array(
+		'href' => array(),
+		'rel'  => array(),
+	),
+);
+
 ?>
 <!-- wp:group {"metadata":{"name":"Footer band"},"className":"bubbledew-band bubbledew-band--footer","style":{"spacing":{"padding":{"top":"var:preset|spacing|xl","bottom":"var:preset|spacing|l"},"blockGap":"var:preset|spacing|l"}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group bubbledew-band bubbledew-band--footer" style="padding-top:var(--wp--preset--spacing--xl);padding-bottom:var(--wp--preset--spacing--l)"><!-- wp:group {"metadata":{"name":"Footer top"},"align":"wide","style":{"spacing":{"blockGap":"var:preset|spacing|m"}},"layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between","verticalAlignment":"center"}} -->
@@ -41,13 +54,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- wp:site-title {"level":0,"isLink":false} /-->
 
 <!-- wp:paragraph {"className":"dot-before"} -->
-<p class="dot-before"><?php
-printf(
-	/* translators: %s: WordPress. */
-	esc_html__( 'Proudly powered by %s', 'bubbledew' ),
-	'<a href="' . esc_url( __( 'https://wordpress.org/', 'bubbledew' ) ) . '" rel="nofollow">WordPress</a>'
-);
-?></p>
+<p class="dot-before"><?php echo wp_kses( $bubbledew_credit, $bubbledew_credit_tags ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
