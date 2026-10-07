@@ -52,6 +52,27 @@ p.wp-block-site-tagline.is-style-speech-bubble {
 	}
 }
 
+// A comment's bubble sits under its author line, so the tail points up at the
+// avatar. Comments alternate between surface and a sky tint so a thread reads
+// as a conversation.
+.wp-block-comment-content.is-style-speech-bubble {
+	padding: var(--wp--preset--spacing--s) var(--wp--preset--spacing--m);
+	border-radius: 1.4rem 1.6rem 1.5rem 1.2rem / 1.5rem 1.3rem 1.6rem 1.4rem;
+
+	&::after {
+		top: -0.6rem;
+		bottom: auto;
+		left: 1.25rem;
+		width: 1.2rem;
+		height: 1.2rem;
+		transform: rotate(45deg);
+	}
+}
+
+.wp-block-comment-template > li:nth-child(even) > .wp-block-group > .wp-block-comment-content.is-style-speech-bubble {
+	background-color: color-mix(in oklab, var(--wp--preset--color--secondary) 30%, var(--wp--preset--color--surface));
+}
+
 // ------------------------------------------------------------ sticky note
 
 .is-style-sticky-note {

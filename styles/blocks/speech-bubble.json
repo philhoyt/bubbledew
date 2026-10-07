@@ -3,7 +3,7 @@
   "version": 3,
   "title": "Speech bubble",
   "slug": "speech-bubble",
-  "blockTypes": ["core/group", "core/site-tagline", "core/paragraph"],
+  "blockTypes": ["core/group", "core/site-tagline", "core/paragraph", "core/comment-content"],
   "styles": {
     "border": {
       "radius": "var(--wp--custom--card--radius)"
