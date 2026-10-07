@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-10-07T20:03:34+00:00\n"
+"POT-Creation-Date: 2026-10-07T20:28:21+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: bubbledew\n"
@@ -17,6 +17,11 @@ msgstr ""
 #. Theme Name of the theme
 #: style.css
 msgid "Bubbledew"
+msgstr ""
+
+#. Theme URI of the theme
+#: style.css
+msgid "https://github.com/philhoyt/bubbledew"
 msgstr ""
 
 #. Description of the theme
@@ -125,11 +130,13 @@ msgstr ""
 
 #: build/bubbledew-check/patterns/sidebar.php:66
 #: patterns/sidebar.php:66
+#: patterns/sticky-note.php:20
 msgid "Right now"
 msgstr ""
 
 #: build/bubbledew-check/patterns/sidebar.php:70
 #: patterns/sidebar.php:70
+#: patterns/sticky-note.php:24
 msgid "What you are reading, making or thinking about this week."
 msgstr ""
 
@@ -139,11 +146,13 @@ msgid "Archives"
 msgstr ""
 
 #: build/bubbledew-check/patterns/template-query-loop.php:27
+#: patterns/keep-reading.php:20
 #: patterns/template-query-loop.php:27
 msgid "Keep reading"
 msgstr ""
 
 #: build/bubbledew-check/patterns/template-query-loop.php:49
+#: patterns/posts-grid.php:33
 #: patterns/template-query-loop.php:49
 msgctxt "Message shown when a query returns nothing."
 msgid "No posts were found."
@@ -208,6 +217,43 @@ msgctxt "Pattern title"
 msgid "Search"
 msgstr ""
 
+#: patterns/keep-reading.php
+msgctxt "Pattern title"
+msgid "Keep reading"
+msgstr ""
+
+#: patterns/keep-reading.php
+msgctxt "Pattern description"
+msgid "The three most recent posts, not counting the one being read, as a short list under a highlighted heading."
+msgstr ""
+
+#: patterns/keep-reading.php:34
+msgctxt "Shown under a post when there are no other posts."
+msgid "Nothing else to read yet."
+msgstr ""
+
+#: patterns/links-in-bio.php
+msgctxt "Pattern title"
+msgid "Links in bio"
+msgstr ""
+
+#: patterns/links-in-bio.php
+msgctxt "Pattern description"
+msgid "A speech-bubble card with the site logo, title and tagline, a stack of pill buttons and social icons. Made for the Page without title template."
+msgstr ""
+
+#: patterns/links-in-bio.php:27
+msgid "Read the latest post"
+msgstr ""
+
+#: patterns/links-in-bio.php:31
+msgid "Subscribe to the newsletter"
+msgstr ""
+
+#: patterns/links-in-bio.php:35
+msgid "Say hello"
+msgstr ""
+
 #: patterns/post-navigation.php
 msgctxt "Pattern title"
 msgid "Post navigation"
@@ -218,6 +264,16 @@ msgctxt "Pattern description"
 msgid "Previous and next post links."
 msgstr ""
 
+#: patterns/posts-grid.php
+msgctxt "Pattern title"
+msgid "Posts grid"
+msgstr ""
+
+#: patterns/posts-grid.php
+msgctxt "Pattern description"
+msgid "The latest posts as two columns of tilted cards with name-tag badges, pebble images, titles and dates."
+msgstr ""
+
 #: patterns/sidebar.php
 msgctxt "Pattern title"
 msgid "Sidebar"
@@ -226,6 +282,16 @@ msgstr ""
 #: patterns/sidebar.php
 msgctxt "Pattern description"
 msgid "About card, search, categories, latest posts, a sticky note and archives."
+msgstr ""
+
+#: patterns/sticky-note.php
+msgctxt "Pattern title"
+msgid "Sticky note"
+msgstr ""
+
+#: patterns/sticky-note.php
+msgctxt "Pattern description"
+msgid "A butter-yellow note with a strip of tape, a highlighted heading and a short paragraph. Good for what you are up to right now."
 msgstr ""
 
 #: patterns/template-query-loop.php

@@ -3,46 +3,41 @@
 //
 // The CSS half of the Card and Name tag block styles (styles/blocks/card.json
 // and name-tag.json register them). A Card is a Group with the `is-style-card`
-// class: tilted a degree or so, filled with a pastel that depends on its
-// position among its siblings, straightened and lifted on hover. A Name tag is
+// class: tilted a degree or so, straightened and lifted on hover, always on the
+// surface colour (a fill that changed with position was tried and read as
+// noise); the variety comes from the tilt, the corner shape and the badge. A Name tag is
 // a Post Terms block sitting across the top edge of the card it is in, like
 // the speaker's name on an Animal Crossing dialogue box. Shared by the front
 // end and the editor.
 //
 // Position is counted on the repeating sibling: the post template's
-// `li.wp-block-post`, or a direct child of the sidebar Group. Fills are set
-// here rather than with a background preset in the markup, because core emits
-// `.has-*-background-color` with `!important` and the rotation could not
-// override it. Blocks carrying another style (speech bubble, sticky note)
-// keep that style's fill but still take the position's tilt.
+// `li.wp-block-post`, or a direct child of the sidebar Group. Blocks carrying
+// another style (speech bubble, sticky note) keep their own fill but still take
+// the position's tilt.
 //
 
 @use "sass:map";
 
 $fills: (
 	1: (
-		"fill": "var(--wp--preset--color--surface)",
 		"tilt": "calc(-1 * var(--wp--custom--card--tilt))",
 		"badge": "var(--wp--preset--color--secondary)",
 		"badge-tilt": "-4deg",
 		"side": "left",
 	),
 	2: (
-		"fill": "color-mix(in oklab, var(--wp--preset--color--secondary) 32%, var(--wp--preset--color--surface))",
 		"tilt": "calc(0.9 * var(--wp--custom--card--tilt))",
 		"badge": "var(--wp--preset--color--tertiary)",
 		"badge-tilt": "3deg",
 		"side": "right",
 	),
 	3: (
-		"fill": "color-mix(in oklab, var(--wp--preset--color--lavender) 36%, var(--wp--preset--color--surface))",
 		"tilt": "calc(-0.7 * var(--wp--custom--card--tilt))",
 		"badge": "var(--wp--preset--color--lavender)",
 		"badge-tilt": "-2deg",
 		"side": "left",
 	),
 	4: (
-		"fill": "color-mix(in oklab, var(--wp--preset--color--primary) 30%, var(--wp--preset--color--surface))",
 		"tilt": "calc(1.2 * var(--wp--custom--card--tilt))",
 		"badge": "var(--wp--preset--color--primary)",
 		"badge-tilt": "2.5deg",
@@ -55,8 +50,6 @@ $fills: (
 .is-style-card {
 	position: relative;
 	overflow: visible;
-	background-color: var(--wp--preset--color--surface);
-	background-color: var(--bubbledew-card-fill, var(--wp--preset--color--surface));
 	rotate: var(--bubbledew-tilt, 0deg);
 	transition:
 		rotate 0.25s cubic-bezier(0.34, 1.56, 0.64, 1),
@@ -80,7 +73,6 @@ $fills: (
 @each $i, $card in $fills {
 	.wp-block-post-template > .wp-block-post:nth-child(4n + #{$i}) .is-style-card,
 	.bubbledew-sidebar > :nth-child(4n + #{$i}) {
-		--bubbledew-card-fill: #{map.get($card, "fill")};
 		--bubbledew-tilt: #{map.get($card, "tilt")};
 		--bubbledew-badge-fill: #{map.get($card, "badge")};
 		--bubbledew-badge-tilt: #{map.get($card, "badge-tilt")};
@@ -111,6 +103,12 @@ $fills: (
 }
 
 // Sticky posts wear a star. Icon only: text in CSS could not be translated.
+// The star takes the top-right corner, so a sticky post's badge stays left.
+.wp-block-post.sticky .is-style-name-tag {
+	right: auto;
+	left: var(--wp--preset--spacing--m);
+}
+
 .wp-block-post.sticky .is-style-card::after {
 	content: "";
 	position: absolute;

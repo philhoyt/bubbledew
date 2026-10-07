@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Demo content for Bubbledew: six posts, two pages, a few comments. Imported by the
+     Playground blueprint (.github/blueprint.json) and by `npm run demo` for screenshots. -->
+<rss version="2.0"
+	xmlns:excerpt="http://wordpress.org/export/1.2/excerpt/"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:wp="http://wordpress.org/export/1.2/">
+<channel>
+<title>Bubbledew</title>
+<link>https://bubbledew.example</link>
+<description>Notes on growing things, small software and slow weekends</description>
+<pubDate>2026-10-04 09:10:00</pubDate>
+<language>en-US</language>
+<wp:wxr_version>1.2</wp:wxr_version>
+<wp:base_site_url>https://bubbledew.example</wp:base_site_url>
+<wp:base_blog_url>https://bubbledew.example</wp:base_blog_url>
+<wp:author><wp:author_id>1</wp:author_id><wp:author_login><![CDATA[admin]]></wp:author_login><wp:author_email><![CDATA[admin@example.com]]></wp:author_email><wp:author_display_name><![CDATA[Rowan]]></wp:author_display_name><wp:author_first_name><![CDATA[]]></wp:author_first_name><wp:author_last_name><![CDATA[]]></wp:author_last_name></wp:author>
+<wp:category><wp:term_id>1</wp:term_id><wp:category_nicename><![CDATA[garden]]></wp:category_nicename><wp:category_parent><![CDATA[]]></wp:category_parent><wp:cat_name><![CDATA[Garden]]></wp:cat_name></wp:category>
+<wp:category><wp:term_id>2</wp:term_id><wp:category_nicename><![CDATA[kitchen]]></wp:category_nicename><wp:category_parent><![CDATA[]]></wp:category_parent><wp:cat_name><![CDATA[Kitchen]]></wp:cat_name></wp:category>
+<wp:category><wp:term_id>3</wp:term_id><wp:category_nicename><![CDATA[reading]]></wp:category_nicename><wp:category_parent><![CDATA[]]></wp:category_parent><wp:cat_name><![CDATA[Reading]]></wp:cat_name></wp:category>
+<wp:category><wp:term_id>4</wp:term_id><wp:category_nicename><![CDATA[software]]></wp:category_nicename><wp:category_parent><![CDATA[]]></wp:category_parent><wp:cat_name><![CDATA[Software]]></wp:cat_name></wp:category>
+<wp:category><wp:term_id>5</wp:term_id><wp:category_nicename><![CDATA[weekend]]></wp:category_nicename><wp:category_parent><![CDATA[]]></wp:category_parent><wp:cat_name><![CDATA[Weekend]]></wp:cat_name></wp:category>
+<wp:tag><wp:term_id>20</wp:term_id><wp:tag_slug><![CDATA[books]]></wp:tag_slug><wp:tag_name><![CDATA[books]]></wp:tag_name></wp:tag>
+<wp:tag><wp:term_id>21</wp:term_id><wp:tag_slug><![CDATA[home-automation]]></wp:tag_slug><wp:tag_name><![CDATA[home automation]]></wp:tag_name></wp:tag>
+<wp:tag><wp:term_id>22</wp:term_id><wp:tag_slug><![CDATA[hostas]]></wp:tag_slug><wp:tag_name><![CDATA[hostas]]></wp:tag_name></wp:tag>
+<wp:tag><wp:term_id>23</wp:term_id><wp:tag_slug><![CDATA[perennials]]></wp:tag_slug><wp:tag_name><![CDATA[perennials]]></wp:tag_name></wp:tag>
+<wp:tag><wp:term_id>24</wp:term_id><wp:tag_slug><![CDATA[preserving]]></wp:tag_slug><wp:tag_name><![CDATA[preserving]]></wp:tag_name></wp:tag>
+<wp:tag><wp:term_id>25</wp:term_id><wp:tag_slug><![CDATA[raised-beds]]></wp:tag_slug><wp:tag_name><![CDATA[raised beds]]></wp:tag_name></wp:tag>
+<wp:tag><wp:term_id>26</wp:term_id><wp:tag_slug><![CDATA[sensors]]></wp:tag_slug><wp:tag_name><![CDATA[sensors]]></wp:tag_name></wp:tag>
+<wp:tag><wp:term_id>27</wp:term_id><wp:tag_slug><![CDATA[slow-days]]></wp:tag_slug><wp:tag_name><![CDATA[slow days]]></wp:tag_name></wp:tag>
+<wp:tag><wp:term_id>28</wp:term_id><wp:tag_slug><![CDATA[tomatoes]]></wp:tag_slug><wp:tag_name><![CDATA[tomatoes]]></wp:tag_name></wp:tag>
+
+<item>
+<title><![CDATA[The tomatoes finally gave up, and I feel fine about it]]></title>
+<link>https://bubbledew.example/the-tomatoes-finally-gave-up/</link>
+<pubDate>2026-10-04 09:10:00</pubDate>
+<dc:creator><![CDATA[admin]]></dc:creator>
+<guid isPermaLink="false">https://bubbledew.example/?p=101</guid>
+<description></description>
+<content:encoded><![CDATA[<!-- wp:paragraph -->
+<p>Six weeks of nursing split skins and blossom-end rot taught me more than the two good months before it.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>The raised bed on the north side never drained. I knew it in May, I knew it in June, and I kept watering anyway, because the plants looked thirsty and I am a soft touch.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Next year: a drainage layer, two fewer plants, and a promise to read the soil rather than the leaves.</p>
+<!-- /wp:paragraph -->]]></content:encoded>
+<excerpt:encoded><![CDATA[Six weeks of nursing split skins and blossom-end rot taught me more than the two good months before it. Here is what I am changing for next year, starting with the raised bed that never drained.]]></excerpt:encoded>
+<wp:post_id>101</wp:post_id>
+<wp:post_date><![CDATA[2026-10-04 09:10:00]]></wp:post_date>
+<wp:post_date_gmt><![CDATA[2026-10-04 09:10:00]]></wp:post_date_gmt>
+<wp:comment_status><![CDATA[open]]></wp:comment_status>
+<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+<wp:post_name><![CDATA[the-tomatoes-finally-gave-up]]></wp:post_name>
+<wp:status><![CDATA[publish]]></wp:status>
+<wp:post_parent>0</wp:post_parent>
+<wp:menu_order>0</wp:menu_order>
+<wp:post_type><![CDATA[post]]></wp:post_type>
+<wp:post_password><![CDATA[]]></wp:post_password>
+<wp:is_sticky>0</wp:is_sticky>
+<category domain="category" nicename="garden"><![CDATA[Garden]]></category><category domain="post_tag" nicename="tomatoes"><![CDATA[tomatoes]]></category><category domain="post_tag" nicename="raised-beds"><![CDATA[raised beds]]></category>
+<wp:comment><wp:comment_id>2</wp:comment_id><wp:comment_author><![CDATA[Rowan]]></wp:comment_author><wp:comment_author_email><![CDATA[rowan@example.com]]></wp:comment_author_email><wp:comment_author_url></wp:comment_author_url><wp:comment_author_IP>127.0.0.1</wp:comment_author_IP><wp:comment_date><![CDATA[2026-10-04 18:10:00]]></wp:comment_date><wp:comment_date_gmt><![CDATA[2026-10-04 18:10:00]]></wp:comment_date_gmt><wp:comment_content><![CDATA[Lovely to read this with a cup of tea.]]></wp:comment_content><wp:comment_approved><![CDATA[1]]></wp:comment_approved><wp:comment_type><![CDATA[comment]]></wp:comment_type><wp:comment_parent>0</wp:comment_parent><wp:comment_user_id>0</wp:comment_user_id></wp:comment>
+<wp:comment><wp:comment_id>3</wp:comment_id><wp:comment_author><![CDATA[Grace]]></wp:comment_author><wp:comment_author_email><![CDATA[grace@example.com]]></wp:comment_author_email><wp:comment_author_url></wp:comment_author_url><wp:comment_author_IP>127.0.0.1</wp:comment_author_IP><wp:comment_date><![CDATA[2026-10-04 18:11:00]]></wp:comment_date><wp:comment_date_gmt><![CDATA[2026-10-04 18:11:00]]></wp:comment_date_gmt><wp:comment_content><![CDATA[Same here, the north bed is a swamp every spring.]]></wp:comment_content><wp:comment_approved><![CDATA[1]]></wp:comment_approved><wp:comment_type><![CDATA[comment]]></wp:comment_type><wp:comment_parent>0</wp:comment_parent><wp:comment_user_id>0</wp:comment_user_id></wp:comment>
+<wp:comment><wp:comment_id>4</wp:comment_id><wp:comment_author><![CDATA[Ken]]></wp:comment_author><wp:comment_author_email><![CDATA[ken@example.com]]></wp:comment_author_email><wp:comment_author_url></wp:comment_author_url><wp:comment_author_IP>127.0.0.1</wp:comment_author_IP><wp:comment_date><![CDATA[2026-10-04 18:12:00]]></wp:comment_date><wp:comment_date_gmt><![CDATA[2026-10-04 18:12:00]]></wp:comment_date_gmt><wp:comment_content><![CDATA[Bookmarking the script, thank you!]]></wp:comment_content><wp:comment_approved><![CDATA[1]]></wp:comment_approved><wp:comment_type><![CDATA[comment]]></wp:comment_type><wp:comment_parent>0</wp:comment_parent><wp:comment_user_id>0</wp:comment_user_id></wp:comment>
+</item><item>
+<title><![CDATA[A tiny script that tells me when the greenhouse drops below 8°C]]></title>
+<link>https://bubbledew.example/greenhouse-script/</link>
+<pubDate>2026-09-28 20:45:00</pubDate>
+<dc:creator><![CDATA[admin]]></dc:creator>
+<guid isPermaLink="false">https://bubbledew.example/?p=102</guid>
+<description></description>
+<content:encoded><![CDATA[<!-- wp:paragraph -->
+<p>Forty lines, one cheap sensor, and a notification that arrives before the seedlings notice.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>The sensor reports every ten minutes. The script keeps the last six readings and only shouts when the trend is down and the latest reading is under eight degrees, which stops it waking me for a draught.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>It has paid for the sensor twice over in basil alone.</p>
+<!-- /wp:paragraph -->]]></content:encoded>
+<excerpt:encoded><![CDATA[Forty lines, one cheap sensor, and a notification that arrives before the seedlings notice. I wrote it in an evening and it has already paid for the sensor in saved basil.]]></excerpt:encoded>
+<wp:post_id>102</wp:post_id>
+<wp:post_date><![CDATA[2026-09-28 20:45:00]]></wp:post_date>
+<wp:post_date_gmt><![CDATA[2026-09-28 20:45:00]]></wp:post_date_gmt>
+<wp:comment_status><![CDATA[open]]></wp:comment_status>
+<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+<wp:post_name><![CDATA[greenhouse-script]]></wp:post_name>
+<wp:status><![CDATA[publish]]></wp:status>
+<wp:post_parent>0</wp:post_parent>
+<wp:menu_order>0</wp:menu_order>
+<wp:post_type><![CDATA[post]]></wp:post_type>
+<wp:post_password><![CDATA[]]></wp:post_password>
+<wp:is_sticky>0</wp:is_sticky>
+<category domain="category" nicename="software"><![CDATA[Software]]></category><category domain="post_tag" nicename="sensors"><![CDATA[sensors]]></category><category domain="post_tag" nicename="home-automation"><![CDATA[home automation]]></category>
+</item><item>
+<title><![CDATA[Sunday, mostly spent watching the light move across one wall]]></title>
+<link>https://bubbledew.example/sunday-light/</link>
+<pubDate>2026-09-21 16:00:00</pubDate>
+<dc:creator><![CDATA[admin]]></dc:creator>
+<guid isPermaLink="false">https://bubbledew.example/?p=103</guid>
+<description></description>
+<content:encoded><![CDATA[<!-- wp:paragraph -->
+<p>No plans, a pot of tea, and the slow realisation that the north-facing room is the best room in the house for exactly ninety minutes in October.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>I moved the chair twice to follow it. The cat did the same, with more conviction.</p>
+<!-- /wp:paragraph -->]]></content:encoded>
+<excerpt:encoded><![CDATA[No plans, a pot of tea, and the slow realisation that the north-facing room is the best room in the house for exactly ninety minutes in October.]]></excerpt:encoded>
+<wp:post_id>103</wp:post_id>
+<wp:post_date><![CDATA[2026-09-21 16:00:00]]></wp:post_date>
+<wp:post_date_gmt><![CDATA[2026-09-21 16:00:00]]></wp:post_date_gmt>
+<wp:comment_status><![CDATA[open]]></wp:comment_status>
+<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+<wp:post_name><![CDATA[sunday-light]]></wp:post_name>
+<wp:status><![CDATA[publish]]></wp:status>
+<wp:post_parent>0</wp:post_parent>
+<wp:menu_order>0</wp:menu_order>
+<wp:post_type><![CDATA[post]]></wp:post_type>
+<wp:post_password><![CDATA[]]></wp:post_password>
+<wp:is_sticky>0</wp:is_sticky>
+<category domain="category" nicename="weekend"><![CDATA[Weekend]]></category><category domain="post_tag" nicename="slow-days"><![CDATA[slow days]]></category>
+<wp:comment><wp:comment_id>5</wp:comment_id><wp:comment_author><![CDATA[Rowan]]></wp:comment_author><wp:comment_author_email><![CDATA[rowan@example.com]]></wp:comment_author_email><wp:comment_author_url></wp:comment_author_url><wp:comment_author_IP>127.0.0.1</wp:comment_author_IP><wp:comment_date><![CDATA[2026-09-21 18:10:00]]></wp:comment_date><wp:comment_date_gmt><![CDATA[2026-09-21 18:10:00]]></wp:comment_date_gmt><wp:comment_content><![CDATA[Lovely to read this with a cup of tea.]]></wp:comment_content><wp:comment_approved><![CDATA[1]]></wp:comment_approved><wp:comment_type><![CDATA[comment]]></wp:comment_type><wp:comment_parent>0</wp:comment_parent><wp:comment_user_id>0</wp:comment_user_id></wp:comment>
+<wp:comment><wp:comment_id>6</wp:comment_id><wp:comment_author><![CDATA[Grace]]></wp:comment_author><wp:comment_author_email><![CDATA[grace@example.com]]></wp:comment_author_email><wp:comment_author_url></wp:comment_author_url><wp:comment_author_IP>127.0.0.1</wp:comment_author_IP><wp:comment_date><![CDATA[2026-09-21 18:11:00]]></wp:comment_date><wp:comment_date_gmt><![CDATA[2026-09-21 18:11:00]]></wp:comment_date_gmt><wp:comment_content><![CDATA[Same here, the north bed is a swamp every spring.]]></wp:comment_content><wp:comment_approved><![CDATA[1]]></wp:comment_approved><wp:comment_type><![CDATA[comment]]></wp:comment_type><wp:comment_parent>0</wp:comment_parent><wp:comment_user_id>0</wp:comment_user_id></wp:comment>
+<wp:comment><wp:comment_id>7</wp:comment_id><wp:comment_author><![CDATA[Ken]]></wp:comment_author><wp:comment_author_email><![CDATA[ken@example.com]]></wp:comment_author_email><wp:comment_author_url></wp:comment_author_url><wp:comment_author_IP>127.0.0.1</wp:comment_author_IP><wp:comment_date><![CDATA[2026-09-21 18:12:00]]></wp:comment_date><wp:comment_date_gmt><![CDATA[2026-09-21 18:12:00]]></wp:comment_date_gmt><wp:comment_content><![CDATA[Bookmarking the script, thank you!]]></wp:comment_content><wp:comment_approved><![CDATA[1]]></wp:comment_approved><wp:comment_type><![CDATA[comment]]></wp:comment_type><wp:comment_parent>0</wp:comment_parent><wp:comment_user_id>0</wp:comment_user_id></wp:comment>
+<wp:comment><wp:comment_id>8</wp:comment_id><wp:comment_author><![CDATA[Barbara]]></wp:comment_author><wp:comment_author_email><![CDATA[barbara@example.com]]></wp:comment_author_email><wp:comment_author_url></wp:comment_author_url><wp:comment_author_IP>127.0.0.1</wp:comment_author_IP><wp:comment_date><![CDATA[2026-09-21 18:13:00]]></wp:comment_date><wp:comment_date_gmt><![CDATA[2026-09-21 18:13:00]]></wp:comment_date_gmt><wp:comment_content><![CDATA[The cat has the right idea.]]></wp:comment_content><wp:comment_approved><![CDATA[1]]></wp:comment_approved><wp:comment_type><![CDATA[comment]]></wp:comment_type><wp:comment_parent>0</wp:comment_parent><wp:comment_user_id>0</wp:comment_user_id></wp:comment>
+<wp:comment><wp:comment_id>9</wp:comment_id><wp:comment_author><![CDATA[Ash]]></wp:comment_author><wp:comment_author_email><![CDATA[ash@example.com]]></wp:comment_author_email><wp:comment_author_url></wp:comment_author_url><wp:comment_author_IP>127.0.0.1</wp:comment_author_IP><wp:comment_date><![CDATA[2026-09-21 18:14:00]]></wp:comment_date><wp:comment_date_gmt><![CDATA[2026-09-21 18:14:00]]></wp:comment_date_gmt><wp:comment_content><![CDATA[More of these, please.]]></wp:comment_content><wp:comment_approved><![CDATA[1]]></wp:comment_approved><wp:comment_type><![CDATA[comment]]></wp:comment_type><wp:comment_parent>0</wp:comment_parent><wp:comment_user_id>0</wp:comment_user_id></wp:comment>
+</item><item>
+<title><![CDATA[Dividing the hostas, a love letter to a very patient plant]]></title>
+<link>https://bubbledew.example/dividing-the-hostas/</link>
+<pubDate>2026-09-14 11:30:00</pubDate>
+<dc:creator><![CDATA[admin]]></dc:creator>
+<guid isPermaLink="false">https://bubbledew.example/?p=104</guid>
+<description></description>
+<content:encoded><![CDATA[<!-- wp:paragraph -->
+<p>One plant became five. The spade went where it should not have, twice.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Every piece is up and leafing out anyway, which is the whole appeal of hostas and probably the whole appeal of gardening.</p>
+<!-- /wp:paragraph -->]]></content:encoded>
+<excerpt:encoded><![CDATA[One plant became five. The spade went where it should not have, twice. Every piece is up and leafing out anyway, which is the whole appeal of hostas and probably the whole appeal of gardening.]]></excerpt:encoded>
+<wp:post_id>104</wp:post_id>
+<wp:post_date><![CDATA[2026-09-14 11:30:00]]></wp:post_date>
+<wp:post_date_gmt><![CDATA[2026-09-14 11:30:00]]></wp:post_date_gmt>
+<wp:comment_status><![CDATA[open]]></wp:comment_status>
+<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+<wp:post_name><![CDATA[dividing-the-hostas]]></wp:post_name>
+<wp:status><![CDATA[publish]]></wp:status>
+<wp:post_parent>0</wp:post_parent>
+<wp:menu_order>0</wp:menu_order>
+<wp:post_type><![CDATA[post]]></wp:post_type>
+<wp:post_password><![CDATA[]]></wp:post_password>
+<wp:is_sticky>0</wp:is_sticky>
+<category domain="category" nicename="garden"><![CDATA[Garden]]></category><category domain="post_tag" nicename="hostas"><![CDATA[hostas]]></category><category domain="post_tag" nicename="perennials"><![CDATA[perennials]]></category>
+<wp:comment><wp:comment_id>10</wp:comment_id><wp:comment_author><![CDATA[Rowan]]></wp:comment_author><wp:comment_author_email><![CDATA[rowan@example.com]]></wp:comment_author_email><wp:comment_author_url></wp:comment_author_url><wp:comment_author_IP>127.0.0.1</wp:comment_author_IP><wp:comment_date><![CDATA[2026-09-14 18:10:00]]></wp:comment_date><wp:comment_date_gmt><![CDATA[2026-09-14 18:10:00]]></wp:comment_date_gmt><wp:comment_content><![CDATA[Lovely to read this with a cup of tea.]]></wp:comment_content><wp:comment_approved><![CDATA[1]]></wp:comment_approved><wp:comment_type><![CDATA[comment]]></wp:comment_type><wp:comment_parent>0</wp:comment_parent><wp:comment_user_id>0</wp:comment_user_id></wp:comment>
+</item><item>
+<title><![CDATA[Pickling the last of the cucumbers before the frost gets them]]></title>
+<link>https://bubbledew.example/pickling-the-last-cucumbers/</link>
+<pubDate>2026-09-07 14:20:00</pubDate>
+<dc:creator><![CDATA[admin]]></dc:creator>
+<guid isPermaLink="false">https://bubbledew.example/?p=105</guid>
+<description></description>
+<content:encoded><![CDATA[<!-- wp:paragraph -->
+<p>Eleven cucumbers, one saucepan, and a recipe my grandmother never wrote down.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Dill from the garden, garlic from the shop, and far too much vinegar the first time. The second batch is right.</p>
+<!-- /wp:paragraph -->]]></content:encoded>
+<excerpt:encoded><![CDATA[Eleven cucumbers, one saucepan, and a recipe my grandmother never wrote down. The jars are lined up on the windowsill like a small, sour trophy cabinet.]]></excerpt:encoded>
+<wp:post_id>105</wp:post_id>
+<wp:post_date><![CDATA[2026-09-07 14:20:00]]></wp:post_date>
+<wp:post_date_gmt><![CDATA[2026-09-07 14:20:00]]></wp:post_date_gmt>
+<wp:comment_status><![CDATA[open]]></wp:comment_status>
+<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+<wp:post_name><![CDATA[pickling-the-last-cucumbers]]></wp:post_name>
+<wp:status><![CDATA[publish]]></wp:status>
+<wp:post_parent>0</wp:post_parent>
+<wp:menu_order>0</wp:menu_order>
+<wp:post_type><![CDATA[post]]></wp:post_type>
+<wp:post_password><![CDATA[]]></wp:post_password>
+<wp:is_sticky>0</wp:is_sticky>
+<category domain="category" nicename="kitchen"><![CDATA[Kitchen]]></category><category domain="post_tag" nicename="preserving"><![CDATA[preserving]]></category>
+</item><item>
+<title><![CDATA[Notes on The Well-Gardened Mind, read slowly in the greenhouse]]></title>
+<link>https://bubbledew.example/the-well-gardened-mind/</link>
+<pubDate>2026-08-30 10:05:00</pubDate>
+<dc:creator><![CDATA[admin]]></dc:creator>
+<guid isPermaLink="false">https://bubbledew.example/?p=106</guid>
+<description></description>
+<content:encoded><![CDATA[<!-- wp:paragraph -->
+<p>A psychiatrist's book about why digging makes people feel better, read in the one place it could not be argued with.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>The chapter on time is the one I keep going back to. Plants do not care about your deadline, and it turns out that is the point.</p>
+<!-- /wp:paragraph -->]]></content:encoded>
+<excerpt:encoded><![CDATA[A psychiatrist's book about why digging makes people feel better, read in the one place it could not be argued with.]]></excerpt:encoded>
+<wp:post_id>106</wp:post_id>
+<wp:post_date><![CDATA[2026-08-30 10:05:00]]></wp:post_date>
+<wp:post_date_gmt><![CDATA[2026-08-30 10:05:00]]></wp:post_date_gmt>
+<wp:comment_status><![CDATA[open]]></wp:comment_status>
+<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+<wp:post_name><![CDATA[the-well-gardened-mind]]></wp:post_name>
+<wp:status><![CDATA[publish]]></wp:status>
+<wp:post_parent>0</wp:post_parent>
+<wp:menu_order>0</wp:menu_order>
+<wp:post_type><![CDATA[post]]></wp:post_type>
+<wp:post_password><![CDATA[]]></wp:post_password>
+<wp:is_sticky>0</wp:is_sticky>
+<category domain="category" nicename="reading"><![CDATA[Reading]]></category><category domain="post_tag" nicename="books"><![CDATA[books]]></category>
+<wp:comment><wp:comment_id>11</wp:comment_id><wp:comment_author><![CDATA[Rowan]]></wp:comment_author><wp:comment_author_email><![CDATA[rowan@example.com]]></wp:comment_author_email><wp:comment_author_url></wp:comment_author_url><wp:comment_author_IP>127.0.0.1</wp:comment_author_IP><wp:comment_date><![CDATA[2026-08-30 18:10:00]]></wp:comment_date><wp:comment_date_gmt><![CDATA[2026-08-30 18:10:00]]></wp:comment_date_gmt><wp:comment_content><![CDATA[Lovely to read this with a cup of tea.]]></wp:comment_content><wp:comment_approved><![CDATA[1]]></wp:comment_approved><wp:comment_type><![CDATA[comment]]></wp:comment_type><wp:comment_parent>0</wp:comment_parent><wp:comment_user_id>0</wp:comment_user_id></wp:comment>
+<wp:comment><wp:comment_id>12</wp:comment_id><wp:comment_author><![CDATA[Grace]]></wp:comment_author><wp:comment_author_email><![CDATA[grace@example.com]]></wp:comment_author_email><wp:comment_author_url></wp:comment_author_url><wp:comment_author_IP>127.0.0.1</wp:comment_author_IP><wp:comment_date><![CDATA[2026-08-30 18:11:00]]></wp:comment_date><wp:comment_date_gmt><![CDATA[2026-08-30 18:11:00]]></wp:comment_date_gmt><wp:comment_content><![CDATA[Same here, the north bed is a swamp every spring.]]></wp:comment_content><wp:comment_approved><![CDATA[1]]></wp:comment_approved><wp:comment_type><![CDATA[comment]]></wp:comment_type><wp:comment_parent>0</wp:comment_parent><wp:comment_user_id>0</wp:comment_user_id></wp:comment>
+</item><item>
+<title><![CDATA[About]]></title>
+<link>https://bubbledew.example/about/</link>
+<pubDate>2026-08-01 09:00:00</pubDate>
+<dc:creator><![CDATA[admin]]></dc:creator>
+<guid isPermaLink="false">https://bubbledew.example/?page_id=107</guid>
+<description></description>
+<content:encoded><![CDATA[<!-- wp:paragraph -->
+<p>A few lines about who writes here and what the blog is for. The garden is small, the software is smaller, and the weekends are the point.</p>
+<!-- /wp:paragraph -->]]></content:encoded>
+<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+<wp:post_id>107</wp:post_id>
+<wp:post_date><![CDATA[2026-08-01 09:00:00]]></wp:post_date>
+<wp:post_date_gmt><![CDATA[2026-08-01 09:00:00]]></wp:post_date_gmt>
+<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+<wp:post_name><![CDATA[about]]></wp:post_name>
+<wp:status><![CDATA[publish]]></wp:status>
+<wp:post_parent>0</wp:post_parent>
+<wp:menu_order>0</wp:menu_order>
+<wp:post_type><![CDATA[page]]></wp:post_type>
+<wp:post_password><![CDATA[]]></wp:post_password>
+<wp:is_sticky>0</wp:is_sticky>
+</item><item>
+<title><![CDATA[Now]]></title>
+<link>https://bubbledew.example/now/</link>
+<pubDate>2026-08-01 09:00:00</pubDate>
+<dc:creator><![CDATA[admin]]></dc:creator>
+<guid isPermaLink="false">https://bubbledew.example/?page_id=108</guid>
+<description></description>
+<content:encoded><![CDATA[<!-- wp:paragraph -->
+<p>Reading The Well-Gardened Mind, pickling the last of the cucumbers, and trying to learn one new keyboard shortcut a week.</p>
+<!-- /wp:paragraph -->]]></content:encoded>
+<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+<wp:post_id>108</wp:post_id>
+<wp:post_date><![CDATA[2026-08-01 09:00:00]]></wp:post_date>
+<wp:post_date_gmt><![CDATA[2026-08-01 09:00:00]]></wp:post_date_gmt>
+<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+<wp:post_name><![CDATA[now]]></wp:post_name>
+<wp:status><![CDATA[publish]]></wp:status>
+<wp:post_parent>0</wp:post_parent>
+<wp:menu_order>0</wp:menu_order>
+<wp:post_type><![CDATA[page]]></wp:post_type>
+<wp:post_password><![CDATA[]]></wp:post_password>
+<wp:is_sticky>0</wp:is_sticky>
+</item>
+</channel>
+</rss>
