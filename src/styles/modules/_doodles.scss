@@ -1,0 +1,156 @@
+//
+// Module: doodles.
+//
+// Decorative art: doodles floating in the page margins on wide screens, and
+// stickers stuck to card corners. All of it is CSS pseudo-elements with
+// `pointer-events: none`, so the block markup stays plain core blocks and no
+// decorative image ends up in the content. The SVGs live in
+// assets/images/doodles/ and are bundled by the build. The path is resolved
+// from the entry file in src/styles/, not from this partial.
+//
+
+@use "../tools/context";
+
+$doodles: "../../assets/images/doodles";
+
+@include context.is(front) {
+	.wp-site-blocks {
+		position: relative;
+	}
+
+	// Margin doodles. Absolutely positioned so the grid ignores them.
+	.wp-site-blocks::before,
+	.wp-site-blocks::after {
+		content: "";
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		z-index: 0;
+		display: none;
+		width: 8rem;
+		background-repeat: no-repeat;
+		pointer-events: none;
+	}
+
+	.wp-site-blocks::before {
+		left: calc(50% - 680px);
+		background-image:
+			url("#{$doodles}/star.svg"),
+			url("#{$doodles}/flower.svg"),
+			url("#{$doodles}/cloud.svg");
+		background-position:
+			1rem 14rem,
+			0 40rem,
+			0.5rem 72rem;
+		background-size: 3.5rem, 4.5rem, 5.5rem;
+		rotate: -6deg;
+		animation: bubbledew-float 8s ease-in-out infinite;
+	}
+
+	.wp-site-blocks::after {
+		right: calc(50% - 680px);
+		background-image:
+			url("#{$doodles}/heart.svg"),
+			url("#{$doodles}/sprout.svg"),
+			url("#{$doodles}/swirl.svg");
+		background-position:
+			right 1rem top 26rem,
+			right 0 top 58rem,
+			right 0.5rem top 92rem;
+		background-size: 3rem, 4rem, 3.25rem;
+		rotate: 8deg;
+		animation: bubbledew-float 9.5s ease-in-out -3s infinite;
+	}
+
+	@media (width >= 1220px) {
+		.wp-site-blocks::before,
+		.wp-site-blocks::after {
+			display: block;
+		}
+	}
+}
+
+// Stickers on card corners. `::before` is free on every card that is not a
+// sticky note (the note uses it for its tape).
+%sticker {
+	content: "";
+	position: absolute;
+	z-index: 1;
+	width: 2.6rem;
+	height: 2.6rem;
+	background: center / contain no-repeat;
+	filter: drop-shadow(0 3px 4px rgb(120 80 50 / 20%));
+	pointer-events: none;
+}
+
+.wp-block-post-template > .wp-block-post:nth-child(4n + 2) .bubbledew-card::before {
+	@extend %sticker;
+
+	top: 1.5rem;
+	left: -0.9rem;
+	width: 2.4rem;
+	height: 2.4rem;
+	background-image: url("#{$doodles}/star.svg");
+	rotate: -16deg;
+}
+
+.wp-block-post-template > .wp-block-post:nth-child(4n + 4) .bubbledew-card::before {
+	@extend %sticker;
+
+	right: -0.8rem;
+	bottom: 1.2rem;
+	width: 2.8rem;
+	height: 2.8rem;
+	background-image: url("#{$doodles}/flower.svg");
+	rotate: 22deg;
+}
+
+.bubbledew-sidebar > .bubbledew-widget:nth-child(1)::before {
+	@extend %sticker;
+
+	top: -0.8rem;
+	right: -0.6rem;
+	width: 2.8rem;
+	height: 2.8rem;
+	background-image: url("#{$doodles}/leaf.svg");
+	rotate: 14deg;
+}
+
+.bubbledew-sidebar > .bubbledew-widget:nth-child(3)::before {
+	@extend %sticker;
+
+	bottom: -0.6rem;
+	left: -0.8rem;
+	width: 2.4rem;
+	height: 2.4rem;
+	background-image: url("#{$doodles}/heart.svg");
+	rotate: -20deg;
+}
+
+.bubbledew-sidebar > .bubbledew-widget:nth-child(6)::before {
+	@extend %sticker;
+
+	top: -1rem;
+	right: -0.7rem;
+	width: 3rem;
+	height: 3rem;
+	background-image: url("#{$doodles}/cloud.svg");
+	rotate: 10deg;
+}
+
+// The avatar bobs gently.
+.bubbledew-avatar img {
+	box-shadow: var(--wp--preset--shadow--card);
+	rotate: -4deg;
+	animation: bubbledew-float 6s ease-in-out infinite;
+}
+
+.bubbledew-brand__mark img {
+	box-shadow: var(--wp--preset--shadow--card);
+	rotate: -8deg;
+	transition: rotate 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.bubbledew-brand:hover .bubbledew-brand__mark img {
+	rotate: 8deg;
+}

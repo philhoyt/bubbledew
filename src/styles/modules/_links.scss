@@ -21,3 +21,11 @@ a {
 		outline: none !important;
 	}
 }
+
+// Links inside post and comment content get a wavy underline. The excerpt's
+// "Keep reading" link and buttons are pills and stay out of it.
+:where(.wp-block-post-content, .wp-block-comment-content) a:not(.wp-block-button__link, .wp-block-post-excerpt__more-link) {
+	text-decoration-style: wavy;
+	text-decoration-thickness: 1.5px !important;
+	text-underline-offset: 0.2em;
+}

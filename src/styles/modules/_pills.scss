@@ -1,0 +1,208 @@
+//
+// Module: pills.
+//
+// Toy-like pills: navigation items, category list items, buttons, the
+// excerpt's "Keep reading" link, pagination and the search field. Each pill
+// has a darker lip underneath that squishes on press, and the nav and
+// category pills take a different pastel and a slight tilt from their
+// position. Shared by the front end and the editor.
+//
+
+@use "sass:map";
+
+$pastels: (
+	1: ("fill": "var(--wp--preset--color--butter)", "tilt": "-2deg"),
+	2: ("fill": "var(--wp--preset--color--tertiary)", "tilt": "1.5deg"),
+	3: ("fill": "var(--wp--preset--color--lavender)", "tilt": "-1deg"),
+	4: ("fill": "var(--wp--preset--color--pink)", "tilt": "2deg"),
+	5: ("fill": "var(--wp--preset--color--primary)", "tilt": "-1.5deg"),
+	6: ("fill": "var(--wp--preset--color--secondary)", "tilt": "1deg"),
+);
+
+@mixin lip($fill) {
+	box-shadow: 0 var(--wp--custom--pill--lip) 0 var(--wp--preset--color--contrast-medium);
+	box-shadow: 0 var(--wp--custom--pill--lip) 0 color-mix(in oklab, #{$fill} 82%, black);
+}
+
+@mixin pill {
+	display: inline-flex;
+	gap: 0.4rem;
+	align-items: center;
+	padding: 0.45rem 1.05rem;
+	border-radius: var(--wp--custom--pill--radius);
+	background-color: var(--wp--preset--color--primary);
+	background-color: var(--bubbledew-pill-fill, var(--wp--preset--color--primary));
+	color: var(--wp--preset--color--contrast);
+	font-family: var(--wp--preset--font-family--heading);
+	font-weight: 500;
+	line-height: 1.3;
+	text-decoration: none;
+	rotate: var(--bubbledew-pill-tilt, 0deg);
+	transition:
+		rotate 0.2s cubic-bezier(0.34, 1.56, 0.64, 1),
+		translate 0.2s cubic-bezier(0.34, 1.56, 0.64, 1),
+		box-shadow 0.12s;
+
+	@include lip(var(--bubbledew-pill-fill, var(--wp--preset--color--primary)));
+
+	&:hover,
+	&:focus-visible {
+		color: var(--wp--preset--color--contrast);
+		text-decoration: none;
+		rotate: 0deg;
+		translate: 0 -2px;
+	}
+
+	&:focus-visible {
+		outline: var(--wp--custom--outline--width) var(--wp--custom--outline--style) var(--wp--preset--color--contrast);
+		outline-offset: var(--wp--custom--outline--offset);
+	}
+
+	&:active {
+		translate: 0 2px;
+		box-shadow: 0 1px 0 var(--wp--preset--color--contrast-medium);
+	}
+}
+
+// ------------------------------------------------------------- navigation
+
+.bubbledew-pills.wp-block-navigation {
+	.wp-block-navigation__container > .wp-block-navigation-item > .wp-block-navigation-item__content {
+		@include pill;
+
+		font-size: var(--wp--preset--font-size--s);
+	}
+
+	@each $i, $pill in $pastels {
+		.wp-block-navigation__container > .wp-block-navigation-item:nth-child(6n + #{$i}) > .wp-block-navigation-item__content {
+			--bubbledew-pill-fill: #{map.get($pill, "fill")};
+			--bubbledew-pill-tilt: #{map.get($pill, "tilt")};
+		}
+	}
+
+	// The current page's pill gets a cream ring inside its edge.
+	.wp-block-navigation__container > .current-menu-item > .wp-block-navigation-item__content {
+		box-shadow:
+			0 var(--wp--custom--pill--lip) 0 var(--wp--preset--color--contrast-medium),
+			inset 0 0 0 2px var(--wp--preset--color--surface);
+	}
+
+	// The lip needs room below each item.
+	.wp-block-navigation__container {
+		row-gap: calc(var(--wp--preset--spacing--xs) + var(--wp--custom--pill--lip));
+	}
+}
+
+// ------------------------------------------------------- category pills
+
+.bubbledew-pills.wp-block-categories-list {
+	display: flex;
+	flex-wrap: wrap;
+	gap: calc(0.5rem + var(--wp--custom--pill--lip)) 0.55rem;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+
+	li {
+		@include pill;
+
+		margin: 0;
+		font-size: var(--wp--preset--font-size--s);
+	}
+
+	@each $i, $pill in $pastels {
+		li:nth-child(6n + #{$i}) {
+			--bubbledew-pill-fill: #{map.get($pill, "fill")};
+			--bubbledew-pill-tilt: #{map.get($pill, "tilt")};
+		}
+	}
+
+	a {
+		color: inherit;
+		text-decoration: none;
+	}
+
+	a:hover,
+	a:focus-visible {
+		text-decoration: underline;
+	}
+}
+
+// ---------------------------------------------------------------- buttons
+
+.wp-block-button__link,
+.wp-block-search__button,
+.wp-block-post-excerpt__more-link {
+	border-radius: var(--wp--custom--pill--radius);
+	transition:
+		translate 0.12s,
+		box-shadow 0.12s;
+
+	@include lip(var(--wp--preset--color--primary));
+
+	&:hover {
+		animation: bubbledew-wobble 0.5s ease-in-out;
+	}
+
+	&:active {
+		translate: 0 2px;
+		box-shadow: 0 1px 0 var(--wp--preset--color--contrast-medium);
+	}
+}
+
+.wp-block-post-excerpt__more-link {
+	@include pill;
+
+	font-size: var(--wp--preset--font-size--s);
+}
+
+// ------------------------------------------------------------- pagination
+
+.bubbledew-pagination {
+	.wp-block-query-pagination-previous,
+	.wp-block-query-pagination-next,
+	.wp-block-query-pagination-numbers .page-numbers {
+		@include pill;
+
+		font-size: var(--wp--preset--font-size--s);
+	}
+
+	.wp-block-query-pagination-previous {
+		--bubbledew-pill-fill: var(--wp--preset--color--secondary);
+		--bubbledew-pill-tilt: -1.5deg;
+	}
+
+	.wp-block-query-pagination-next {
+		--bubbledew-pill-fill: var(--wp--preset--color--tertiary);
+		--bubbledew-pill-tilt: 1.5deg;
+	}
+
+	.wp-block-query-pagination-numbers {
+		display: inline-flex;
+		flex-wrap: wrap;
+		gap: 0.4rem;
+
+		.page-numbers {
+			--bubbledew-pill-fill: var(--wp--preset--color--surface);
+		}
+
+		.page-numbers.current {
+			--bubbledew-pill-fill: var(--wp--preset--color--butter);
+		}
+
+		.page-numbers.dots {
+			box-shadow: none;
+			background: none;
+		}
+	}
+}
+
+// ----------------------------------------------------------------- search
+
+.bubbledew-widget .wp-block-search__input {
+	border: 0;
+	border-radius: var(--wp--custom--pill--radius);
+	background-color: var(--wp--preset--color--base);
+	box-shadow: inset 0 2px 0 rgb(120 80 50 / 8%);
+	padding-inline: 1.05rem;
+}

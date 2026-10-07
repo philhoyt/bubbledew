@@ -1,0 +1,69 @@
+//
+// Module: blobs.
+//
+// Pebble-shaped corners. Every card gets uneven radii that change with its
+// position in the list, so no two neighbours are the same shape. Shared by the
+// front end and the editor.
+//
+// `corner-shape: squircle` turns the rounded corners into superellipses where
+// the browser supports it (Chromium at the time of writing); everywhere else
+// the plain radii are the design, so nothing depends on it.
+//
+// The repeating sibling is the post template's `li.wp-block-post` and the
+// sidebar's widget Group, not the card Group inside the `li`, which has no
+// siblings of its own.
+//
+
+$blobs: (
+	1: "1.75rem 2.5rem 1.6rem 2.25rem / 2.1rem 1.6rem 2.5rem 1.75rem",
+	2: "2.4rem 1.6rem 2.6rem 1.8rem / 1.6rem 2.3rem 1.8rem 2.6rem",
+	3: "1.6rem 2.2rem 2.6rem 1.7rem / 2.4rem 1.7rem 2rem 2.5rem",
+	4: "2.5rem 1.8rem 1.7rem 2.5rem / 1.9rem 2.5rem 2.2rem 1.6rem",
+);
+
+.bubbledew-card,
+.bubbledew-widget {
+	border-radius: var(--wp--custom--card--radius);
+}
+
+@each $i, $radius in $blobs {
+	.wp-block-post-template > .wp-block-post:nth-child(4n + #{$i}) .bubbledew-card,
+	.bubbledew-sidebar > .bubbledew-widget:nth-child(4n + #{$i}) {
+		border-radius: #{$radius};
+	}
+}
+
+// The sticky note keeps its paper corners.
+.bubbledew-sidebar > .bubbledew-widget.is-style-sticky-note {
+	border-radius: 0.6rem 0.9rem 0.7rem 1rem;
+}
+
+.bubbledew-card__image {
+	overflow: hidden;
+	border-radius: 1.2rem 1.6rem 1.1rem 1.5rem / 1.4rem 1.1rem 1.6rem 1.2rem;
+
+	img {
+		border-radius: inherit;
+	}
+}
+
+.bubbledew-avatar img {
+	border-radius: 55% 45% 50% 50% / 45% 55%;
+}
+
+.bubbledew-brand__mark img {
+	border-radius: 48% 52% 45% 55% / 55% 45%;
+}
+
+@supports (corner-shape: squircle) {
+	.bubbledew-card,
+	.bubbledew-widget,
+	.bubbledew-card__image,
+	.bubbledew-avatar img,
+	.bubbledew-brand__mark img,
+	.bubbledew-badge,
+	.wp-block-button__link,
+	.wp-block-post-excerpt__more-link {
+		corner-shape: squircle;
+	}
+}

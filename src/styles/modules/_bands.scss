@@ -1,0 +1,62 @@
+//
+// Module: bands.
+//
+// The header sits on a sky-tinted band and the footer on a leaf-tinted one.
+// Each meets the cream page with a wave instead of a straight edge: a
+// pseudo-element filled with the band colour and masked by an inline SVG
+// wave. Shared by the front end and the editor.
+//
+// The wave hangs outside the band, over the root blockGap and into `main`,
+// so `main` is padded by the wave height at both ends.
+//
+
+@use "../tools/context";
+
+$wave: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 48' preserveAspectRatio='none'%3E%3Cpath d='M0 22C110 46 230 2 360 22S600 46 720 22 960 2 1080 22s250 24 360 0V0H0Z'/%3E%3C/svg%3E");
+
+.bubbledew-band {
+	position: relative;
+	background-color: var(--bubbledew-band-fill, var(--wp--preset--color--contrast-light));
+
+	&::before,
+	&::after {
+		position: absolute;
+		right: 0;
+		left: 0;
+		height: var(--wp--custom--band--wave-height);
+		background-color: inherit;
+		mask: $wave center / 100% 100% no-repeat;
+		pointer-events: none;
+	}
+}
+
+.bubbledew-band--header {
+	--bubbledew-band-fill: color-mix(in oklab, var(--wp--preset--color--secondary) 32%, var(--wp--preset--color--surface));
+
+	&::after {
+		content: "";
+		top: 100%;
+	}
+}
+
+.bubbledew-band--footer {
+	--bubbledew-band-fill: color-mix(in oklab, var(--wp--preset--color--primary) 30%, var(--wp--preset--color--surface));
+
+	&::before {
+		content: "";
+		bottom: 100%;
+		transform: scaleY(-1);
+	}
+}
+
+@include context.is(front) {
+	.wp-site-blocks > main {
+		padding-block: var(--wp--custom--band--wave-height);
+	}
+
+	// The waves paint over main's padding, so both bands sit above it.
+	.wp-site-blocks > footer {
+		position: relative;
+		z-index: 1;
+	}
+}

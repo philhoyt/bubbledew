@@ -12,6 +12,13 @@
 @use "modules/navigation";
 @use "modules/content";
 @use "modules/utilities";
+@use "modules/motion";
+@use "modules/blobs";
+@use "modules/cards";
+@use "modules/pills";
+@use "modules/bands";
+@use "modules/doodles";
+@use "modules/block-styles";
 
 html {
 	scrollbar-gutter: stable;
