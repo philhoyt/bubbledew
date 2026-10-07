@@ -2,14 +2,14 @@
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Bubbledew 0.0.0\n"
+"Project-Id-Version: Bubbledew 0.1.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/bubbledew\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-10-07T13:01:08+00:00\n"
+"POT-Creation-Date: 2026-10-07T17:20:08+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: bubbledew\n"
@@ -21,7 +21,7 @@ msgstr ""
 
 #. Description of the theme
 #: style.css
-msgid "A custom WordPress Site Editor theme."
+msgid "A whimsical pastel blog theme with pebble-shaped cards, name-tag badges, pill navigation and a sidebar, built from core blocks."
 msgstr ""
 
 #. Author of the theme
@@ -41,10 +41,10 @@ msgstr ""
 
 #: patterns/comments.php
 msgctxt "Pattern description"
-msgid "Comments area with comments list, pagination, and comment form."
+msgid "Comment list with a heading, author lines, comment bubbles, pagination and the comment form."
 msgstr ""
 
-#: patterns/comments.php:19
+#: patterns/comments.php:20
 msgid "Comments"
 msgstr ""
 
@@ -65,7 +65,7 @@ msgstr ""
 
 #: patterns/header.php
 msgctxt "Pattern description"
-msgid "Site header with site title and navigation."
+msgid "Site header on a sky band: logo, highlighted title, speech-bubble tagline and pill navigation."
 msgstr ""
 
 #: patterns/hidden-404.php
@@ -118,6 +118,65 @@ msgstr ""
 msgid "Post navigation"
 msgstr ""
 
+#: patterns/sidebar.php
+msgctxt "Pattern title"
+msgid "Sidebar"
+msgstr ""
+
+#: patterns/sidebar.php
+msgctxt "Pattern description"
+msgid "About card, search, categories, latest posts, a sticky note and archives."
+msgstr ""
+
+#: patterns/sidebar.php:22
+msgid "A round pastel blob with a leaf sprouting from its head"
+msgstr ""
+
+#: patterns/sidebar.php:26
+msgid "Hello there"
+msgstr ""
+
+#: patterns/sidebar.php:30
+msgid "A few lines about who writes here and what the blog is for. Swap the picture for your own."
+msgstr ""
+
+#: patterns/sidebar.php:35
+msgid "More about me"
+msgstr ""
+
+#: patterns/sidebar.php:42
+#: patterns/sidebar.php:45
+msgid "Search"
+msgstr ""
+
+#: patterns/sidebar.php:45
+msgid "Search posts"
+msgstr ""
+
+#: patterns/sidebar.php:45
+msgid "Go"
+msgstr ""
+
+#: patterns/sidebar.php:50
+msgid "Categories"
+msgstr ""
+
+#: patterns/sidebar.php:58
+msgid "Latest posts"
+msgstr ""
+
+#: patterns/sidebar.php:66
+msgid "Right now"
+msgstr ""
+
+#: patterns/sidebar.php:70
+msgid "What you are reading, making or thinking about this week."
+msgstr ""
+
+#: patterns/sidebar.php:76
+msgid "Archives"
+msgstr ""
+
 #: patterns/template-query-loop.php
 msgctxt "Pattern title"
 msgid "Posts list"
@@ -125,10 +184,14 @@ msgstr ""
 
 #: patterns/template-query-loop.php
 msgctxt "Pattern description"
-msgid "Default post list with featured image, title, content, meta, and pagination."
+msgid "Post cards with a category badge, featured image, title, excerpt and meta, followed by pagination."
 msgstr ""
 
-#: patterns/template-query-loop.php:51
+#: patterns/template-query-loop.php:27
+msgid "Keep reading"
+msgstr ""
+
+#: patterns/template-query-loop.php:49
 msgctxt "Message shown when a query returns nothing."
 msgid "No posts were found."
 msgstr ""
@@ -140,22 +203,12 @@ msgstr ""
 
 #: theme.json
 msgctxt "Color name"
+msgid "Surface"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
 msgid "Contrast"
-msgstr ""
-
-#: theme.json
-msgctxt "Color name"
-msgid "Primary"
-msgstr ""
-
-#: theme.json
-msgctxt "Color name"
-msgid "Secondary"
-msgstr ""
-
-#: theme.json
-msgctxt "Color name"
-msgid "Tertiary"
 msgstr ""
 
 #: theme.json
@@ -171,6 +224,41 @@ msgstr ""
 #: theme.json
 msgctxt "Color name"
 msgid "Contrast - Light"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Leaf"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Sky"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Peach"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Butter"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Lavender"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Pink"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Link"
 msgstr ""
 
 #: theme.json
@@ -245,7 +333,12 @@ msgstr ""
 
 #: theme.json
 msgctxt "Font family name"
-msgid "System Font"
+msgid "Nunito"
+msgstr ""
+
+#: theme.json
+msgctxt "Font family name"
+msgid "Fredoka"
 msgstr ""
 
 #: theme.json
@@ -294,6 +387,16 @@ msgid "3X-Large"
 msgstr ""
 
 #: theme.json
+msgctxt "Shadow name"
+msgid "Card"
+msgstr ""
+
+#: theme.json
+msgctxt "Shadow name"
+msgid "Lift"
+msgstr ""
+
+#: theme.json
 msgctxt "Custom template name"
 msgid "Page without title"
 msgstr ""
@@ -306,4 +409,9 @@ msgstr ""
 #: theme.json
 msgctxt "Template part name"
 msgid "Footer"
+msgstr ""
+
+#: theme.json
+msgctxt "Template part name"
+msgid "Sidebar"
 msgstr ""
