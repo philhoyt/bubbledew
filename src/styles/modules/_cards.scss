@@ -174,6 +174,11 @@ $fills: (
 	margin-block: 0;
 }
 
+// Room between the picture and the title; the group's gap alone is too tight.
+.bubbledew-card__image + .bubbledew-card__title {
+	margin-block-start: var(--wp--preset--spacing--m);
+}
+
 .bubbledew-card__excerpt .wp-block-post-excerpt__more-text {
 	margin-block: var(--wp--preset--spacing--s) 0;
 }
