@@ -24,6 +24,18 @@ html {
 	scrollbar-gutter: stable;
 }
 
+/*
+* Crossfade between pages, as in the sibling themes. A progressive enhancement:
+* browsers without cross-document view transitions ignore the at-rule, and it
+* only applies to same-origin navigations. Gated on the OS motion preference,
+* like every other animation in the theme.
+*/
+@media (prefers-reduced-motion: no-preference) {
+	@view-transition {
+		navigation: auto;
+	}
+}
+
 /* Focus styles */
 :where(.wp-site-blocks *:focus) {
 	outline-width: var(--wp--custom--outline--width);
