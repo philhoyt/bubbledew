@@ -1,0 +1,17 @@
+//
+// Editor stylesheet.
+//
+
+// Set the context to editor; every module that uses tools/context inherits it.
+@use 'tools/context' with (
+	$context: editor,
+);
+
+// Import base styles.
+@use 'base/global/admin-bar';
+
+// Import modules. Front-only rules inside them are skipped by the context.
+@use 'modules/site';
+@use 'modules/forms';
+@use 'modules/links';
+@use 'modules/utilities';

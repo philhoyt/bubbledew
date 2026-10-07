@@ -1,0 +1,73 @@
+{
+  "name": "bubbledew",
+  "description": "A custom WordPress Site Editor theme.",
+  "version": "0.0.0",
+  "scripts": {
+    "start": "wp-scripts start --experimental-modules",
+    "build": "wp-scripts build --experimental-modules",
+    "format": "wp-scripts format",
+    "format:check": "prettier --check \"**/*.{js,json,md}\"",
+    "lint:js": "wp-scripts lint-js",
+    "lint:scss": "stylelint 'src/**/*.scss' --formatter verbose",
+    "lint:scss:fix": "stylelint 'src/**/*.scss' --fix",
+    "lint:php": "composer run-script lint",
+    "lint:php:fix": "composer run-script lint-fix",
+    "packages-update": "wp-scripts packages-update",
+    "screenshot": "node bin/screenshot.js",
+    "validate:blocks": "node bin/validate-blocks.js",
+    "wp-env:start": "wp-env start",
+    "wp-env:stop": "wp-env stop",
+    "patterns:flush": "bin/wp.sh eval-file bin/flush-patterns.php",
+    "export:templates": "bin/wp.sh eval-file bin/export-templates.php",
+    "export:templates:write": "bin/wp.sh eval-file bin/export-templates.php write && npm run validate:blocks",
+    "export:templates:delete": "npm run validate:blocks && bin/wp.sh eval-file bin/export-templates.php delete",
+    "seed": "bin/wp.sh eval-file bin/seed-content.php",
+    "review:start": "mkdir -p build/bubbledew-check && wp-env start --config=.wp-env.review.json",
+    "review:stop": "wp-env stop --config=.wp-env.review.json",
+    "review:import": "wp-env run cli --config=.wp-env.review.json bash -c \"curl -sL https://raw.githubusercontent.com/WordPress/theme-test-data/master/themeunittestdata.wordpress.xml -o /tmp/tut.xml && wp import /tmp/tut.xml --authors=create\"",
+    "review:check": "npm run build && mkdir -p build/bubbledew-check && rsync -a --delete --exclude-from=.distignore --exclude=build ./ build/bubbledew-check/ && wp-env run cli --config=.wp-env.review.json wp theme-check run bubbledew-check",
+    "test:smoke": "node bin/smoke.js",
+    "check:a11y": "node bin/check-a11y.js"
+  },
+  "overrides": {
+    "@sentry/node": {
+      "minimatch": "9.0.9"
+    },
+    "@typescript-eslint/typescript-estree": {
+      "minimatch": "9.0.9"
+    },
+    "markdownlint-cli": {
+      "minimatch": "3.1.5"
+    },
+    "serialize-javascript": "7.0.5",
+    "webpack-dev-server": "5.2.3"
+  },
+  "devDependencies": {
+    "@stylistic/stylelint-plugin": "^5.3.1",
+    "@wordpress/block-library": "^11.1.0",
+    "@wordpress/blocks": "^16.1.0",
+    "@wordpress/dependency-extraction-webpack-plugin": "^6.43.0",
+    "@wordpress/env": "^11.16.0",
+    "@wordpress/scripts": "^36.1.0",
+    "axe-core": "^4.14.0",
+    "editorconfig": "^3.0.1",
+    "jsdom": "^30.1.2",
+    "mini-css-extract-plugin": "^2.9.4",
+    "prettier": "^3.0.0",
+    "puppeteer": "^25.12.0",
+    "sass": "^1.86.3",
+    "stylelint": "^17.16.0",
+    "stylelint-config-standard-scss": "^17.0.0"
+  },
+  "validateBlocks": {
+    "allow": []
+  },
+  "engines": {
+    "node": "^22.22.2 || ^24.15.0 || >=26.0.0"
+  },
+  "allowScripts": {
+    "puppeteer": true,
+    "core-js": false,
+    "core-js-pure": false
+  }
+}

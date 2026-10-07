@@ -1,0 +1,60 @@
+# NPM
+node_modules
+
+# Packages
+*.7z
+*.dmg
+*.gz
+*.bz2
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+*.tgz
+*.map
+
+# Logs and databases
+*.log
+*.sql
+*.env
+
+# OS generated files
+.DS_Store
+ehthumbs.db
+Icon?
+![iI]con[_a-zA-Z0-9]
+Thumbs.db
+._*
+
+# Vim generated files
+*.un~
+
+# VSCode Project Files
+.vscode
+
+# PhpStorm Project Files
+.idea
+
+# PHPCS
+/wpcs
+
+# Composer
+/vendor
+
+# Compiled Files
+/dist
+.windsurfrules
+
+# Local audit/scope plans (not for commit)
+/plans
+
+# Claude Code — machine-specific session permissions, not shared
+.claude/settings.local.json
+
+# wp-env — per-machine overrides
+.wp-env.override.json
+.wp-env.*.override.json
+
+# Release and Theme Check staging
+/build

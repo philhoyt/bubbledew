@@ -1,0 +1,77 @@
+//
+// Front-end stylesheet.
+//
+
+// Import base styles.
+@use "base/global/admin-bar";
+
+// Import modules.
+@use "modules/site";
+@use "modules/forms";
+@use "modules/links";
+@use "modules/navigation";
+@use "modules/content";
+@use "modules/utilities";
+
+html {
+	scrollbar-gutter: stable;
+}
+
+/* Focus styles */
+:where(.wp-site-blocks *:focus) {
+	outline-width: var(--wp--custom--outline--width);
+	outline-style: var(--wp--custom--outline--style);
+	outline-color: var(--wp--preset--color--tertiary);
+}
+
+/* Increase the bottom margin on submenus, so that the outline is visible. */
+.wp-block-navigation .wp-block-navigation-submenu .wp-block-navigation-item:not(:last-child) {
+	margin-bottom: 3px;
+}
+
+/* Increase the outline offset on the parent menu items, so that the outline does not touch the text. */
+.wp-block-navigation .wp-block-navigation-item .wp-block-navigation-item__content {
+	outline-offset: 4px;
+}
+
+/* Remove outline offset from the submenus, otherwise the outline is visible outside the submenu container. */
+.wp-block-navigation .wp-block-navigation-item ul.wp-block-navigation__submenu-container .wp-block-navigation-item__content {
+	outline-offset: 0;
+}
+
+/*
+* Progressive enhancement to reduce widows and orphans
+* https://github.com/WordPress/gutenberg/issues/55190
+*/
+h1, h2, h3, h4, h5, h6, blockquote, caption, figcaption, p {
+	text-wrap: pretty;
+}
+
+/*
+* Change the position of the more block on the front, by making it a block level element.
+* https://github.com/WordPress/gutenberg/issues/65934
+*/
+.more-link {
+	display: block;
+}
+
+/*
+* Prevents unnecessary scrollbars while handling long lines of preformatted text.
+* https://core.trac.wordpress.org/ticket/63875
+*/
+:where(pre) {
+	overflow-x: auto;
+}
+
+/*
+* Breathing room when jumping to in-page anchors such as #comments or #respond,
+* so the target does not sit flush with the viewport edge.
+*/
+:target {
+	scroll-margin-block-start: var(--wp--preset--spacing--l);
+}
+
+/* Add spacing between list items. */
+.wp-block-list li {
+	margin-top: 0.5rem;
+}
