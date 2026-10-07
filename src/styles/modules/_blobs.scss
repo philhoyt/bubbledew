@@ -51,6 +51,18 @@ $blobs: (
 	border-radius: 55% 45% 50% 50% / 45% 55%;
 }
 
+// The single post's featured image: a bigger pebble with the card shadow.
+.bubbledew-hero {
+	overflow: hidden;
+	border-radius: 2.2rem 1.6rem 2.4rem 1.8rem / 1.7rem 2.3rem 1.6rem 2.4rem;
+	box-shadow: var(--wp--preset--shadow--card);
+	rotate: -0.6deg;
+
+	img {
+		border-radius: inherit;
+	}
+}
+
 .bubbledew-brand__mark img {
 	border-radius: 48% 52% 45% 55% / 55% 45%;
 }
@@ -59,6 +71,8 @@ $blobs: (
 	.bubbledew-card,
 	.bubbledew-widget,
 	.bubbledew-card__image,
+	.bubbledew-hero,
+	.wp-block-avatar img,
 	.bubbledew-avatar img,
 	.bubbledew-brand__mark img,
 	.bubbledew-badge,

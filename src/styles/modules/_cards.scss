@@ -178,7 +178,8 @@ $fills: (
 	margin-block: var(--wp--preset--spacing--s) 0;
 }
 
-.bubbledew-card__meta {
+.bubbledew-card__meta,
+.bubbledew-meta {
 	font-weight: 700;
 
 	a {
@@ -203,6 +204,11 @@ $fills: (
 		vertical-align: middle;
 		rotate: 15deg;
 	}
+}
+
+// Single post header: the title sits close to its pills and meta.
+.bubbledew-single__header .wp-block-post-title {
+	margin-block: 0;
 }
 
 // Latest posts and archives: blob bullets in rotating pastels.

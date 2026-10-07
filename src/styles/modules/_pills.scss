@@ -135,6 +135,61 @@ $nav-top: ".wp-block-navigation__container > .wp-block-navigation-item, .wp-bloc
 	}
 }
 
+// ---------------------------------------------------- post terms as pills
+
+// Category and tag lists on a single post. The block renders bare links with a
+// ", " separator; the separator is hidden and the flex gap spaces the pills.
+.bubbledew-pills.wp-block-post-terms {
+	display: flex;
+	flex-wrap: wrap;
+	gap: calc(0.4rem + var(--wp--custom--pill--lip)) 0.5rem;
+	align-items: center;
+
+	a {
+		@include pill;
+
+		padding: 0.3rem 0.85rem;
+		font-size: var(--wp--preset--font-size--xs);
+	}
+
+	@each $i, $pill in $pastels {
+		a:nth-of-type(6n + #{$i}) {
+			--bubbledew-pill-fill: #{map.get($pill, "fill")};
+			--bubbledew-pill-tilt: #{map.get($pill, "tilt")};
+		}
+	}
+
+	.wp-block-post-terms__separator {
+		display: none;
+	}
+
+	.wp-block-post-terms__prefix {
+		font-size: var(--wp--preset--font-size--xs);
+		font-weight: 700;
+		color: var(--wp--preset--color--contrast-dark);
+	}
+}
+
+// -------------------------------------------------------- post navigation
+
+.bubbledew-post-nav .wp-block-post-navigation-link a {
+	@include pill;
+
+	max-width: 100%;
+	font-size: var(--wp--preset--font-size--s);
+	text-align: start;
+}
+
+.bubbledew-post-nav .post-navigation-link-previous a {
+	--bubbledew-pill-fill: var(--wp--preset--color--secondary);
+	--bubbledew-pill-tilt: -1.5deg;
+}
+
+.bubbledew-post-nav .post-navigation-link-next a {
+	--bubbledew-pill-fill: var(--wp--preset--color--tertiary);
+	--bubbledew-pill-tilt: 1.5deg;
+}
+
 // ---------------------------------------------------------------- buttons
 
 .wp-block-button__link,
@@ -200,6 +255,42 @@ $nav-top: ".wp-block-navigation__container > .wp-block-navigation-item, .wp-bloc
 		.page-numbers.dots {
 			box-shadow: none;
 			background: none;
+		}
+	}
+}
+
+// ---------------------------------------------------- comments pagination
+
+.wp-block-comments-pagination {
+	.wp-block-comments-pagination-previous,
+	.wp-block-comments-pagination-next,
+	.wp-block-comments-pagination-numbers .page-numbers {
+		@include pill;
+
+		font-size: var(--wp--preset--font-size--xs);
+	}
+
+	.wp-block-comments-pagination-previous {
+		--bubbledew-pill-fill: var(--wp--preset--color--secondary);
+		--bubbledew-pill-tilt: -1.5deg;
+	}
+
+	.wp-block-comments-pagination-next {
+		--bubbledew-pill-fill: var(--wp--preset--color--tertiary);
+		--bubbledew-pill-tilt: 1.5deg;
+	}
+
+	.wp-block-comments-pagination-numbers {
+		display: inline-flex;
+		flex-wrap: wrap;
+		gap: 0.4rem;
+
+		.page-numbers {
+			--bubbledew-pill-fill: var(--wp--preset--color--surface);
+		}
+
+		.page-numbers.current {
+			--bubbledew-pill-fill: var(--wp--preset--color--butter);
 		}
 	}
 }
