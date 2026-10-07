@@ -10,44 +10,69 @@
       "defaultPalette": false,
       "palette": [
         {
-          "color": "#ffffff",
+          "color": "#FFF8EA",
           "name": "Base",
           "slug": "base"
         },
         {
-          "color": "#000000",
+          "color": "#FFFDF8",
+          "name": "Surface",
+          "slug": "surface"
+        },
+        {
+          "color": "#4A3F35",
           "name": "Contrast",
           "slug": "contrast"
         },
         {
-          "color": "#F24C62",
-          "name": "Primary",
-          "slug": "primary"
-        },
-        {
-          "color": "#49C6DD",
-          "name": "Secondary",
-          "slug": "secondary"
-        },
-        {
-          "color": "#005070",
-          "name": "Tertiary",
-          "slug": "tertiary"
-        },
-        {
-          "color": "#434344",
+          "color": "#6F5F51",
           "name": "Contrast - Dark",
           "slug": "contrast-dark"
         },
         {
-          "color": "#C7C4C4",
+          "color": "#D9CDBE",
           "name": "Contrast - Medium",
           "slug": "contrast-medium"
         },
         {
-          "color": "#F7F6F6",
+          "color": "#F3EBDD",
           "name": "Contrast - Light",
           "slug": "contrast-light"
+        },
+        {
+          "color": "#9FDFBF",
+          "name": "Leaf",
+          "slug": "primary"
+        },
+        {
+          "color": "#A9DCF7",
+          "name": "Sky",
+          "slug": "secondary"
+        },
+        {
+          "color": "#FFC3AE",
+          "name": "Peach",
+          "slug": "tertiary"
+        },
+        {
+          "color": "#FFE58A",
+          "name": "Butter",
+          "slug": "butter"
+        },
+        {
+          "color": "#D6C8F5",
+          "name": "Lavender",
+          "slug": "lavender"
+        },
+        {
+          "color": "#FFC9DD",
+          "name": "Pink",
+          "slug": "pink"
+        },
+        {
+          "color": "#24604A",
+          "name": "Link",
+          "slug": "link"
         }
       ]
     },
@@ -551,8 +576,8 @@
     "elements": {
       "button": {
         "color": {
-          "background": "var(--wp--preset--color--contrast)",
-          "text": "var(--wp--preset--color--base)"
+          "background": "var(--wp--preset--color--primary)",
+          "text": "var(--wp--preset--color--contrast)"
         },
         "spacing": {
           "padding": {
@@ -569,17 +594,17 @@
         },
         ":hover": {
           "color": {
-            "background": "var(--wp--preset--color--contrast-dark)",
-            "text": "var(--wp--preset--color--base)"
+            "background": "var(--wp--preset--color--secondary)",
+            "text": "var(--wp--preset--color--contrast)"
           }
         },
         ":focus": {
           "color": {
-            "background": "var(--wp--preset--color--contrast-dark)",
-            "text": "var(--wp--preset--color--base)"
+            "background": "var(--wp--preset--color--secondary)",
+            "text": "var(--wp--preset--color--contrast)"
           },
           "outline": {
-            "color": "var(--wp--preset--color--tertiary)",
+            "color": "var(--wp--preset--color--contrast)",
             "offset": "var(--wp--custom--outline--offset)"
           }
         }
@@ -662,7 +687,7 @@
         },
         ":focus": {
           "outline": {
-            "color": "var(--wp--preset--color--tertiary)",
+            "color": "var(--wp--preset--color--contrast)",
             "offset": "var(--wp--custom--outline--offset)"
           }
         }
@@ -698,30 +723,30 @@
         },
         ":focus": {
           "outline": {
-            "color": "var(--wp--preset--color--tertiary)",
+            "color": "var(--wp--preset--color--contrast)",
             "offset": "var(--wp--custom--outline--offset)"
           }
         }
       },
       "link": {
-        ":focus": {
-          "typography": {
-            "textDecoration": "underline"
-          }
+        "color": {
+          "text": "var(--wp--preset--color--link)"
+        },
+        "typography": {
+          "textDecoration": "underline"
         },
         ":hover": {
           "color": {
-            "text": "inherit"
+            "text": "var(--wp--preset--color--contrast)"
           },
           "typography": {
             "textDecoration": "underline"
           }
         },
-        "color": {
-          "text": "var(--wp--preset--color--contrast)"
-        },
-        "typography": {
-          "textDecoration": "underline"
+        ":focus": {
+          "typography": {
+            "textDecoration": "underline"
+          }
         }
       }
     },

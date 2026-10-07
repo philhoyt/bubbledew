@@ -21,7 +21,7 @@ html {
 :where(.wp-site-blocks *:focus) {
 	outline-width: var(--wp--custom--outline--width);
 	outline-style: var(--wp--custom--outline--style);
-	outline-color: var(--wp--preset--color--tertiary);
+	outline-color: var(--wp--preset--color--contrast);
 }
 
 /* Increase the bottom margin on submenus, so that the outline is visible. */

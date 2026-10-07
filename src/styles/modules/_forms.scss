@@ -7,10 +7,10 @@ textarea,
 select,
 input:where([type="email"], [type="number"], [type="password"], [type="search"], [type="text"], [type="tel"], [type="url"]) {
 	line-height: normal;
-	caret-color: var(--wp--preset--color--tertiary);
+	caret-color: var(--wp--preset--color--contrast);
 
 	&:focus {
-		outline: var(--wp--custom--outline--width) var(--wp--custom--outline--style) var(--wp--preset--color--tertiary);
+		outline: var(--wp--custom--outline--width) var(--wp--custom--outline--style) var(--wp--preset--color--contrast);
 		outline-offset: var(--wp--custom--outline--offset);
 	}
 
@@ -40,7 +40,7 @@ input:where([type="email"], [type="number"], [type="password"], [type="search"],
 	}
 
 	&:where(:focus) {
-		outline: var(--wp--custom--outline--width) var(--wp--custom--outline--style) var(--wp--preset--color--tertiary);
+		outline: var(--wp--custom--outline--width) var(--wp--custom--outline--style) var(--wp--preset--color--contrast);
 		outline-offset: var(--wp--custom--outline--offset);
 	}
 
