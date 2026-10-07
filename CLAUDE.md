@@ -62,11 +62,11 @@ src/styles/
 ├── tools/_context.scss     # front/editor separation mixin
 ├── base/global/            # global resets/base styles
 └── modules/                # feature-specific partials
-    ├── _cards.scss         # post cards and sidebar widgets: tilt, nth-child fills, badge, sticky star, list bullets
+    ├── _cards.scss         # post cards and sidebar widgets: tilt, nth-child fills, badge, sticky-post star, list bullets
     ├── _pills.scss         # nav items, category pills, buttons, excerpt link, pagination, search field
     ├── _blobs.scss         # uneven corner radii per position + corner-shape: squircle
     ├── _bands.scss         # header/footer tinted bands with masked SVG wave edges
-    ├── _doodles.scss       # margin doodles (≥1440px) and card stickers as pseudo-elements
+    ├── _doodles.scss       # margin doodles (≥1440px), bobbing avatar and brand mark
     ├── _block-styles.scss  # the CSS half of the styles/blocks/*.json variations (tail, tape, stripe)
     └── _motion.scss        # the three keyframes and the prefers-reduced-motion switch
 ```
