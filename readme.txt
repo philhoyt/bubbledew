@@ -16,7 +16,7 @@ Bubbledew is a block theme for personal blogs. The posts list sits in a narrow c
 
 Everything is built from core blocks and theme.json, so the Site Editor can change any of it. Everything that gives the theme its look is a block style you can switch on or off in the editor: Card (Group: the tilted pastel post cards and sidebar widgets), Name tag (Post Terms: the category badge across a card's top edge), Pebble (Image, Featured Image, Site Logo), Pills (Navigation, Categories, Post Terms), Blob bullets (Latest Posts, Archives, List), Speech bubble (Group, Paragraph, Site Tagline, Comment Content), Sticky note (Group) and Highlight (Heading, Site Title, Query Title). The header menu uses Pills; a menu without it is a quiet row of text links, which is what the footer uses.
 
-The sidebar is a template part. Replace the picture in its about card with your own and edit the text; the Categories, Latest Posts and Archives blocks fill themselves.
+The sidebar is a template part. Replace the picture in its about card with your own and edit the text; the Categories and Archives blocks fill themselves. There is no Latest Posts widget, since the feed beside it already shows them.
 
 Three colour presets besides the default (Sakura, Dusk and Seaside) share the same palette slugs, so switching between them keeps saved content intact, and every preset is checked against the same contrast table. A Nunito typography preset swaps the Fredoka headings for heavier Nunito ones.
 

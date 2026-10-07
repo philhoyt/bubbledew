@@ -5,7 +5,7 @@
  * Categories: text
  * Block Types: core/template-part/sidebar
  * Inserter: no
- * Description: About card, search, categories, latest posts, a sticky note and archives.
+ * Description: About card, search, categories, a sticky note and archives.
  * Viewport Width: 360
  *
  * @package bubbledew
@@ -51,14 +51,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- /wp:heading -->
 
 <!-- wp:categories {"showPostCounts":true,"className":"is-style-pills"} /--></div>
-<!-- /wp:group -->
-
-<!-- wp:group {"metadata":{"name":"Latest posts"},"className":"is-style-card","style":{"spacing":{"padding":{"top":"var:preset|spacing|m","right":"var:preset|spacing|m","bottom":"var:preset|spacing|m","left":"var:preset|spacing|m"},"blockGap":"var:preset|spacing|s"}},"layout":{"type":"default"}} -->
-<div class="wp-block-group is-style-card" style="padding-top:var(--wp--preset--spacing--m);padding-right:var(--wp--preset--spacing--m);padding-bottom:var(--wp--preset--spacing--m);padding-left:var(--wp--preset--spacing--m)"><!-- wp:heading {"className":"is-style-highlight","fontSize":"m"} -->
-<h2 class="wp-block-heading is-style-highlight has-m-font-size"><?php esc_html_e( 'Latest posts', 'bubbledew' ); ?></h2>
-<!-- /wp:heading -->
-
-<!-- wp:latest-posts {"postsToShow":4,"displayPostDate":true,"className":"is-style-blob-bullets"} /--></div>
 <!-- /wp:group -->
 
 <!-- wp:group {"metadata":{"name":"Right now"},"className":"is-style-sticky-note","style":{"spacing":{"blockGap":"var:preset|spacing|xs"}},"layout":{"type":"default"}} -->

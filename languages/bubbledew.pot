@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-10-07T20:28:21+00:00\n"
+"POT-Creation-Date: 2026-10-07T21:04:45+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: bubbledew\n"
@@ -39,130 +39,6 @@ msgstr ""
 msgid "https://philhoyt.com"
 msgstr ""
 
-#: build/bubbledew-check/patterns/comments.php:20
-#: patterns/comments.php:20
-msgid "Comments"
-msgstr ""
-
-#: build/bubbledew-check/patterns/hidden-404.php:17
-#: patterns/hidden-404.php:17
-msgctxt "404 error page heading"
-msgid "Page not found"
-msgstr ""
-
-#: build/bubbledew-check/patterns/hidden-404.php:21
-#: patterns/hidden-404.php:21
-msgctxt "404 error page body text"
-msgid "The page you are looking for doesn't exist, or it has been moved. Please try searching using the form below."
-msgstr ""
-
-#: build/bubbledew-check/patterns/hidden-search.php:15
-#: patterns/hidden-search.php:15
-msgctxt "Search form label."
-msgid "Search"
-msgstr ""
-
-#: build/bubbledew-check/patterns/hidden-search.php:15
-#: patterns/hidden-search.php:15
-msgctxt "Search input placeholder text."
-msgid "Type here..."
-msgstr ""
-
-#: build/bubbledew-check/patterns/hidden-search.php:15
-#: patterns/hidden-search.php:15
-msgctxt "Search button text. Verb."
-msgid "Search"
-msgstr ""
-
-#: build/bubbledew-check/patterns/post-navigation.php:18
-#: build/bubbledew-check/patterns/post-navigation.php:19
-#: patterns/post-navigation.php:18
-#: patterns/post-navigation.php:19
-msgid "Post navigation"
-msgstr ""
-
-#: build/bubbledew-check/patterns/sidebar.php:22
-#: patterns/sidebar.php:22
-msgid "A round pastel blob with a leaf sprouting from its head"
-msgstr ""
-
-#: build/bubbledew-check/patterns/sidebar.php:26
-#: patterns/sidebar.php:26
-msgid "Hello there"
-msgstr ""
-
-#: build/bubbledew-check/patterns/sidebar.php:30
-#: patterns/sidebar.php:30
-msgid "A few lines about who writes here and what the blog is for. Swap the picture for your own."
-msgstr ""
-
-#: build/bubbledew-check/patterns/sidebar.php:35
-#: patterns/sidebar.php:35
-msgid "More about me"
-msgstr ""
-
-#: build/bubbledew-check/patterns/sidebar.php:42
-#: build/bubbledew-check/patterns/sidebar.php:45
-#: patterns/sidebar.php:42
-#: patterns/sidebar.php:45
-msgid "Search"
-msgstr ""
-
-#: build/bubbledew-check/patterns/sidebar.php:45
-#: patterns/sidebar.php:45
-msgid "Search posts"
-msgstr ""
-
-#: build/bubbledew-check/patterns/sidebar.php:45
-#: patterns/sidebar.php:45
-msgid "Go"
-msgstr ""
-
-#: build/bubbledew-check/patterns/sidebar.php:50
-#: patterns/sidebar.php:50
-msgid "Categories"
-msgstr ""
-
-#: build/bubbledew-check/patterns/sidebar.php:58
-#: patterns/sidebar.php:58
-msgid "Latest posts"
-msgstr ""
-
-#: build/bubbledew-check/patterns/sidebar.php:66
-#: patterns/sidebar.php:66
-#: patterns/sticky-note.php:20
-msgid "Right now"
-msgstr ""
-
-#: build/bubbledew-check/patterns/sidebar.php:70
-#: patterns/sidebar.php:70
-#: patterns/sticky-note.php:24
-msgid "What you are reading, making or thinking about this week."
-msgstr ""
-
-#: build/bubbledew-check/patterns/sidebar.php:76
-#: patterns/sidebar.php:76
-msgid "Archives"
-msgstr ""
-
-#: build/bubbledew-check/patterns/template-query-loop.php:27
-#: patterns/keep-reading.php:20
-#: patterns/template-query-loop.php:27
-msgid "Keep reading"
-msgstr ""
-
-#: build/bubbledew-check/patterns/template-query-loop.php:49
-#: patterns/posts-grid.php:33
-#: patterns/template-query-loop.php:49
-msgctxt "Message shown when a query returns nothing."
-msgid "No posts were found."
-msgstr ""
-
-#: build/bubbledew-check/patterns/template-single.php:37
-#: patterns/template-single.php:37
-msgid "Tagged"
-msgstr ""
-
 #: patterns/comments.php
 msgctxt "Pattern title"
 msgid "Comments"
@@ -171,6 +47,10 @@ msgstr ""
 #: patterns/comments.php
 msgctxt "Pattern description"
 msgid "Comment list with a heading, author lines, comment bubbles, pagination and the comment form."
+msgstr ""
+
+#: patterns/comments.php:20
+msgid "Comments"
 msgstr ""
 
 #: patterns/footer.php
@@ -184,16 +64,16 @@ msgid "Site footer on a leaf band: brand, tagline, a quiet row of links, then co
 msgstr ""
 
 #. translators: %s: WordPress.
-#: patterns/footer.php:47
+#: patterns/footer.php:19
 #, php-format
 msgid "Proudly powered by %s"
 msgstr ""
 
-#: patterns/footer.php:48
+#: patterns/footer.php:20
 msgid "https://wordpress.org/"
 msgstr ""
 
-#: patterns/footer.php:56
+#: patterns/footer.php:63
 msgid "Back to top"
 msgstr ""
 
@@ -212,8 +92,33 @@ msgctxt "Pattern title"
 msgid "404"
 msgstr ""
 
+#: patterns/hidden-404.php:17
+msgctxt "404 error page heading"
+msgid "Page not found"
+msgstr ""
+
+#: patterns/hidden-404.php:21
+msgctxt "404 error page body text"
+msgid "The page you are looking for doesn't exist, or it has been moved. Please try searching using the form below."
+msgstr ""
+
 #: patterns/hidden-search.php
 msgctxt "Pattern title"
+msgid "Search"
+msgstr ""
+
+#: patterns/hidden-search.php:15
+msgctxt "Search form label."
+msgid "Search"
+msgstr ""
+
+#: patterns/hidden-search.php:15
+msgctxt "Search input placeholder text."
+msgid "Type here..."
+msgstr ""
+
+#: patterns/hidden-search.php:15
+msgctxt "Search button text. Verb."
 msgid "Search"
 msgstr ""
 
@@ -225,6 +130,11 @@ msgstr ""
 #: patterns/keep-reading.php
 msgctxt "Pattern description"
 msgid "The three most recent posts, not counting the one being read, as a short list under a highlighted heading."
+msgstr ""
+
+#: patterns/keep-reading.php:20
+#: patterns/template-query-loop.php:27
+msgid "Keep reading"
 msgstr ""
 
 #: patterns/keep-reading.php:34
@@ -264,6 +174,11 @@ msgctxt "Pattern description"
 msgid "Previous and next post links."
 msgstr ""
 
+#: patterns/post-navigation.php:18
+#: patterns/post-navigation.php:19
+msgid "Post navigation"
+msgstr ""
+
 #: patterns/posts-grid.php
 msgctxt "Pattern title"
 msgid "Posts grid"
@@ -274,6 +189,12 @@ msgctxt "Pattern description"
 msgid "The latest posts as two columns of tilted cards with name-tag badges, pebble images, titles and dates."
 msgstr ""
 
+#: patterns/posts-grid.php:33
+#: patterns/template-query-loop.php:49
+msgctxt "Message shown when a query returns nothing."
+msgid "No posts were found."
+msgstr ""
+
 #: patterns/sidebar.php
 msgctxt "Pattern title"
 msgid "Sidebar"
@@ -281,7 +202,54 @@ msgstr ""
 
 #: patterns/sidebar.php
 msgctxt "Pattern description"
-msgid "About card, search, categories, latest posts, a sticky note and archives."
+msgid "About card, search, categories, a sticky note and archives."
+msgstr ""
+
+#: patterns/sidebar.php:22
+msgid "A round pastel blob with a leaf sprouting from its head"
+msgstr ""
+
+#: patterns/sidebar.php:26
+msgid "Hello there"
+msgstr ""
+
+#: patterns/sidebar.php:30
+msgid "A few lines about who writes here and what the blog is for. Swap the picture for your own."
+msgstr ""
+
+#: patterns/sidebar.php:35
+msgid "More about me"
+msgstr ""
+
+#: patterns/sidebar.php:42
+#: patterns/sidebar.php:45
+msgid "Search"
+msgstr ""
+
+#: patterns/sidebar.php:45
+msgid "Search posts"
+msgstr ""
+
+#: patterns/sidebar.php:45
+msgid "Go"
+msgstr ""
+
+#: patterns/sidebar.php:50
+msgid "Categories"
+msgstr ""
+
+#: patterns/sidebar.php:58
+#: patterns/sticky-note.php:20
+msgid "Right now"
+msgstr ""
+
+#: patterns/sidebar.php:62
+#: patterns/sticky-note.php:24
+msgid "What you are reading, making or thinking about this week."
+msgstr ""
+
+#: patterns/sidebar.php:68
+msgid "Archives"
 msgstr ""
 
 #: patterns/sticky-note.php
@@ -314,265 +282,225 @@ msgctxt "Pattern description"
 msgid "Category pills, title, meta row, featured image, content and tags for a single post."
 msgstr ""
 
-#: build/bubbledew-check/theme.json
+#: patterns/template-single.php:37
+msgid "Tagged"
+msgstr ""
+
 #: theme.json
 msgctxt "Color name"
 msgid "Base"
 msgstr ""
 
-#: build/bubbledew-check/theme.json
 #: theme.json
 msgctxt "Color name"
 msgid "Surface"
 msgstr ""
 
-#: build/bubbledew-check/theme.json
 #: theme.json
 msgctxt "Color name"
 msgid "Contrast"
 msgstr ""
 
-#: build/bubbledew-check/theme.json
 #: theme.json
 msgctxt "Color name"
 msgid "Contrast - Dark"
 msgstr ""
 
-#: build/bubbledew-check/theme.json
 #: theme.json
 msgctxt "Color name"
 msgid "Contrast - Medium"
 msgstr ""
 
-#: build/bubbledew-check/theme.json
 #: theme.json
 msgctxt "Color name"
 msgid "Contrast - Light"
 msgstr ""
 
-#: build/bubbledew-check/theme.json
 #: theme.json
 msgctxt "Color name"
 msgid "Leaf"
 msgstr ""
 
-#: build/bubbledew-check/theme.json
 #: theme.json
 msgctxt "Color name"
 msgid "Sky"
 msgstr ""
 
-#: build/bubbledew-check/theme.json
 #: theme.json
 msgctxt "Color name"
 msgid "Peach"
 msgstr ""
 
-#: build/bubbledew-check/theme.json
 #: theme.json
 msgctxt "Color name"
 msgid "Butter"
 msgstr ""
 
-#: build/bubbledew-check/theme.json
 #: theme.json
 msgctxt "Color name"
 msgid "Lavender"
 msgstr ""
 
-#: build/bubbledew-check/theme.json
 #: theme.json
 msgctxt "Color name"
 msgid "Pink"
 msgstr ""
 
-#: build/bubbledew-check/theme.json
 #: theme.json
 msgctxt "Color name"
 msgid "Link"
 msgstr ""
 
-#: build/bubbledew-check/theme.json
 #: theme.json
 msgctxt "Border radius size name"
 msgid "XS"
 msgstr ""
 
-#: build/bubbledew-check/theme.json
 #: theme.json
 msgctxt "Border radius size name"
 msgid "Small"
 msgstr ""
 
-#: build/bubbledew-check/theme.json
 #: theme.json
 msgctxt "Border radius size name"
 msgid "Medium"
 msgstr ""
 
-#: build/bubbledew-check/theme.json
 #: theme.json
 msgctxt "Border radius size name"
 msgid "Large"
 msgstr ""
 
-#: build/bubbledew-check/theme.json
 #: theme.json
 msgctxt "Border radius size name"
 msgid "XL"
 msgstr ""
 
-#: build/bubbledew-check/theme.json
 #: theme.json
 msgctxt "Border radius size name"
 msgid "2XL"
 msgstr ""
 
-#: build/bubbledew-check/theme.json
 #: theme.json
 msgctxt "Border radius size name"
 msgid "3XL"
 msgstr ""
 
-#: build/bubbledew-check/theme.json
 #: theme.json
 msgctxt "Space size name"
 msgid "X-Small"
 msgstr ""
 
-#: build/bubbledew-check/theme.json
 #: theme.json
 msgctxt "Space size name"
 msgid "Small"
 msgstr ""
 
-#: build/bubbledew-check/theme.json
 #: theme.json
 msgctxt "Space size name"
 msgid "Medium"
 msgstr ""
 
-#: build/bubbledew-check/theme.json
 #: theme.json
 msgctxt "Space size name"
 msgid "Large"
 msgstr ""
 
-#: build/bubbledew-check/theme.json
 #: theme.json
 msgctxt "Space size name"
 msgid "X-Large"
 msgstr ""
 
-#: build/bubbledew-check/theme.json
 #: theme.json
 msgctxt "Space size name"
 msgid "2X-Large"
 msgstr ""
 
-#: build/bubbledew-check/theme.json
 #: theme.json
 msgctxt "Space size name"
 msgid "3X-Large"
 msgstr ""
 
-#: build/bubbledew-check/theme.json
 #: theme.json
 msgctxt "Font family name"
 msgid "Nunito"
 msgstr ""
 
-#: build/bubbledew-check/theme.json
 #: theme.json
 msgctxt "Font family name"
 msgid "Fredoka"
 msgstr ""
 
-#: build/bubbledew-check/theme.json
 #: theme.json
 msgctxt "Font size name"
 msgid "3X-Small"
 msgstr ""
 
-#: build/bubbledew-check/theme.json
 #: theme.json
 msgctxt "Font size name"
 msgid "2X-Small"
 msgstr ""
 
-#: build/bubbledew-check/theme.json
 #: theme.json
 msgctxt "Font size name"
 msgid "X-Small"
 msgstr ""
 
-#: build/bubbledew-check/theme.json
 #: theme.json
 msgctxt "Font size name"
 msgid "Small"
 msgstr ""
 
-#: build/bubbledew-check/theme.json
 #: theme.json
 msgctxt "Font size name"
 msgid "Medium"
 msgstr ""
 
-#: build/bubbledew-check/theme.json
 #: theme.json
 msgctxt "Font size name"
 msgid "Large"
 msgstr ""
 
-#: build/bubbledew-check/theme.json
 #: theme.json
 msgctxt "Font size name"
 msgid "X-Large"
 msgstr ""
 
-#: build/bubbledew-check/theme.json
 #: theme.json
 msgctxt "Font size name"
 msgid "2X-Large"
 msgstr ""
 
-#: build/bubbledew-check/theme.json
 #: theme.json
 msgctxt "Font size name"
 msgid "3X-Large"
 msgstr ""
 
-#: build/bubbledew-check/theme.json
 #: theme.json
 msgctxt "Shadow name"
 msgid "Card"
 msgstr ""
 
-#: build/bubbledew-check/theme.json
 #: theme.json
 msgctxt "Shadow name"
 msgid "Lift"
 msgstr ""
 
-#: build/bubbledew-check/theme.json
 #: theme.json
 msgctxt "Custom template name"
 msgid "Page without title"
 msgstr ""
 
-#: build/bubbledew-check/theme.json
 #: theme.json
 msgctxt "Template part name"
 msgid "Header"
 msgstr ""
 
-#: build/bubbledew-check/theme.json
 #: theme.json
 msgctxt "Template part name"
 msgid "Footer"
 msgstr ""
 
-#: build/bubbledew-check/theme.json
 #: theme.json
 msgctxt "Template part name"
 msgid "Sidebar"

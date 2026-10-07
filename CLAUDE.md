@@ -268,10 +268,10 @@ theme at `wp-content/themes/bubbledew`, so it is active under its text-domain sl
 User-facing strings live in `patterns/*.php` wrapped in `esc_html__()`, `esc_html_e()`, `esc_html_x()`, or `esc_attr_x()` with the `bubbledew` text domain. To regenerate `languages/bubbledew.pot`:
 
 ```bash
-wp i18n make-pot . languages/bubbledew.pot --include="templates,parts,patterns,inc,theme.json"
+wp i18n make-pot . languages/bubbledew.pot --include="templates,parts,patterns,inc,theme.json" --exclude="build,node_modules,vendor,dist"
 ```
 
-The `--include` paths cover both PHP source and any patterns/templates that might pick up additional strings as the theme grows; `theme.json` carries the custom template titles.
+The `--include` paths cover both PHP source and any patterns/templates that might pick up additional strings as the theme grows; `theme.json` carries the custom template titles. `--exclude=build` matters: `npm run review:check` stages a copy of the theme under `build/`, and without the exclusion every string is extracted twice, once from the stale copy.
 
 ## Gotchas
 
