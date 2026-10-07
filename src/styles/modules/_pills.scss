@@ -308,6 +308,18 @@ $nav-top: ".wp-block-navigation__container > .wp-block-navigation-item, .wp-bloc
 	}
 }
 
+// ----------------------------------------------------------------- footer
+
+.bubbledew-footer__top {
+	@include pill;
+
+	--bubbledew-pill-fill: var(--wp--preset--color--surface);
+	--bubbledew-pill-tilt: 2deg;
+
+	padding: 0.3rem 0.85rem;
+	font-size: var(--wp--preset--font-size--xs);
+}
+
 // ----------------------------------------------------------------- search
 
 .bubbledew-widget .wp-block-search__input {

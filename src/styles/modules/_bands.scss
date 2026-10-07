@@ -60,3 +60,31 @@ $wave: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox
 		z-index: 1;
 	}
 }
+
+// Footer rows: the brand column keeps its width, the navigation wraps beside it.
+.bubbledew-footer__brand {
+	max-width: 22rem;
+}
+
+.bubbledew-footer__nav {
+	flex: 0 1 auto;
+	max-width: 100%;
+	align-items: flex-end;
+	text-align: end;
+
+	// On a phone the navigation drops under the brand and lines up with it.
+	@media (width < 600px) {
+		align-items: flex-start;
+		text-align: start;
+
+		.wp-block-navigation__container {
+			justify-content: flex-start;
+		}
+	}
+}
+
+.bubbledew-footer__rule {
+	height: 2px;
+	border: 0;
+	opacity: 0.8;
+}
