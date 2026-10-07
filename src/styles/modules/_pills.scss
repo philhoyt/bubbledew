@@ -66,29 +66,36 @@ $pastels: (
 
 // ------------------------------------------------------------- navigation
 
+// Top-level items only (submenu items stay plain). On the front end core
+// unwraps the Page List so its items are direct children of the container; in
+// the editor they sit inside a nested `ul.wp-block-page-list`, hence the two
+// selectors.
+$nav-top: ".wp-block-navigation__container > .wp-block-navigation-item, .wp-block-navigation__container > .wp-block-page-list > .wp-block-navigation-item";
+
 .bubbledew-pills.wp-block-navigation {
-	.wp-block-navigation__container > .wp-block-navigation-item > .wp-block-navigation-item__content {
+	:is(#{$nav-top}) > .wp-block-navigation-item__content {
 		@include pill;
 
 		font-size: var(--wp--preset--font-size--s);
 	}
 
 	@each $i, $pill in $pastels {
-		.wp-block-navigation__container > .wp-block-navigation-item:nth-child(6n + #{$i}) > .wp-block-navigation-item__content {
+		:is(#{$nav-top}):nth-child(6n + #{$i}) > .wp-block-navigation-item__content {
 			--bubbledew-pill-fill: #{map.get($pill, "fill")};
 			--bubbledew-pill-tilt: #{map.get($pill, "tilt")};
 		}
 	}
 
 	// The current page's pill gets a cream ring inside its edge.
-	.wp-block-navigation__container > .current-menu-item > .wp-block-navigation-item__content {
+	:is(#{$nav-top}).current-menu-item > .wp-block-navigation-item__content {
 		box-shadow:
 			0 var(--wp--custom--pill--lip) 0 var(--wp--preset--color--contrast-medium),
 			inset 0 0 0 2px var(--wp--preset--color--surface);
 	}
 
 	// The lip needs room below each item.
-	.wp-block-navigation__container {
+	.wp-block-navigation__container,
+	.wp-block-page-list {
 		row-gap: calc(var(--wp--preset--spacing--xs) + var(--wp--custom--pill--lip));
 	}
 }
