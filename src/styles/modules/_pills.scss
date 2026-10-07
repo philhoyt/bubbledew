@@ -172,20 +172,32 @@ $nav-top: ".wp-block-navigation__container > .wp-block-navigation-item, .wp-bloc
 
 // -------------------------------------------------------- post navigation
 
-.bubbledew-post-nav .wp-block-post-navigation-link a {
+// The arrow is a span beside the link, so the pill goes on the wrapper and
+// the link inherits its colour.
+.bubbledew-post-nav .wp-block-post-navigation-link {
 	@include pill;
 
 	max-width: 100%;
 	font-size: var(--wp--preset--font-size--s);
 	text-align: start;
+
+	a {
+		color: inherit;
+		text-decoration: none;
+	}
+
+	&:hover a,
+	a:focus-visible {
+		text-decoration: underline;
+	}
 }
 
-.bubbledew-post-nav .post-navigation-link-previous a {
+.bubbledew-post-nav .post-navigation-link-previous {
 	--bubbledew-pill-fill: var(--wp--preset--color--secondary);
 	--bubbledew-pill-tilt: -1.5deg;
 }
 
-.bubbledew-post-nav .post-navigation-link-next a {
+.bubbledew-post-nav .post-navigation-link-next {
 	--bubbledew-pill-fill: var(--wp--preset--color--tertiary);
 	--bubbledew-pill-tilt: 1.5deg;
 }
