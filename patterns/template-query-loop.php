@@ -20,7 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- wp:group {"metadata":{"name":"Post card"},"className":"is-style-card","style":{"spacing":{"padding":{"top":"var:preset|spacing|l","right":"var:preset|spacing|m","bottom":"var:preset|spacing|m","left":"var:preset|spacing|m"},"blockGap":"var:preset|spacing|s"}},"layout":{"type":"default"}} -->
 <div class="wp-block-group is-style-card" style="padding-top:var(--wp--preset--spacing--l);padding-right:var(--wp--preset--spacing--m);padding-bottom:var(--wp--preset--spacing--m);padding-left:var(--wp--preset--spacing--m)"><!-- wp:post-terms {"term":"category","className":"is-style-name-tag"} /-->
 
-<!-- wp:post-featured-image {"aspectRatio":"16/9","className":"is-style-pebble"} /-->
+<!-- wp:post-featured-image {"isLink":true,"aspectRatio":"16/9","className":"is-style-pebble"} /-->
 
 <!-- wp:post-title {"isLink":true,"fontSize":"xl"} /-->
 
