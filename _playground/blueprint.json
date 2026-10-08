@@ -43,7 +43,7 @@
       "step": "importWxr",
       "file": {
         "resource": "url",
-        "url": "https://raw.githubusercontent.com/philhoyt/bubbledew/main/.github/demo.xml"
+        "url": "https://raw.githubusercontent.com/philhoyt/bubbledew/main/_playground/demo.xml"
       },
       "defaultAuthorUsername": "admin"
     },

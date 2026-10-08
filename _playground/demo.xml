@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!-- Demo content for Bubbledew: six posts, two pages, a few comments. Imported by the
-     Playground blueprint (.github/blueprint.json) and by `npm run demo` for screenshots. -->
+     Playground blueprint (_playground/blueprint.json) and by `npm run demo` for screenshots. -->
 <rss version="2.0"
 	xmlns:excerpt="http://wordpress.org/export/1.2/excerpt/"
 	xmlns:content="http://purl.org/rss/1.0/modules/content/"

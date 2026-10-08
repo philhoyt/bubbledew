@@ -17,6 +17,7 @@ src
 bin
 docs
 plans
+_playground
 *.zip
 *.map
 package.json

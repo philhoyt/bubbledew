@@ -1,5 +1,7 @@
 # Bubbledew
 
+[![Playground Demo](https://img.shields.io/badge/Playground_Demo-blue?logo=wordpress&logoColor=%23fff&labelColor=%233858e9&color=%23386be9)](https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/philhoyt/bubbledew/main/_playground/blueprint.json)
+
 A whimsical pastel blog theme for the WordPress Site Editor: a narrow two-column feed of tilted cards with name-tag badges, single-column posts with speech-bubble comments, and Fredoka and Nunito bundled as local fonts.
 
 The posts list sits in a 640px column on the left with a 300px sidebar on the right inside a 1080px shell. Templates and parts under `templates/` and `parts/` are thin shells; the block markup lives in PHP patterns under `patterns/` so strings can be translated. Everything is core blocks and `theme.json`. See `CLAUDE.md` for the architecture notes and `readme.txt` for the directory readme.
@@ -35,18 +37,18 @@ Then copy or symlink this folder into `wp-content/themes/bubbledew` and activate
 
 ## Development
 
-| Command                                                    | Purpose                                                                                                                                         |
-| ---------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
-| `npm run start`                                            | Build `src/` into `dist/` and watch for changes                                                                                                 |
-| `npm run build`                                            | Production build                                                                                                                                |
-| `npm run lint:js`, `npm run lint:scss`, `npm run lint:php` | ESLint, Stylelint, PHP_CodeSniffer                                                                                                              |
-| `composer analyse`                                         | PHPStan                                                                                                                                         |
-| `npm run validate:blocks`                                  | Parse patterns, templates and parts with the core block registry                                                                                |
-| `npm run test:smoke`, `npm run check:a11y`                 | Templates at desktop and phone widths; axe-core WCAG 2.1 A/AA                                                                                   |
-| `npm run review:check`                                     | Theme Check on a `.distignore`-staged copy                                                                                                      |
-| `npm run check:contrast`                                   | Every colour preset against the theme's text contrast pairs                                                                                     |
-| `npm run demo`                                             | Import the demo posts from `.github/demo.xml` and finish them the way the Playground blueprint does (`-- --clean` resets the wp-env site first) |
-| `npm run format`                                           | Prettier                                                                                                                                        |
+| Command                                                    | Purpose                                                                                                                                             |
+| ---------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `npm run start`                                            | Build `src/` into `dist/` and watch for changes                                                                                                     |
+| `npm run build`                                            | Production build                                                                                                                                    |
+| `npm run lint:js`, `npm run lint:scss`, `npm run lint:php` | ESLint, Stylelint, PHP_CodeSniffer                                                                                                                  |
+| `composer analyse`                                         | PHPStan                                                                                                                                             |
+| `npm run validate:blocks`                                  | Parse patterns, templates and parts with the core block registry                                                                                    |
+| `npm run test:smoke`, `npm run check:a11y`                 | Templates at desktop and phone widths; axe-core WCAG 2.1 A/AA                                                                                       |
+| `npm run review:check`                                     | Theme Check on a `.distignore`-staged copy                                                                                                          |
+| `npm run check:contrast`                                   | Every colour preset against the theme's text contrast pairs                                                                                         |
+| `npm run demo`                                             | Import the demo posts from `_playground/demo.xml` and finish them the way the Playground blueprint does (`-- --clean` resets the wp-env site first) |
+| `npm run format`                                           | Prettier                                                                                                                                            |
 
 ## Releases
 
@@ -58,9 +60,9 @@ git tag v1.2.0 && git push origin v1.2.0
 
 `.github/workflows/release.yml` checks the tag against those three version strings, builds the theme, stages it through `.distignore`, zips it with a single `bubbledew/` root and attaches `bubbledew.zip` to a GitHub release. The theme directory takes that same zip as a manual upload.
 
-Once a release exists, the theme can be tried in WordPress Playground without installing anything. `.github/blueprint.json` installs the latest release zip, imports the demo posts from `.github/demo.xml` and gives them pastel featured images:
+Once a release exists, the theme can be tried in WordPress Playground without installing anything. `_playground/blueprint.json` installs the latest release zip, imports the demo posts from `_playground/demo.xml` and gives them pastel featured images:
 
-[Open Bubbledew in Playground](https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/philhoyt/bubbledew/main/.github/blueprint.json)
+[Open Bubbledew in Playground](https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/philhoyt/bubbledew/main/_playground/blueprint.json)
 
 ## Limitations
 
