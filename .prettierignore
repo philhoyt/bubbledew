@@ -29,3 +29,6 @@ composer.lock
 
 # Claude Code hook scripts (single-quoted, kept in step with the wordpress plugin)
 .claude/scripts/
+
+# Theme Unit Test content sweep from the wordpress plugin: WordPress spacing, kept out of ESLint too
+bin/check-test-content.js
