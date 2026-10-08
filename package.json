@@ -29,7 +29,8 @@
     "test:smoke": "node bin/smoke.js",
     "check:a11y": "node bin/check-a11y.js",
     "check:contrast": "node bin/check-contrast.js",
-    "demo": "node bin/demo.js"
+    "demo": "node bin/demo.js",
+    "check:test-content": "node bin/check-test-content.js"
   },
   "overrides": {
     "@sentry/node": {
