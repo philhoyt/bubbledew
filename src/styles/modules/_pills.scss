@@ -178,7 +178,13 @@ $nav-top: ".wp-block-navigation__container > .wp-block-navigation-item, .wp-bloc
 // -------------------------------------------------------- post navigation
 
 // The arrow is a span beside the link, so the pill goes on the wrapper and
-// the link inherits its colour.
+// the link inherits its colour. Core still renders the wrapper when there is
+// no post to link to (the newest post has no "next"), which would leave an
+// empty pill, so an empty wrapper is hidden.
+.wp-block-post-navigation-link:empty {
+	display: none;
+}
+
 .wp-block-post-navigation-link {
 	@include pill;
 
