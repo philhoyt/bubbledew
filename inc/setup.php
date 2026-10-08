@@ -239,8 +239,8 @@ add_filter( 'render_block_core/post-navigation-link', __NAMESPACE__ . '\\fill_em
 /**
  * Use the same date in the browser tab title of an untitled post.
  *
- * wp_get_document_title() reads the post title through single_post_title(),
- * which does not run the_title, so the tab would show only the site name.
+ * The document title reads the post title through single_post_title(), which
+ * does not run the_title, so the tab would show only the site name.
  *
  * @since 1.2.1
  * @param array $parts Document title parts.
