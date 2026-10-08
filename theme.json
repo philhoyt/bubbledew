@@ -114,6 +114,9 @@
       "band": {
         "waveHeight": "2.75rem"
       },
+      "code": {
+        "fontFamily": "ui-monospace, SFMono-Regular, Menlo, Consolas, \"Liberation Mono\", monospace"
+      },
       "quote": {
         "fill": "color-mix(in oklab, var(--wp--preset--color--lavender) 35%, var(--wp--preset--color--surface))",
         "mark": "color-mix(in oklab, var(--wp--preset--color--lavender) 40%, var(--wp--preset--color--contrast))"
@@ -451,6 +454,50 @@
       "core/site-tagline": {
         "typography": {
           "fontSize": "var(--wp--preset--font-size--m)"
+        }
+      },
+      "core/code": {
+        "border": {
+          "radius": "var(--wp--preset--border-radius--2-xl)"
+        },
+        "color": {
+          "background": "var(--wp--preset--color--contrast-light)",
+          "text": "var(--wp--preset--color--contrast)"
+        },
+        "spacing": {
+          "padding": {
+            "top": "var(--wp--preset--spacing--s)",
+            "right": "var(--wp--preset--spacing--m)",
+            "bottom": "var(--wp--preset--spacing--s)",
+            "left": "var(--wp--preset--spacing--m)"
+          }
+        },
+        "typography": {
+          "fontFamily": "var(--wp--custom--code--font-family)",
+          "fontSize": "var(--wp--preset--font-size--xs)",
+          "lineHeight": "1.6"
+        }
+      },
+      "core/preformatted": {
+        "border": {
+          "radius": "var(--wp--preset--border-radius--2-xl)"
+        },
+        "color": {
+          "background": "var(--wp--preset--color--contrast-light)",
+          "text": "var(--wp--preset--color--contrast)"
+        },
+        "spacing": {
+          "padding": {
+            "top": "var(--wp--preset--spacing--s)",
+            "right": "var(--wp--preset--spacing--m)",
+            "bottom": "var(--wp--preset--spacing--s)",
+            "left": "var(--wp--preset--spacing--m)"
+          }
+        },
+        "typography": {
+          "fontFamily": "var(--wp--custom--code--font-family)",
+          "fontSize": "var(--wp--preset--font-size--xs)",
+          "lineHeight": "1.6"
         }
       },
       "core/quote": {

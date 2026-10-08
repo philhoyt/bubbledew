@@ -1,0 +1,46 @@
+//
+// Module: classic.
+//
+// The look of the Code, Preformatted and Table blocks, given to the same
+// elements typed into the classic editor or a comment. theme.json block
+// styles and core's block CSS never reach markup without the block class.
+// Elements with a class of their own (plugin output, embeds) are left alone.
+// The quote counterpart lives in the quotes module.
+//
+
+$content: ":where(.wp-block-post-content, .wp-block-comment-content)";
+
+// A <pre> gets the box theme.json gives the Code and Preformatted blocks.
+#{$content} pre:not([class]) {
+	padding:
+		var(--wp--preset--spacing--s)
+		var(--wp--preset--spacing--m);
+	border-radius: var(--wp--preset--border-radius--2-xl);
+	background-color: var(--wp--preset--color--contrast-light);
+	color: var(--wp--preset--color--contrast);
+	font-family: var(--wp--custom--code--font-family);
+	font-size: var(--wp--preset--font-size--xs);
+	line-height: 1.6;
+}
+
+// A <table> gets the Table block's cell rules and the heavier rule core puts
+// under the header row and above the footer.
+#{$content} table:not([class]) {
+	width: 100%;
+	border-collapse: collapse;
+
+	th,
+	td {
+		padding: 0.5em;
+		border: 1px solid;
+		word-break: normal;
+	}
+
+	thead {
+		border-bottom: 3px solid;
+	}
+
+	tfoot {
+		border-top: 3px solid;
+	}
+}
