@@ -8,17 +8,17 @@ License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Tags: blog, two-columns, right-sidebar, wide-blocks, custom-colors, custom-logo, custom-menu, editor-style, featured-images, threaded-comments, block-patterns, block-styles, style-variations, full-site-editing, rtl-language-support, translation-ready
 
-A whimsical pastel blog theme: pebble-shaped post cards, name-tag category badges, pill navigation and a sidebar, built from core blocks.
+A whimsical pastel blog theme: pebble-shaped post cards, name-tag category badges, pill navigation and a sidebar, built from core blocks
 
 == Description ==
 
-Bubbledew is a block theme for personal blogs. The posts list sits in a narrow column on the left with a sidebar on the right, and every post is a tilted pastel card with its category on a name tag across the top edge. Single posts and pages are a single reading column. Comments are speech bubbles. Headings are set in Fredoka and body text in Nunito, both shipped with the theme.
+Bubbledew is a block theme for personal blogs. The posts list sits in a narrow column on the left with a sidebar on the right, and every post is a tilted card on the surface colour with its category on a name tag across the top edge. Single posts and pages are a single reading column; under each post come an author card with avatar and biography, a Keep reading list of three other posts, and comments as speech bubbles. Headings are set in Fredoka and body text in Nunito, both shipped with the theme. Pages crossfade in browsers that support cross-document view transitions.
 
-Everything is built from core blocks and theme.json, so the Site Editor can change any of it. Everything that gives the theme its look is a block style you can switch on or off in the editor: Card (Group: the tilted pastel post cards and sidebar widgets), Name tag (Post Terms: the category badge across a card's top edge), Pebble (Image, Featured Image, Site Logo), Pills (Navigation, Categories, Post Terms), Blob bullets (Latest Posts, Archives, List), Speech bubble (Group, Paragraph, Site Tagline, Comment Content), Sticky note (Group) and Highlight (Heading, Site Title, Query Title). The header menu uses Pills; a menu without it is a quiet row of text links, which is what the footer uses.
+The theme is core blocks and theme.json, so the Site Editor can edit its templates, parts and styles. Each look is a block style you can switch on or off per block in the editor: Card (Group: the tilted post cards and sidebar widgets), Name tag (Post Terms: the category badge across a card's top edge), Pebble (Image, Featured Image, Site Logo), Pills (Navigation, Categories, Post Terms), Blob bullets (Latest Posts, Archives, List), Speech bubble (Group, Paragraph, Site Tagline, Comment Content), Sticky note (Group) and Highlight (Heading, Site Title, Query Title). The header menu uses Pills; a menu without it is a row of plain text links, which is what the footer uses.
 
-The sidebar is a template part. Replace the picture in its about card with your own and edit the text; the Categories and Archives blocks fill themselves. There is no Latest Posts widget, since the feed beside it already shows them.
+The sidebar is a template part. Replace the picture in its about card with your own and edit the text; the Categories and Archives blocks fill themselves. There is no Latest Posts widget, since the feed beside it already shows those posts.
 
-Three colour presets besides the default (Sakura, Dusk and Seaside) share the same palette slugs, so switching between them keeps saved content intact, and every preset is checked against the same contrast table. A Nunito typography preset swaps the Fredoka headings for heavier Nunito ones.
+Three colour presets besides the default (Sakura, Dusk and Seaside) share the same palette slugs, so switching between them keeps saved content intact, and each preset is checked against the same contrast table. A Nunito typography preset swaps the Fredoka headings for heavier Nunito ones.
 
 Patterns in the inserter: Keep reading (the three most recent posts, excluding the one being read), Posts grid (two columns of cards), Links in bio (a speech-bubble card with stacked buttons and social icons, for the Page without title template) and Sticky note.
 
@@ -36,7 +36,7 @@ Open the Site Editor, choose Styles, then Colors for the Sakura, Dusk and Seasid
 
 = Can a post card be a particular colour? =
 
-Card, badge and pill colours rotate by position in the list, so a post's colour depends on where it falls. The theme does not assign colours to categories.
+Cards all sit on the surface colour. The name-tag badge and the pills take one of four pastels by position in the list, so a post's badge colour depends on where it falls; the theme does not assign colours to categories.
 
 = Why does a sticky post have a star? =
 
@@ -56,12 +56,12 @@ The theme honours the reduced motion setting of the operating system or browser.
 
 = 1.0.0 =
 * First release for the theme directory.
-* Three colour presets (Sakura, Dusk, Seaside) and a Nunito typography preset, each checked against the same contrast table.
-* Every look is a block style: Card, Name tag, Pebble, Pills, Blob bullets, Speech bubble, Sticky note and Highlight.
-* Patterns: Keep reading (also under every post), Posts grid, Links in bio and Sticky note.
-* Footer with brand, quiet text links, copyright, credit and a back-to-top button.
-* Cards stay on the surface colour; the sidebar no longer repeats the latest posts.
-* Demo content and a Playground blueprint that imports it.
+* Add: Three colour presets (Sakura, Dusk, Seaside) and a Nunito typography preset, each checked against the same contrast table.
+* Add: Block styles for each look: Card, Name tag, Pebble, Pills, Blob bullets, Speech bubble, Sticky note and Highlight.
+* Add: Keep reading (also under every post), Posts grid, Links in bio and Sticky note patterns.
+* Add: Footer with brand, plain text links, copyright, credit and a back-to-top button.
+* Change: Cards stay on the surface colour; the sidebar no longer repeats the latest posts.
+* Add: Demo content and a Playground blueprint that imports it.
 
 = 0.1.0 =
 * Initial release.
