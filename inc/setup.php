@@ -207,3 +207,53 @@ function mark_current_button( $block_content, $block ) {
 	return $processor->get_updated_html();
 }
 add_filter( 'render_block_core/button', __NAMESPACE__ . '\\mark_current_button', 10, 2 );
+
+/**
+ * Fall back to a label when a post navigation link has no title to show.
+ *
+ * Core already prints "Previous Post" or "Next Post" when the neighbouring
+ * post was saved without a title, but it decides that before the_title runs.
+ * A plugin that blanks the title through that filter (status-format posts on
+ * a microblog, for instance) leaves an arrow beside an empty link, which has
+ * no accessible name. An empty link gets a label instead.
+ *
+ * @since 1.2.1
+ * @param string $content Rendered block HTML.
+ * @param array  $block   Parsed block.
+ * @return string
+ */
+function fill_empty_navigation_link( $content, $block ) {
+	if ( '' === $content || false === strpos( $content, '></a>' ) ) {
+		return $content;
+	}
+
+	$type  = isset( $block['attrs']['type'] ) ? $block['attrs']['type'] : 'next';
+	$label = 'previous' === $type
+		? _x( 'Previous post', 'Post navigation link to a post without a title', 'bubbledew' )
+		: _x( 'Next post', 'Post navigation link to a post without a title', 'bubbledew' );
+
+	return preg_replace( '/(<a\b[^>]*>)(<\/a>)/', '$1' . esc_html( $label ) . '$2', $content, 1 );
+}
+add_filter( 'render_block_core/post-navigation-link', __NAMESPACE__ . '\\fill_empty_navigation_link', 10, 2 );
+
+/**
+ * Use the same date in the browser tab title of an untitled post.
+ *
+ * wp_get_document_title() reads the post title through single_post_title(),
+ * which does not run the_title, so the tab would show only the site name.
+ *
+ * @since 1.2.1
+ * @param array $parts Document title parts.
+ * @return array
+ */
+function untitled_document_title( $parts ) {
+	if ( is_singular() && ( empty( $parts['title'] ) || '' === trim( (string) $parts['title'] ) ) ) {
+		$date = get_the_date( '', get_queried_object_id() );
+		if ( $date ) {
+			$parts['title'] = $date;
+		}
+	}
+
+	return $parts;
+}
+add_filter( 'document_title_parts', __NAMESPACE__ . '\\untitled_document_title' );
