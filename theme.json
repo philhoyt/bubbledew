@@ -113,6 +113,10 @@
       },
       "band": {
         "waveHeight": "2.75rem"
+      },
+      "quote": {
+        "fill": "color-mix(in oklab, var(--wp--preset--color--lavender) 35%, var(--wp--preset--color--surface))",
+        "mark": "color-mix(in oklab, var(--wp--preset--color--lavender) 40%, var(--wp--preset--color--contrast))"
       }
     },
     "layout": {
@@ -447,6 +451,35 @@
       "core/site-tagline": {
         "typography": {
           "fontSize": "var(--wp--preset--font-size--m)"
+        }
+      },
+      "core/quote": {
+        "border": {
+          "radius": "var(--wp--custom--card--radius)"
+        },
+        "color": {
+          "background": "var(--wp--custom--quote--fill)",
+          "text": "var(--wp--preset--color--contrast)"
+        },
+        "spacing": {
+          "padding": {
+            "top": "var(--wp--preset--spacing--l)",
+            "right": "var(--wp--preset--spacing--m)",
+            "bottom": "var(--wp--preset--spacing--m)",
+            "left": "var(--wp--preset--spacing--m)"
+          }
+        },
+        "elements": {
+          "cite": {
+            "color": {
+              "text": "var(--wp--preset--color--contrast-dark)"
+            },
+            "typography": {
+              "fontSize": "var(--wp--preset--font-size--xs)",
+              "fontStyle": "normal",
+              "fontWeight": "700"
+            }
+          }
         }
       },
       "core/separator": {

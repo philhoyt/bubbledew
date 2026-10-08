@@ -1,0 +1,79 @@
+//
+// Module: quotes.
+//
+// The Quote block's card (lavender fill, card radius, padding, citation) comes
+// from styles.blocks.core/quote in theme.json, so Global Styles can change it.
+// This adds the oversized opening mark, which theme.json cannot draw, and
+// gives a classic <blockquote> typed into a post or comment the same card:
+// theme.json block styles never reach markup without the block class. Shared
+// by the front end and the editor.
+//
+
+$classic: ":where(.wp-block-post-content, .wp-block-comment-content) blockquote:not([class])";
+
+.wp-block-quote:not(.is-style-plain),
+#{$classic} {
+	position: relative;
+
+	// The mark is decoration; the empty alternative text keeps screen readers
+	// from announcing it.
+	&::before {
+		content: "\201C" / "";
+		position: absolute;
+		top: -0.32em;
+		left: var(--wp--preset--spacing--s);
+		color: var(--wp--custom--quote--mark);
+		font-family: var(--wp--preset--font-family--heading);
+
+		// Fredoka's quote glyph fills a small part of its em box, so the mark
+		// needs a size well above the type scale to read as a mark.
+		font-size: 5rem;
+		font-weight: 700;
+		line-height: 1;
+		rotate: -8deg;
+		pointer-events: none;
+	}
+}
+
+// Core pads the Large style with two classes, which outranks theme.json and
+// would put the mark over the first line. Keep the card's padding.
+.wp-block-quote.is-style-large {
+	padding:
+		var(--wp--preset--spacing--l)
+		var(--wp--preset--spacing--m)
+		var(--wp--preset--spacing--m);
+}
+
+// A classic blockquote, matched to the block's card.
+#{$classic} {
+	margin-inline: 0;
+	padding:
+		var(--wp--preset--spacing--l)
+		var(--wp--preset--spacing--m)
+		var(--wp--preset--spacing--m);
+	border-radius: var(--wp--custom--card--radius);
+	background-color: var(--wp--custom--quote--fill);
+	color: var(--wp--preset--color--contrast);
+
+	> :first-child {
+		margin-block-start: 0;
+	}
+
+	> :last-child {
+		margin-block-end: 0;
+	}
+
+	cite {
+		color: var(--wp--preset--color--contrast-dark);
+		font-size: var(--wp--preset--font-size--xs);
+		font-style: normal;
+		font-weight: 700;
+	}
+}
+
+// The core Plain style asks for a quote with no decoration.
+.wp-block-quote.is-style-plain {
+	padding: 0;
+	border-radius: 0;
+	background-color: transparent;
+}
