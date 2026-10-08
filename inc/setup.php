@@ -257,3 +257,34 @@ function untitled_document_title( $parts ) {
 	return $parts;
 }
 add_filter( 'document_title_parts', __NAMESPACE__ . '\\untitled_document_title' );
+
+/**
+ * Let keyboard users scroll a preformatted box.
+ *
+ * Code, Preformatted and classic <pre> boxes scroll sideways when a line is
+ * longer than the column, and a scrolling region that cannot take focus is
+ * out of reach without a mouse. Every <pre> in post and comment content gets
+ * tabindex="0"; one that already sets a tabindex keeps it. A box that does
+ * not scroll gains a tab stop, which the server cannot avoid: it cannot know
+ * which lines will fit.
+ *
+ * @since 1.2.1
+ * @param string $block_content Rendered block HTML.
+ * @return string
+ */
+function focusable_preformatted( $block_content ) {
+	if ( false === stripos( $block_content, '<pre' ) ) {
+		return $block_content;
+	}
+
+	$processor = new \WP_HTML_Tag_Processor( $block_content );
+	while ( $processor->next_tag( array( 'tag_name' => 'PRE' ) ) ) {
+		if ( null === $processor->get_attribute( 'tabindex' ) ) {
+			$processor->set_attribute( 'tabindex', '0' );
+		}
+	}
+
+	return $processor->get_updated_html();
+}
+add_filter( 'render_block_core/post-content', __NAMESPACE__ . '\\focusable_preformatted' );
+add_filter( 'render_block_core/comment-content', __NAMESPACE__ . '\\focusable_preformatted' );
