@@ -178,5 +178,17 @@ $content: ".wp-block-post-content, .wp-block-comment-content";
 		.gallery:not(.gallery-columns-1, .gallery-columns-2) {
 			--bubbledew--gallery-columns: 3;
 		}
+
+		// Half a phone row leaves a pill too narrow for an ordinary word, which
+		// then breaks mid-word. Stack the previous and next links, each the
+		// full width of the row. Two classes outrank core's `.is-nowrap`.
+		.is-layout-flex:has(> .wp-block-post-navigation-link) {
+			flex-wrap: wrap;
+		}
+
+		.is-layout-flex > .wp-block-post-navigation-link:not(:only-child) {
+			flex: 1 1 100%;
+			max-width: 100%;
+		}
 	}
 }
