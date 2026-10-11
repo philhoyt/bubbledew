@@ -107,6 +107,11 @@
         "badgeOffset": "1.05rem",
         "padding": "1.9rem 1.85rem 1.6rem"
       },
+      "polaroid": {
+        "edge": "0.75rem",
+        "lip": "2.6rem",
+        "tilt": "-1.4deg"
+      },
       "pill": {
         "radius": "999px",
         "lip": "3px"
