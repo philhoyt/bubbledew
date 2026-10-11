@@ -138,6 +138,8 @@ p.wp-block-site-tagline.is-style-speech-bubble {
 // puts an Image style's shadow and radius on the `img`, so the frame's own
 // shadow and corners are set here, along with the tilt.
 .is-style-polaroid {
+	// The padding counts against the column, so the frame sits on the text edge.
+	box-sizing: border-box;
 	border-radius: var(--wp--preset--border-radius--md);
 	box-shadow: var(--wp--preset--shadow--card);
 	rotate: var(--wp--custom--polaroid--tilt);
@@ -148,10 +150,20 @@ p.wp-block-site-tagline.is-style-speech-bubble {
 	}
 }
 
-// The frame hugs a resized picture instead of spanning the column.
+// Neighbouring polaroids tip the other way, as the cards do. In post content
+// the siblings are paragraphs too, so the count is of polaroids only; a
+// browser without `of S` keeps the single tilt. In the posts list the
+// repeating sibling is the `li`, so the count is of posts.
+:nth-child(even of .is-style-polaroid),
+.wp-block-post-template > .wp-block-post:nth-child(even) .is-style-polaroid {
+	rotate: calc(-1 * var(--wp--custom--polaroid--tilt));
+}
+
+// The frame hugs a resized picture instead of spanning the column. No
+// max-width here: fit-content already stops at the available width, and a
+// 100% would outrank the constrained layout's content-size cap.
 .wp-block-image.is-style-polaroid {
 	width: fit-content;
-	max-width: 100%;
 
 	// Core lays an aligned image's caption out as a table-caption, which sits
 	// below the figure's padding box and so outside the frame.
