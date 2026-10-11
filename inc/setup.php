@@ -301,7 +301,7 @@ add_filter( 'render_block_core/comment-content', __NAMESPACE__ . '\\focusable_pr
  * context is built when the block is instantiated. The editor preview is not
  * affected and shows the latest posts.
  *
- * @since 1.4.0
+ * @since 1.3.3
  * @param array          $context      Context passed to the child block.
  * @param array          $parsed_block The child block.
  * @param \WP_Block|null $parent_block The block it sits in.
