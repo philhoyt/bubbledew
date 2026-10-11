@@ -30,7 +30,7 @@ Then copy or symlink this folder into `wp-content/themes/bubbledew` and activate
 - **Block styles.** Nine ship as JSON partials under `styles/blocks/`: Card, Name tag, Pebble, Pills, Blob bullets, Speech bubble, Sticky note, Highlight and Polaroid. The patterns opt into them; switch any of them off per block from the Styles panel.
 - **Presets.** Three colour presets (Sakura, Dusk, Seaside) under `styles/colors/` share the default palette's slugs, and a Nunito typography preset under `styles/typography/` swaps the Fredoka headings. Pick them under Styles in the Site Editor.
 - **Sidebar.** A template part on the home, archive and search templates: about card, search, categories, sticky note and archives. Replace the about card's picture and text with your own.
-- **Single posts.** Category pills, title, meta row, pebble featured image, content, tags, then an author card, a Keep reading list, previous and next links and the comments.
+- **Single posts.** Category pills, title, meta row, content, tags, then an author card with three more posts by the same author, previous and next links and the comments.
 - **Patterns.** Keep reading, Posts grid, Links in bio and Sticky note are in the inserter.
 - **Motion.** Cards tilt and lift on hover, the about card's picture bobs, and pages crossfade in browsers with cross-document view transitions. All of it switches off under the reduced-motion preference.
 - **Demo content.** `npm run demo` imports the posts from `_playground/demo.xml` into the wp-env site, the same content the Playground blueprint loads.

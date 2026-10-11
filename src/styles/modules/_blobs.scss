@@ -44,8 +44,9 @@ $blobs: (
 	box-shadow: none;
 }
 
-// A post's hero image tips a little, like the cards.
-.bubbledew-single .is-style-pebble {
+// A featured image placed at the top of a post tips a little, like the cards.
+// Only that block: a pebble-styled image inside the content stays level.
+.bubbledew-single .wp-block-post-featured-image.is-style-pebble {
 	rotate: -0.6deg;
 }
 

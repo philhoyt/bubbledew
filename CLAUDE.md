@@ -196,7 +196,7 @@ This theme follows the **pattern-paradigm** used by Twenty Twenty-Five: template
 
 - `header.php` / `footer.php` / `sidebar.php` — site-wide template-part patterns (`parts/sidebar.html` is the right-hand column on the feed templates only; single posts and pages are one column)
 - `template-*.php` — full-page or major-region patterns that compose a template (`template-query-loop`, `template-single`)
-- Inserter patterns: `keep-reading.php` (also placed by `single.html`), `posts-grid.php`, `links-in-bio.php`, `sticky-note.php`
+- Inserter patterns: `keep-reading.php`, `posts-grid.php`, `links-in-bio.php`, `sticky-note.php`
 - `hidden-*.php` — internal building blocks referenced only from templates or other patterns; not shown in the inserter
 - Other names (`comments.php`, `post-navigation.php`) — reusable building blocks that may also surface in the inserter
 

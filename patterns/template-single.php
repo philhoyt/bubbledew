@@ -4,7 +4,7 @@
  * Slug: bubbledew/template-single
  * Categories: posts
  * Inserter: no
- * Description: Category pills, title, meta row, featured image, content and tags for a single post.
+ * Description: Category pills, title, meta row, content and tags for a single post.
  * Viewport Width: 1280
  *
  * @package bubbledew
@@ -29,8 +29,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- wp:post-comments-link {"className":"dot-before"} /--></div>
 <!-- /wp:group --></div>
 <!-- /wp:group -->
-
-<!-- wp:post-featured-image {"aspectRatio":"16/9","className":"is-style-pebble"} /-->
 
 <!-- wp:post-content {"align":"full","layout":{"type":"constrained"}} /-->
 

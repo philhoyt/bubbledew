@@ -288,3 +288,42 @@ function focusable_preformatted( $block_content ) {
 }
 add_filter( 'render_block_core/post-content', __NAMESPACE__ . '\\focusable_preformatted' );
 add_filter( 'render_block_core/comment-content', __NAMESPACE__ . '\\focusable_preformatted' );
+
+/**
+ * Point the author card's post list at the author of the post being read.
+ *
+ * The Query Loop block only takes a fixed author ID, so the "More from this
+ * author" list in patterns/hidden-author-card.php carries the namespace
+ * `bubbledew/author-posts`, and the query its Post Template and No Results
+ * blocks receive through context gets the author here. The block's own
+ * `excludeCurrent` leaves out the post itself. Changing the Query block's
+ * attributes instead (render_block_data) would be too late: the children's
+ * context is built when the block is instantiated. The editor preview is not
+ * affected and shows the latest posts.
+ *
+ * @since 1.4.0
+ * @param array          $context      Context passed to the child block.
+ * @param array          $parsed_block The child block.
+ * @param \WP_Block|null $parent_block The block it sits in.
+ * @return array
+ */
+function author_posts_query_context( $context, $parsed_block, $parent_block ) {
+	if ( ! $parent_block instanceof \WP_Block || 'core/query' !== $parent_block->name || ! isset( $context['query'] ) ) {
+		return $context;
+	}
+
+	$attributes = $parent_block->attributes;
+	if ( ! isset( $attributes['namespace'] ) || 'bubbledew/author-posts' !== $attributes['namespace'] ) {
+		return $context;
+	}
+
+	$post = get_post();
+	if ( ! $post instanceof \WP_Post || ! $post->post_author ) {
+		return $context;
+	}
+
+	$context['query']['author'] = (int) $post->post_author;
+
+	return $context;
+}
+add_filter( 'render_block_context', __NAMESPACE__ . '\\author_posts_query_context', 10, 3 );
