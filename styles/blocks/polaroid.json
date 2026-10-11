@@ -1,0 +1,35 @@
+{
+  "$schema": "https://schemas.wp.org/wp/7.1/theme.json",
+  "version": 3,
+  "title": "Polaroid",
+  "slug": "polaroid",
+  "blockTypes": ["core/image", "core/post-featured-image"],
+  "styles": {
+    "border": {
+      "radius": "var(--wp--preset--border-radius--xs)"
+    },
+    "color": {
+      "background": "var(--wp--preset--color--surface)"
+    },
+    "spacing": {
+      "padding": {
+        "top": "var(--wp--custom--polaroid--edge)",
+        "right": "var(--wp--custom--polaroid--edge)",
+        "bottom": "var(--wp--custom--polaroid--lip)",
+        "left": "var(--wp--custom--polaroid--edge)"
+      }
+    },
+    "elements": {
+      "caption": {
+        "color": {
+          "text": "var(--wp--preset--color--contrast-dark)"
+        },
+        "typography": {
+          "fontFamily": "var(--wp--preset--font-family--heading)",
+          "fontSize": "var(--wp--preset--font-size--s)",
+          "fontWeight": "500"
+        }
+      }
+    }
+  }
+}

@@ -1,10 +1,11 @@
 //
 // Module: block styles.
 //
-// The parts of the speech-bubble, sticky-note and highlight block styles
-// (registered as JSON partials under styles/blocks/) that theme.json cannot
-// express: the bubble's tail, the note's strip of tape and the highlight
-// stripe's width and tilt. Shared by the front end and the editor.
+// The parts of the speech-bubble, sticky-note, highlight and polaroid block
+// styles (registered as JSON partials under styles/blocks/) that theme.json
+// cannot express: the bubble's tail, the note's strip of tape, the highlight
+// stripe's width and tilt, and the polaroid frame's shadow, tilt and caption
+// seat. Shared by the front end and the editor.
 //
 
 // ---------------------------------------------------------- speech bubble
@@ -128,4 +129,40 @@ p.wp-block-site-tagline.is-style-speech-bubble {
 	&.has-text-align-right {
 		margin-inline-start: auto;
 	}
+}
+
+// --------------------------------------------------------------- polaroid
+
+// styles/blocks/polaroid.json paints the frame: a surface fill, a thin edge
+// and a deep lip from settings.custom.polaroid, and the caption's type. Core
+// puts an Image style's shadow and radius on the `img`, so the frame's own
+// shadow and corners are set here, along with the tilt.
+.is-style-polaroid {
+	border-radius: var(--wp--preset--border-radius--md);
+	box-shadow: var(--wp--preset--shadow--card);
+	rotate: var(--wp--custom--polaroid--tilt);
+
+	// With a caption, the lip is the caption's seat: the edge below the text.
+	&:has(figcaption) {
+		padding-block-end: var(--wp--custom--polaroid--edge);
+	}
+}
+
+// The frame hugs a resized picture instead of spanning the column.
+.wp-block-image.is-style-polaroid {
+	width: fit-content;
+	max-width: 100%;
+
+	// Core lays an aligned image's caption out as a table-caption, which sits
+	// below the figure's padding box and so outside the frame.
+	> figcaption {
+		display: block;
+		margin-block: 0.7rem 0.2rem;
+		text-align: center;
+	}
+}
+
+// The overlay is inset to the picture, not the frame.
+.wp-block-post-featured-image.is-style-polaroid .wp-block-post-featured-image__overlay {
+	inset: var(--wp--custom--polaroid--edge) var(--wp--custom--polaroid--edge) var(--wp--custom--polaroid--lip);
 }

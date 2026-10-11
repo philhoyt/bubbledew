@@ -27,7 +27,7 @@ Then copy or symlink this folder into `wp-content/themes/bubbledew` and activate
 
 ## Usage
 
-- **Block styles.** Eight ship as JSON partials under `styles/blocks/`: Card, Name tag, Pebble, Pills, Blob bullets, Speech bubble, Sticky note and Highlight. The patterns opt into them; switch any of them off per block from the Styles panel.
+- **Block styles.** Nine ship as JSON partials under `styles/blocks/`: Card, Name tag, Pebble, Pills, Blob bullets, Speech bubble, Sticky note, Highlight and Polaroid. The patterns opt into them; switch any of them off per block from the Styles panel.
 - **Presets.** Three colour presets (Sakura, Dusk, Seaside) under `styles/colors/` share the default palette's slugs, and a Nunito typography preset under `styles/typography/` swaps the Fredoka headings. Pick them under Styles in the Site Editor.
 - **Sidebar.** A template part on the home, archive and search templates: about card, search, categories, sticky note and archives. Replace the about card's picture and text with your own.
 - **Single posts.** Category pills, title, meta row, pebble featured image, content, tags, then an author card, a Keep reading list, previous and next links and the comments.

@@ -14,7 +14,7 @@ A whimsical pastel blog theme: pebble-shaped post cards, name-tag category badge
 
 Bubbledew is a block theme for personal blogs. The posts list sits in a narrow column on the left with a sidebar on the right, and every post is a tilted card on the surface colour with its category on a name tag across the top edge. Single posts and pages are a single reading column; under each post come an author card with avatar and biography, a Keep reading list of three other posts, and comments as speech bubbles. Headings are set in Fredoka and body text in Nunito, both shipped with the theme. Pages crossfade in browsers that support cross-document view transitions.
 
-The theme is core blocks and theme.json, so the Site Editor can edit its templates, parts and styles. Each look is a block style you can switch on or off per block in the editor: Card (Group: the tilted post cards and sidebar widgets), Name tag (Post Terms: the category badge across a card's top edge), Pebble (Image, Featured Image, Site Logo), Pills (Navigation, Categories, Post Terms), Blob bullets (Latest Posts, Archives, List), Speech bubble (Group, Paragraph, Site Tagline, Comment Content), Sticky note (Group) and Highlight (Heading, Site Title, Query Title). The header menu uses Pills; a menu without it is a row of plain text links, which is what the footer uses.
+The theme is core blocks and theme.json, so the Site Editor can edit its templates, parts and styles. Each look is a block style you can switch on or off per block in the editor: Card (Group: the tilted post cards and sidebar widgets), Name tag (Post Terms: the category badge across a card's top edge), Pebble (Image, Featured Image, Site Logo), Pills (Navigation, Categories, Post Terms), Blob bullets (Latest Posts, Archives, List), Speech bubble (Group, Paragraph, Site Tagline, Comment Content), Sticky note (Group), Highlight (Heading, Site Title, Query Title) and Polaroid (Image, Featured Image: a white frame with a deep lip that seats the caption). The header menu uses Pills; a menu without it is a row of plain text links, which is what the footer uses.
 
 The sidebar is a template part. Replace the picture in its about card with your own and edit the text; the Categories and Archives blocks fill themselves. There is no Latest Posts widget, since the feed beside it already shows those posts.
 
@@ -47,6 +47,9 @@ The star marks a post you have pinned with the Stick to the top of the blog sett
 The theme honours the reduced motion setting of the operating system or browser. With it on, nothing on the page animates or moves on hover.
 
 == Changelog ==
+
+= Unreleased =
+* Add: Polaroid block style for Image and Featured Image.
 
 = 1.2.1 =
 * Fix: The newest and oldest posts no longer show an empty pill where the missing previous or next link would be.
