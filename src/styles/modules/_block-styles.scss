@@ -142,7 +142,7 @@ p.wp-block-site-tagline.is-style-speech-bubble {
 	box-sizing: border-box;
 	border-radius: var(--wp--preset--border-radius--md);
 	box-shadow: var(--wp--preset--shadow--card);
-	rotate: var(--wp--custom--polaroid--tilt);
+	rotate: calc(var(--wp--custom--polaroid--tilt) * var(--bubbledew-polaroid-flip, 1) * var(--bubbledew-polaroid-turn, 1));
 
 	// With a caption, the lip is the caption's seat: the edge below the text.
 	&:has(figcaption) {
@@ -152,11 +152,18 @@ p.wp-block-site-tagline.is-style-speech-bubble {
 
 // Neighbouring polaroids tip the other way, as the cards do. In post content
 // the siblings are paragraphs too, so the count is of polaroids only; a
-// browser without `of S` keeps the single tilt. In the posts list the
-// repeating sibling is the `li`, so the count is of posts.
-:nth-child(even of .is-style-polaroid),
-.wp-block-post-template > .wp-block-post:nth-child(even) .is-style-polaroid {
-	rotate: calc(-1 * var(--wp--custom--polaroid--tilt));
+// browser without `of S` keeps the single tilt.
+:nth-child(even of .is-style-polaroid) {
+	--bubbledew-polaroid-flip: -1;
+}
+
+// A polaroid alone in a column, or in a post card, is the first among its
+// siblings, so a row of them would all tip the same way. Even columns and
+// even posts turn everything inside them the other way; the two factors
+// multiply, so a second polaroid in an even column still flips.
+.wp-block-columns > .wp-block-column:nth-child(even),
+.wp-block-post-template > .wp-block-post:nth-child(even) {
+	--bubbledew-polaroid-turn: -1;
 }
 
 // The frame hugs a resized picture instead of spanning the column. No
