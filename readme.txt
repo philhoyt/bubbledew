@@ -3,7 +3,7 @@ Contributors: philhoyt
 Requires at least: 6.6
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 1.3.0
+Stable tag: 1.3.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Tags: blog, two-columns, right-sidebar, wide-blocks, custom-colors, custom-logo, custom-menu, editor-style, featured-images, threaded-comments, block-patterns, block-styles, style-variations, full-site-editing, rtl-language-support, translation-ready
@@ -47,6 +47,9 @@ The star marks a post you have pinned with the Stick to the top of the blog sett
 The theme honours the reduced motion setting of the operating system or browser. With it on, nothing on the page animates or moves on hover.
 
 == Changelog ==
+
+= 1.3.1 =
+* Fix: Wide and full-width blocks in a post now reach past the 640px text column instead of being capped at it.
 
 = 1.3.0 =
 * Add: Polaroid block style for Image and Featured Image.
