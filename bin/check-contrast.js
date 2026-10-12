@@ -32,6 +32,10 @@ const pairs = [
 	["link", "contrast-light", 4.5, "links on the tint"],
 	["link", "butter", 4.5, "links on the sticky note"],
 	["contrast", "base", 3, "focus ring on the page"],
+	["contrast", "contrast-light", 3, "focus ring on the tint"],
+	["base", "contrast", 3, "focus ring on a contrast background"],
+	["base", "contrast-dark", 3, "focus ring on a contrast-dark background"],
+	["base", "link", 3, "focus ring on a link-coloured background"],
 ];
 
 const luminance = (hex) => {

@@ -1,0 +1,32 @@
+//
+// Module: focus.
+//
+// The focus ring colour is --wp--custom--outline--color (theme.json), the
+// contrast colour by default. Contrast holds at least 6:1 on every pastel the
+// theme paints (bands, pills, cards, the sticky note) in all four presets, but
+// it vanishes on itself and sits below 2:1 on contrast-dark and the link
+// green. Nothing in the theme files paints those as backgrounds, but the
+// palette offers them, so core's has-<slug>-background-color class on a Group,
+// Cover or the navigation overlay switches the ring to base, which holds at
+// least 5:1 on all three in every preset (bin/check-contrast.js). The colour
+// cannot be currentcolor: a focused pill or button changes its own text colour,
+// and the ring sits outside it, on the surface.
+//
+
+:where(.wp-site-blocks *:focus) {
+	outline-width: var(--wp--custom--outline--width);
+	outline-style: var(--wp--custom--outline--style);
+	outline-color: var(--wp--custom--outline--color);
+}
+
+$ring-overrides: (
+	"contrast": "base",
+	"contrast-dark": "base",
+	"link": "base",
+);
+
+@each $background, $ring in $ring-overrides {
+	.has-#{$background}-background-color {
+		--wp--custom--outline--color: var(--wp--preset--color--#{$ring});
+	}
+}
