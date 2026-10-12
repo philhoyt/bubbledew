@@ -48,7 +48,7 @@ $bubbledew_credit_tags = array(
 <!-- wp:group {"metadata":{"name":"Footer meta"},"align":"wide","style":{"spacing":{"blockGap":"var:preset|spacing|xs"},"typography":{"fontWeight":"700"}},"textColor":"contrast-dark","fontSize":"xs","layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between","verticalAlignment":"center"}} -->
 <div class="wp-block-group alignwide has-contrast-dark-color has-text-color has-xs-font-size" style="font-weight:700"><!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|xs"}},"layout":{"type":"flex","flexWrap":"wrap","verticalAlignment":"center"}} -->
 <div class="wp-block-group"><!-- wp:paragraph -->
-<p>© <?php echo esc_html( gmdate( 'Y' ) ); ?></p>
+<p>©</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:site-title {"level":0,"isLink":false} /-->
