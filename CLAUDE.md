@@ -51,6 +51,8 @@ This is **Bubbledew**, a WordPress Full Site Editing (FSE) block theme: a whimsi
 
 Webpack (`webpack.config.js`) extends the default `@wordpress/scripts` config, separating CSS into a `css/` subdirectory and generating `*.asset.php` manifest files used by `inc/setup.php` for versioned asset enqueueing. `src/scripts/` is reserved as the entry point for theme JS — add an entry to `webpack.config.js` when the first script lands.
 
+The CSS is built **unminified** on purpose. The Theme Directory requires stylesheets to ship as readable source, and Loam's 1.1.1 review was held on minified `dist/css/*.css`. wp-scripts compresses CSS in two places in production: cssnano, which the root `postcss.config.js` replaces with the plain wp-scripts preset, and sass-loader's compressed output style, which `webpack.config.js` sets back to expanded. The release workflow fails the zip if any stylesheet has fewer than 20 indented lines. Do not add cssnano, a CSS minimizer plugin or `.cssnanorc` back.
+
 Blocks live under `src/blocks/<name>/` and are discovered automatically: `wp-scripts` globs `src/` for `block.json` and builds an entry point per script field, so no manual entry is needed. `webpack.config.js` **merges** its two CSS entries into that discovered set rather than replacing it — replacing `entry` silently disables block discovery.
 
 `start` and `build` pass `--experimental-modules`, which is required for the `block.json` `viewScriptModule` field (i.e. any Interactivity API block). That flag makes `@wordpress/scripts` export an **array** of two configs — `[scripts, modules]` — instead of one object, which is why `webpack.config.js` destructures both and customises them separately. The `splitChunks` override is deliberately applied only to the scripts config; the Interactivity router arrives via a dynamic `import()` and needs chunking left alone.
@@ -270,6 +272,8 @@ User-facing strings live in `patterns/*.php` wrapped in `esc_html__()`, `esc_htm
 ```bash
 wp i18n make-pot . languages/bubbledew.pot --include="templates,parts,patterns,inc,theme.json" --exclude="build,node_modules,vendor,dist"
 ```
+
+Regenerate the pot after every version bump and commit it with the release; its `Project-Id-Version` carries the theme version, and 1.3.3 shipped a pot still saying 1.3.2. `/wp-release` does not do this on its own.
 
 The `--include` paths cover both PHP source and any patterns/templates that might pick up additional strings as the theme grows; `theme.json` carries the custom template titles. `--exclude=build` matters: `npm run review:check` stages a copy of the theme under `build/`, and without the exclusion every string is extracted twice, once from the stale copy.
 

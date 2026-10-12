@@ -48,6 +48,12 @@ The theme honours the reduced motion setting of the operating system or browser.
 
 == Changelog ==
 
+= 1.3.4 =
+* Change: The stylesheets ship as readable CSS instead of minified files, as the theme directory requires.
+* Change: The footer copyright line shows the site name without a year, so it stays current after the footer is edited in the Site Editor. A footer already saved in the Site Editor keeps its text until it is reset.
+* Fix: The keyboard focus ring turns cream on a contrast, contrast-dark or link-coloured background, where the brown ring was hard to see.
+* Fix: Removed the text domain loading call, which the theme directory handles.
+
 = 1.3.3 =
 * Change: The author card under a post lists three more posts by the same author; single posts drop the Keep reading list and the featured image.
 * Fix: Polaroids side by side in a Columns block tip in opposite directions.
