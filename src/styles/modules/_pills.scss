@@ -58,7 +58,7 @@ $pastels: (
 	}
 
 	&:focus-visible {
-		outline: var(--wp--custom--outline--width) var(--wp--custom--outline--style) var(--wp--preset--color--contrast);
+		outline: var(--wp--custom--outline--width) var(--wp--custom--outline--style) var(--wp--custom--outline--color);
 		outline-offset: var(--wp--custom--outline--offset);
 	}
 

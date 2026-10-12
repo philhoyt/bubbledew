@@ -10,7 +10,7 @@ input:where([type="email"], [type="number"], [type="password"], [type="search"],
 	caret-color: var(--wp--preset--color--contrast);
 
 	&:focus {
-		outline: var(--wp--custom--outline--width) var(--wp--custom--outline--style) var(--wp--preset--color--contrast);
+		outline: var(--wp--custom--outline--width) var(--wp--custom--outline--style) var(--wp--custom--outline--color);
 		outline-offset: var(--wp--custom--outline--offset);
 	}
 
@@ -51,7 +51,7 @@ input:where([type="email"], [type="number"], [type="password"], [type="search"],
 	}
 
 	&:where(:focus) {
-		outline: var(--wp--custom--outline--width) var(--wp--custom--outline--style) var(--wp--preset--color--contrast);
+		outline: var(--wp--custom--outline--width) var(--wp--custom--outline--style) var(--wp--custom--outline--color);
 		outline-offset: var(--wp--custom--outline--offset);
 	}
 
